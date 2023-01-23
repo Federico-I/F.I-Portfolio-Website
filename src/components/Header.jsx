@@ -1,9 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
-import ;
 
 function Header(props) {
-  return <div>{props.text}</div>;
+  return (
+    <div className="align-center">
+      <div className=" container w-full bg-slate-400">
+        <h3>{props.text}</h3>
+      </div>
+    </div>
+  );
 }
 
 Header.defaultProps = {
