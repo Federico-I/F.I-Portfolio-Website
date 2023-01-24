@@ -4,7 +4,7 @@ import About from "../components/About";
 
 function Home() {
   return (
-    <div className=" flex flex-col items-center justify-center w-full bg-slate-300 h-full">
+    <div className=" flex flex-col items-center justify-center w-full bg-slate-300 h-96 rounded-t-lg">
       <h2>Some of my work</h2>
       <p>Most relevant projects.</p>
       <ItemList />
