@@ -8,13 +8,13 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="flex flex-col justify-between h-screen bg-blue-200">
-      <div className=" self-center bg-gray-200 h-full w-8/12 place-content-stretch">
+    <div className="flex flex-col items-center justify-between h-screen">
+      <div className=" flex flex-col items-center justify-center bg-gray-200 h-full w-8/12">
         <Header />
-        <main className="h-full ">
+        <div className=" flex flex-col items-center justify-center h-1/2 w-full">
           <Home />
           <Contact />
-        </main>
+        </div>
       </div>
       <Footer />
     </div>
