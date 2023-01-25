@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Crimson+Text&family=EB+Garamond:wght@500&display=swap");
+
 .custom-card-image .card-image-full::before {
   border-radius: 0.5rem;
   opacity: 0.45;
