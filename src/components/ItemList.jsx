@@ -1,11 +1,12 @@
 import React from "react";
+import CardItem from "./CardItem";
 
 function ItemList() {
   return (
-    <div className="flex grid lg:grid-cols-3 md:grid-cols-2 place-items-center w-full  bg-stone-100">
-      <div>Project and link</div>
-      <div>Project and link</div>
-      <div>Project and link</div>
+    <div className="flex grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 place-items-center w-full rounded-t-lg md:rounded-none bg-stone-100">
+      <CardItem />
+      <CardItem />
+      <CardItem />
     </div>
   );
 }

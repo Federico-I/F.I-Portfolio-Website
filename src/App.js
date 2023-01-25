@@ -14,13 +14,13 @@ function App() {
 
   return (
     <div
-      className="h-full bg-no-repeat bg-cover bg-top bg-fixed scroll-smooth"
+      className="h-full bg-no-repeat bg-cover bg-top bg-fixed"
       style={backgroundImg}
     >
       <div className="flex flex-col items-center justify-between h-full">
         <div className=" flex flex-col items-center justify-center bg-transparent h-full w-8/12">
           <Header />
-          <div className="flex flex-col items-center justify-center h-1/2 w-full mb-28">
+          <div className="flex flex-col items-center justify-center h-1/2 w-full mb-28 ">
             <Home />
             <Contact />
           </div>
