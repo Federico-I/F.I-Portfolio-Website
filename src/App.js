@@ -1,11 +1,10 @@
 "strict mode";
-
 import React from "react";
 import Header from "./components/Header";
 import Home from "./pages/Home";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import MountainImage from "./mountain2.jpg";
+import MountainImage from "./Data/Images/mountain2.jpg";
 
 function App() {
   const backgroundImg = {

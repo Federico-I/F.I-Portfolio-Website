@@ -13,12 +13,20 @@ function Contact() {
       <div className="p-3">
         <ul className=" flex flex-row sm:pr-8">
           <li className="p-5">
-            <a href="https://github.com/Federico-I">
+            <a
+              href="https://github.com/Federico-I"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FaGithub className="h-10 w-10 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300" />
             </a>
           </li>
           <li className="p-5">
-            <a href="https://linkedin.com/in/federico11izzi11">
+            <a
+              href="https://linkedin.com/in/federico11izzi11"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FaLinkedin className="h-10 w-10 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300" />
             </a>
           </li>
