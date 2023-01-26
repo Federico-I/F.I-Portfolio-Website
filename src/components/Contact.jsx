@@ -5,7 +5,9 @@ import { FaLinkedin } from "react-icons/fa";
 function Contact() {
   return (
     <div className=" flex flex-col items-center xl:flex-row sm:justify-between bg-stone-100 h-full w-full rounded-b-lg font-personalText text-3xl">
-      <h1 className="flex py-8 text-4xl md:text-5xl sm:p-5">Contact</h1>
+      <h1 className="flex py-8 xl:pl-60 text-4xl md:text-5xl sm:p-5">
+        Contact
+      </h1>
       <div className="flex flex-col md:flex-row items-center">
         <div className=" flex flex-col items-center justify-items-center lg:flex-row ">
           <h1 className="flex text-4xl p-3 sm:p-3 sm:selfcenter">Email:</h1>
