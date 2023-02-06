@@ -2,7 +2,7 @@ import React from "react";
 import ItemList from "../components/ItemList";
 import About from "../components/About";
 
-function Home() {
+function Home({ textData }) {
   return (
     <div className=" flex flex-col items-center justify-center w-full h-full  pt-10 bg-transparent text-center">
       <div className="py-8 w-full font-titleFont text-white rounded-t-lg  md:bg-black md:opacity-75 capitalize">
@@ -12,7 +12,9 @@ function Home() {
         </p>
       </div>
       <ItemList />
-      <About />
+      {textData.map((item) => (
+        <About key={item.id} itemData={item}/>
+      ))}
     </div>
   );
 }
