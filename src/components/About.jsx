@@ -48,9 +48,11 @@ function About({ itemData }) {
   );
 }
 
+/*
 About.propTypes = {
   personal: PropTypes.string,
   moreover: PropTypes.string,
 };
+*/
 
 export default About;
