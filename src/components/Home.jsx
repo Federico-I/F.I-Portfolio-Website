@@ -1,15 +1,17 @@
 import React from "react";
-import ItemList from "../components/ItemList";
-import About from "../components/About";
+import ItemList from "./ItemList";
+import About from "./About";
 
 function Home({ textData }) {
   return (
     <div className=" flex flex-col items-center justify-center w-full h-full  pt-10 bg-transparent text-center">
       <div className="py-8 w-full font-titleFont text-white rounded-t-lg  md:bg-black md:opacity-75 capitalize">
-        <h2 className="py-3 text-6xl ">Some of my work</h2>
-        <p className="text-left text-5xl pl-10 pt-20 underline decoration-red-200">
+        <h2 className="py-3 mb-20 text-6xl ">Some of my work</h2>
+        <div className="w-full flex justify-items-start ">
+        <p className="ml-10  text-5xl  underline decoration-red-200 hover:text-blue-600 hover-decoratio-orange-500">
           Most relevant projects
         </p>
+        </div>
       </div>
       <ItemList />
       {textData.map((item) => (

@@ -5,23 +5,25 @@ import { FaLinkedin } from "react-icons/fa";
 function Contact() {
   return (
     <div className=" flex flex-col items-center xl:flex-row sm:justify-between bg-stone-100 h-full w-full rounded-b-lg font-personalText text-3xl">
-      <h1 className="flex py-8 xl:pl-60 text-4xl md:text-5xl sm:p-5">
+      <div className="w-full flex flex-col justify-items-center">
+      <h1 className="flex self-center py-8 hover:text-blue-500 text-5xl md:text-6xl sm:p-5">
         Contact
       </h1>
+      </div>
       <div className="flex flex-col md:flex-row items-center">
         <div className=" flex flex-col items-center justify-items-center lg:flex-row ">
-          <h1 className="flex text-4xl p-3 sm:p-3 sm:selfcenter">Email:</h1>
-          <p className="flex font-planeText sm:p-3">fede.izzi33@gmail.com</p>
+          <h1 className="flex text-4xl p-3 sm:p-3 sm:selfcenter ">Email:</h1>
+          <p className="flex font-planeText sm:p-3 hover:underline hover:decoration-green-500">fede.izzi33@gmail.com</p>
         </div>
         <div className="p-3">
-          <ul className=" flex flex-col lg:flex-row sm:pr-8">
+          <ul className=" flex flex-col lg:flex-row md:pr-8">
             <li className="p-5">
               <a
                 href="https://github.com/Federico-I"
                 target="_blank"
                 rel="noreferrer"
               >
-                <FaGithub className="h-10 w-10 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300" />
+                <FaGithub className="h-20 w-20 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300" />
               </a>
             </li>
             <li className="p-5">
@@ -30,7 +32,7 @@ function Contact() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <FaLinkedin className="h-10 w-10 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300" />
+                <FaLinkedin className="h-20 w-20 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300" />
               </a>
             </li>
           </ul>

@@ -2,7 +2,7 @@
 import React from "react";
 import { useState } from "react";
 import Header from "./components/Header.jsx";
-import Home from "./pages/Home.js";
+import Home from "./components/Home.jsx";
 import Contact from "./components/Contact.jsx";
 import Footer from "./components/Footer.jsx";
 import MountainImage from "./Data/Images/mountain2.jpg";
