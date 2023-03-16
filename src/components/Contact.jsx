@@ -10,12 +10,11 @@ function Contact() {
         Contact
       </h1>
       </div>
-      <div className="flex flex-col md:flex-row ">
-        <div className=" flex flex-col items-center justify-items-center lg:flex-row ">
+      <div className=" flex flex-col items-center justify-items-center lg:flex-row ">
           <h1 className="flex text-4xl p-3 sm:p-3 sm:selfcenter ">Email:</h1>
           <p className="flex font-planeText sm:p-3 hover:underline hover:decoration-green-500 transition-all duration-1000 cursor-pointer">fede.izzi33@gmail.com</p>
-        </div>
-        <div className="p-3">
+      </div>
+      <div className="p-3">
           <ul className=" flex flex-col lg:flex-row md:pr-8">
             <li className="p-5">
               <a
@@ -36,7 +35,6 @@ function Contact() {
               </a>
             </li>
           </ul>
-        </div>
       </div>
     </div>
   );
