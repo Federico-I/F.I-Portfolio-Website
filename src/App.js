@@ -2,7 +2,7 @@
 import React from "react";
 import { useState } from "react";
 import Header from "./components/Header.jsx";
-import Home from "./components/Home.jsx";
+import IntroComp from "./components/IntroComp.jsx";
 import Contact from "./components/Contact.jsx";
 import Footer from "./components/Footer.jsx";
 import MountainImage from "./Data/Images/mountain2.jpg";
@@ -25,7 +25,7 @@ function App() {
         <div className=" flex flex-col items-center justify-center bg-transparent h-full w-8/12">
           <Header />
           <div className="flex flex-col items-center justify-center h-1/2 w-full mb-28 ">
-            <Home textData={infoData} />
+            <IntroComp textData={infoData} />
             <Contact />
           </div>
         </div>

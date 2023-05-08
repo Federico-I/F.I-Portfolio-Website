@@ -2,7 +2,7 @@ import React from "react";
 import ItemList from "./ItemList";
 import About from "./About";
 
-function Home({ textData }) {
+function IntroComp({ textData }) {
   return (
     <div className=" flex flex-col items-center justify-center w-full h-full  pt-10 bg-transparent text-center">
       <div className="py-8 w-full font-titleFont text-white rounded-t-lg  md:bg-black md:opacity-75 capitalize">
@@ -21,4 +21,4 @@ function Home({ textData }) {
   );
 }
 
-export default Home;
+export default IntroComp;
