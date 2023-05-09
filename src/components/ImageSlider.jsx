@@ -4,7 +4,7 @@ const photoSlider = [()];
 
 const MainSlider (photoSlider) {
     <div >
-        <dv>Slider</dv>
+        <div>Slider</div>
     </div>
 };
 
