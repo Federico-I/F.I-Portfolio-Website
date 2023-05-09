@@ -1,29 +1,8 @@
 import React from "react";
 import ProfileImage from "./ProfileImage";
 import PropTypes from "prop-types";
-//import { infoData } from "../Data/infoData.js";
 
 function About({ itemData }) {
-  
-  /*
-  //first way to display data- import "data"
-
-  const displayPersonal = infoData.map((data) => {
-    return <p>{data.personal}</p>;
-  });
-
-  const displayMoreover = infoData.map((data) => {
-    return <p>{data.moreover}</p>;
-  });
-  */
-
-  /*
-  // second way to display data - import 
-
-  const displayPersonal = textData.map((item) => (<p>{item.personal}</p>));
-  
-  const displayMoreover = textData.map((item) => (<p>{item.moreover}</p>));
-  */
 
   return (
     <div className="flex flex-col items-center justify-center w-full h-full bg-stone-300">

@@ -10,7 +10,9 @@ import { informationData } from "./Data/infoData.js";
 
 function App() {
 
-  const [infoData, setInfoData] = useState(informationData);
+  const infoData = informationData;
+
+  /* const [infoData, setInfoData] = useState(informationData); --- test */
 
   const backgroundImg = {
     backgroundImage: `url("${MountainImage}")`,
