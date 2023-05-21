@@ -9,16 +9,21 @@ update state on every onClick (event-listener) to setState and change slides
 style buttons (animation?)
 */
 
-function MainSlider () {
+function MainSlider ({ imgData }) {
 
-    const photoSlider = () => {
+    const imgsPhotos = imgData.map( (item) => {
+        item.imgLinkSlides
+    }) ;
+
+    const photoSlider = (imgsPhotos) => {
     
-        return (
-            <div>
-                <div>Slider</div>
-            </div>
-        )
-    }    
+    }
+    
+    return (
+        <div>
+            <div>photoSlider</div>
+        </div>
+    )
     
 };
 
