@@ -20,9 +20,11 @@ function MainSlider ({ imgData }) {
         const [currentSlide, setCurrentSlide] = useState(0);
         
         
-        return {
-
-        };
+        return (
+            <div>
+                <div style={{backgroundImage: `url(${imgsPhotos[currentSlide]}.url)`}}></div>
+            </div>
+        );
     };
     
     return (
