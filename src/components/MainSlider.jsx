@@ -1,5 +1,5 @@
 import React from "react";
-
+import { useState } from "react";
 /* 
 slider logic - 
 
@@ -13,11 +13,17 @@ function MainSlider ({ imgData }) {
 
     const imgsPhotos = imgData.map( (item) => {
         item.imgLinkSlides
-    }) ;
+    });
 
     const photoSlider = (imgsPhotos) => {
-    
-    }
+        
+        const [currentSlide, setCurrentSlide] = useState(0);
+        
+        
+        return {
+
+        };
+    };
     
     return (
         <div>
