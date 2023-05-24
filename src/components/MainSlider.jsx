@@ -1,5 +1,26 @@
 import React from "react";
-import { useState } from "react";
+import Slider from "./Slider";
+
+function MainSlider ({ imgData }) {
+
+    const imgsPhotos = imgData.map( (item) => {
+        item.imgLinkSlides
+    });
+    
+    return (
+        <div>
+            <h1>Hello </h1>
+            <div style={}>
+                <Slider imgs={imgsPhotos} />
+            </div>
+        </div>
+    )
+    
+};
+
+export default MainSlider;
+
+
 /* 
 slider logic - 
 
@@ -8,31 +29,3 @@ update state on every onClick (event-listener) to setState and change slides
 
 style buttons (animation?)
 */
-
-function MainSlider ({ imgData }) {
-
-    const imgsPhotos = imgData.map( (item) => {
-        item.imgLinkSlides
-    });
-
-    const photoSlider = (imgsPhotos) => {
-        
-        const [currentSlide, setCurrentSlide] = useState(0);
-        
-        
-        return (
-            <div>
-                <div style={{backgroundImage: `url(${imgsPhotos[currentSlide]}.url)`}}></div>
-            </div>
-        );
-    };
-    
-    return (
-        <div>
-            <div>photoSlider</div>
-        </div>
-    )
-    
-};
-
-export default MainSlider;
