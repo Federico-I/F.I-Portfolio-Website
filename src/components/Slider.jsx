@@ -18,11 +18,33 @@ function Slider ({ imgs }) {
         backgroundsize: "cover",
         backgroundImage: `url(${imgs[currentSlide]}.url)`,
     };
-        
+    
+    const leftArrow = {
+        position: "absolute",
+        top: "50%",
+        trasnform: "translate(0, -50%)",
+        left: "32px",
+        fontSize: "45px",
+        color: "#fff",
+        zIndex: 1,
+        cursor: "pointer",
+    };
+
+    const rightArrow = {
+        position: "absolute",
+        top: "50%",
+        trasnform: "translate(0, -50%)",
+        right: "32px",
+        fontSize: "45px",
+        color: "#fff",
+        zIndex: 1,
+        cursor: "pointer",
+    };
+
     return (
         <div style={sliderContainer}>
-            <div styles={leftArrow}><</div>
-            <div styles={rightArrow}>></div>
+            <div styles={leftArrow} onClick={prevImg}>↽</div>
+            <div styles={rightArrow} onClick={nextImg}>⇀</div>
             <div style={imgsStyles}></div>
         </div>
     );
