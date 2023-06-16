@@ -10,7 +10,7 @@ function Slider ({ imgs }) {
         width: "relative",
     };
 
-    const imgsStyles = {
+    const imgStyles = {
         width: "100%",
         height: "100%",
         borderRadious: "10px",
@@ -41,11 +41,17 @@ function Slider ({ imgs }) {
         cursor: "pointer",
     };
 
+    const prevImg = () => {
+        const firstSlide = currentSlide === 0;
+        const newIndex = firstSlide ? imgs.lenght - 1 : currentSlide - 1 ;
+        setCurrentSlide(newIndex);
+    };
+ 
     return (
         <div style={sliderContainer}>
             <div styles={leftArrow} onClick={prevImg}>↽</div>
             <div styles={rightArrow} onClick={nextImg}>⇀</div>
-            <div style={imgsStyles}></div>
+            <div style={imgStyles}></div>
         </div>
     );
 };
