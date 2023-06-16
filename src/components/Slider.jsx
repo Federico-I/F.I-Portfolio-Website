@@ -52,12 +52,22 @@ function Slider ({ imgs }) {
         const newIndexNext = lastSlide ? 0 : currentSlide + 1;
         setCurrentSlide(newIndexNext);
     };
- 
+    
+    const dotStyle = {
+        position: "flex",
+    };
+
+
     return (
         <div style={sliderContainer}>
             <div styles={leftArrow} onClick={prevImg}>↽</div>
             <div styles={rightArrow} onClick={nextImg}>⇀</div>
             <div style={imgStyles}></div>
+            <div style={dotStyle}>
+                {imgs.map((Slide, slideIndex) => (
+                    <div style={dotIcon} onClick={dotClick}>•</div>
+                ))}
+            </div>
         </div>
     );
 };
