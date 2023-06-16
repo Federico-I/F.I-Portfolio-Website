@@ -43,8 +43,14 @@ function Slider ({ imgs }) {
 
     const prevImg = () => {
         const firstSlide = currentSlide === 0;
-        const newIndex = firstSlide ? imgs.lenght - 1 : currentSlide - 1 ;
-        setCurrentSlide(newIndex);
+        const newIndexPrev = firstSlide ? imgs.lenght - 1 : currentSlide - 1 ;
+        setCurrentSlide(newIndexPrev);
+    };
+
+    const nextImg = () => {
+        const lastSlide = currentSlide === imgs.lenght - 1;
+        const newIndexNext = lastSlide ? 0 : currentSlide + 1;
+        setCurrentSlide(newIndexNext);
     };
  
     return (
