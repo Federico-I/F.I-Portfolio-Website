@@ -53,19 +53,25 @@ function Slider ({ imgs }) {
         setCurrentSlide(newIndexNext);
     };
     
-    const dotStyle = {
+    const dotDivStyle = {
         position: "flex",
+        justifyContent: "center",
     };
 
+    const dotIcon = {
+        margin: "0 3px",
+        cursor: "pointer",
+        fontSize: "20px",
+    }
 
     return (
         <div style={sliderContainer}>
             <div styles={leftArrow} onClick={prevImg}>↽</div>
             <div styles={rightArrow} onClick={nextImg}>⇀</div>
             <div style={imgStyles}></div>
-            <div style={dotStyle}>
+            <div style={dotDivStyle}>
                 {imgs.map((Slide, slideIndex) => (
-                    <div style={dotIcon} onClick={dotClick}>•</div>
+                    <div style={dotIcon}  key={slideIndex} onClick={dotClick}>•</div>
                 ))}
             </div>
         </div>
