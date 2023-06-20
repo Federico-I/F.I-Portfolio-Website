@@ -64,6 +64,8 @@ function Slider ({ imgs }) {
         fontSize: "20px",
     }
 
+    const dotClick = slideIndex => {setCurrentSlide(slideIndex)};
+
     return (
         <div style={sliderContainer}>
             <div styles={leftArrow} onClick={prevImg}>↽</div>
@@ -71,7 +73,7 @@ function Slider ({ imgs }) {
             <div style={imgStyles}></div>
             <div style={dotDivStyle}>
                 {imgs.map((Slide, slideIndex) => (
-                    <div style={dotIcon}  key={slideIndex} onClick={dotClick}>•</div>
+                    <div style={dotIcon} key={slideIndex} onClick={() => dotClick(slideIndex) }>•</div>
                 ))}
             </div>
         </div>
