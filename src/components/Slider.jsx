@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-function Slider ({ imgs }) {
+function Slider({ imgs }) {
 
     const [currentSlide, setCurrentSlide] = useState(0);
 

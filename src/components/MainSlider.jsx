@@ -1,24 +1,26 @@
 import React from "react";
 import Slider from "./Slider";
 
-function MainSlider ({ imgData }) {
+function MainSlider({ imgData }) {
 
     const imgsPhotos = imgData.map( (item) => {
-        item.imgLinkSlides
+        return (item.imgLinkSlides);
     });
     
-    const containerSlider = {
+    /* 
+    
+        const containerSlider = {
         width: "500px",
         higth: "280px",
         margin: "0 auto",
     };
 
+    */
+
     return (
-        <div>
-            <h1>Hello </h1>
-            <div style={containerSlider}>
-                <Slider imgs={imgsPhotos} />
-            </div>
+        <div className="w-full h-full">
+            <h1>Slider Test</h1>
+            <Slider imgs={imgsPhotos} />
         </div>
     )
     

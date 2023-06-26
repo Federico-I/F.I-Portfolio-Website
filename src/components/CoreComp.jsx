@@ -1,8 +1,13 @@
 import React from "react";
 import ItemList from "./ItemList";
+import MainSlider from "./components/MainSlider.jsx";
 import About from "./About";
 
-function IntroComp({ textData }) {
+
+function CoreComp({ textData }) {
+
+  const infoData = textData;
+
   return (
     <div className=" flex flex-col items-center justify-center w-full h-full  pt-10 bg-transparent text-center">
       <div className="py-8 w-full font-titleFont text-white rounded-t-lg  md:bg-black md:opacity-75 capitalize">
@@ -13,6 +18,7 @@ function IntroComp({ textData }) {
         </p>
         </div>
       </div>
+      <MainSlider imgData={infoData}/>
       <ItemList />
       {textData.map((item) => (
         <About key={item.id} itemData={item}/>
@@ -21,4 +27,4 @@ function IntroComp({ textData }) {
   );
 }
 
-export default IntroComp;
+export default CoreComp;

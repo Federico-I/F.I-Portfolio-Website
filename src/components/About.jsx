@@ -1,6 +1,6 @@
 import React from "react";
 import ProfileImage from "./ProfileImage";
-import PropTypes from "prop-types";
+
 
 function About({ itemData }) {
 
