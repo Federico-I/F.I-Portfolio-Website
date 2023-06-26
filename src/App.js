@@ -1,6 +1,5 @@
 "strict mode";
 import React from "react";
-import { useState } from "react";
 import Header from "./components/Header.jsx";
 import IntroComp from "./components/IntroComp.jsx";
 import Contact from "./components/Contact.jsx";
