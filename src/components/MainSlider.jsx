@@ -8,13 +8,11 @@ function MainSlider({ imgData }) {
     });
     
     /* 
-    
         const containerSlider = {
         width: "500px",
         higth: "280px",
         margin: "0 auto",
     };
-
     */
 
     return (
