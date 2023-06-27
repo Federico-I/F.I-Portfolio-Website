@@ -8,7 +8,7 @@ function MainSlider({ imgData }) {
     });
     
     /* 
-        const containerSlider = {
+    const containerSlider = {
         width: "500px",
         higth: "280px",
         margin: "0 auto",
@@ -25,13 +25,3 @@ function MainSlider({ imgData }) {
 };
 
 export default MainSlider;
-
-
-/* 
-slider logic - 
-
-need to create state funtion and store current position. 
-update state on every onClick (event-listener) to setState and change slides
-
-style buttons (animation?)
-*/
