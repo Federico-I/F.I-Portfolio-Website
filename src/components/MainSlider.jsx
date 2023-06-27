@@ -5,7 +5,8 @@ function MainSlider({ imgData }) {
 
     const sliderContainer = {
         height: "100%",
-        width: "relative",
+        width: "100%",
+        backgroundColor: "blue",
     };
 
     const imgsPhotos = imgData.map( (item) => {
@@ -21,7 +22,7 @@ function MainSlider({ imgData }) {
     */
 
     return (
-        <div style={sliderContainer}>
+        <div className="p-10 flex flex-col" style={sliderContainer}>
             <h1>Slider Test</h1>
             <Slider imgs={imgsPhotos} />
         </div>

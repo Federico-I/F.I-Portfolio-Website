@@ -7,15 +7,15 @@ function Slider({ imgs }) {
 
     const sliderContainer = {
         height: "100%",
-        width: "relative",
+        width: "100%",
     };
 
     const imgStyles = {
         width: "100%",
         height: "100%",
         borderRadious: "10px",
-        backgroundposition: "center",
-        backgroundsize: "cover",
+        backgroundPosition: "center",
+        backgroundSize: "cover",
         backgroundImage: `url(${imgs[currentSlide]}.url)`,
     };
     
@@ -67,14 +67,14 @@ function Slider({ imgs }) {
     const dotClick = slideIndex => {setCurrentSlide(slideIndex)};
 
     return (
-        <div style={sliderContainer}>
+        <div className="" style={sliderContainer}>
             <div styles={leftArrow} onClick={prevImg}>↽</div>
             <div styles={rightArrow} onClick={nextImg}>⇀</div>
-            <div style={imgStyles}></div>
-            <div style={dotDivStyle}>
+            <div style={imgStyles}><div style={dotDivStyle}>
                 {imgs.map((Slide, slideIndex) => (
                     <div style={dotIcon} key={slideIndex} onClick={() => dotClick(slideIndex) }>•</div>
                 ))}
+            </div>
             </div>
         </div>
     );
