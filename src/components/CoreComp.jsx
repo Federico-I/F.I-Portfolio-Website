@@ -1,6 +1,6 @@
 import React from "react";
 import ItemList from "./ItemList";
-import MainSlider from "./components/MainSlider.jsx";
+import MainSlider from "./MainSlider";
 import About from "./About";
 
 
