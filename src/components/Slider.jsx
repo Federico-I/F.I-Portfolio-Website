@@ -16,7 +16,7 @@ function Slider({ imgs }) {
         borderRadious: "10px",
         backgroundPosition: "center",
         backgroundSize: "cover",
-        backgroundImage: `url(${imgs[currentSlide]}.url)`,
+        backgroundImage: `url(${imgs[currentSlide].url})`,
     };
     
     const leftArrow = {

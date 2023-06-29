@@ -12,14 +12,7 @@ function MainSlider({ imgData }) {
     const imgsPhotos = imgData.map( (item) => {
         return (item.imgLinkSlides);
     });
-    
-    /* 
-    const containerSlider = {
-        width: "500px",
-        higth: "280px",
-        margin: "0 auto",
-    };
-    */
+
 
     return (
         <div className="p-10 flex flex-col" style={sliderContainer}>
