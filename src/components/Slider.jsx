@@ -40,18 +40,6 @@ function Slider({ imgs }) {
         zIndex: 1,
         cursor: "pointer",
     };
-
-    const prevImg = () => {
-        const firstSlide = currentSlide === 0;
-        const newIndexPrev = firstSlide ? imgs.lenght - 1 : currentSlide - 1 ;
-        setCurrentSlide(newIndexPrev);
-    };
-
-    const nextImg = () => {
-        const lastSlide = currentSlide === imgs.lenght - 1;
-        const newIndexNext = lastSlide ? 0 : currentSlide + 1;
-        setCurrentSlide(newIndexNext);
-    };
     
     const dotDivStyle = {
         position: "flex",
@@ -64,17 +52,29 @@ function Slider({ imgs }) {
         fontSize: "20px",
     }
 
+    const prevImg = () => {
+        const firstSlide = currentSlide === 0;
+        const newIndexPrev = firstSlide ? imgs.lenght - 1 : currentSlide - 1 ;
+        setCurrentSlide(newIndexPrev);
+    };
+
+    const nextImg = () => {
+        const lastSlide = currentSlide === imgs.lenght - 1;
+        const newIndexNext = lastSlide ? 0 : currentSlide + 1;
+        setCurrentSlide(newIndexNext);
+    };
+
     const dotClick = slideIndex => {setCurrentSlide(slideIndex)};
 
     return (
         <div className="" style={sliderContainer}>
             <div styles={leftArrow} onClick={prevImg}>↽</div>
             <div styles={rightArrow} onClick={nextImg}>⇀</div>
-            <div style={imgStyles}><div style={dotDivStyle}>
-                {imgs.map((Slide, slideIndex) => (
-                    <div style={dotIcon} key={slideIndex} onClick={() => dotClick(slideIndex) }>•</div>
-                ))}
-            </div>
+                <div style={imgStyles}><div style={dotDivStyle}>
+                    {imgs.map((Slide, slideIndex) => (
+                        <div style={dotIcon} key={slideIndex} onClick={() => dotClick(slideIndex) }>•</div>
+                    ))}
+                </div>
             </div>
         </div>
     );
