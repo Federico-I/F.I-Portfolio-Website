@@ -7,22 +7,24 @@ function MainSlider({ imgData }) {
         return (item.imgLinkSlides);
     });
 
-    // const backgroundTest = imgsPhotos[0].url;
+    const backgroundTest = "https://p4.wallpaperbetter.com/wallpaper/390/840/968/zhangjiajie-national-forest-park-china-cliffs-mountains-fog-wallpaper-preview.jpg";
     
     const sliderContainer = {
         height: "100%",
         width: "100%",
-        /* backgroundImage: `url(${imgsPhotos[0].url})`, */
+        backgroundImage: `url(${backgroundTest})`,
     };
 
     
 
     return (
-        <div className="flex flex-col p-10" style={sliderContainer}>
-            <h1>Slider Test</h1>
+        <div className="flex flex-col p-10 " style={sliderContainer} >
+            <h1 className="text-4 bold" >Slider Test</h1>
             <Slider  imgs={imgsPhotos} />
         </div>
     )
+
+    // {sliderContainer}
     
 };
 
