@@ -12,7 +12,7 @@ function MainSlider({ imgData }) {
     const sliderContainer = {
         height: "100%",
         width: "100%",
-        backgroundImage: `url(${backgroundTest})`,
+        // backgroundImage: `url(${backgroundTest})`,
     };
 
     
