@@ -19,7 +19,7 @@ function MainSlider({ imgData }) {
 
     return (
         <div className="flex flex-col p-10 " style={sliderContainer} >
-            <h1 className="text-4 bold" >Slider Test</h1>
+            <h1 className="font-sans font-bold text-2xl rounded" >Slider Test</h1>
             <Slider  imgs={imgsPhotos} />
         </div>
     )
