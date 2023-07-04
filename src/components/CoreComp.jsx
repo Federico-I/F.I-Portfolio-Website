@@ -18,7 +18,9 @@ function CoreComp({ textData }) {
         </p>
         </div>
       </div>
-      <MainSlider imgData={infoData}/>
+      {textData.map((newItems) => {
+        <MainSlider key={newItems.id} imgData={newItems}/>
+      })}
       <ItemList />
       {textData.map((item) => (
         <About key={item.id} itemData={item}/>

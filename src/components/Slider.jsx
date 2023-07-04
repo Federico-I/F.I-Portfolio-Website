@@ -18,8 +18,8 @@ function Slider({ imgs }) {
         borderRadious: "10px",
         backgroundPosition: "center",
         backgroundSize: "cover",
-        backgroundImage: `url(${backgroundTest})`,
-        // backgroundImage: `url(${imgs[currentSlide].url})`,
+        // backgroundImage: `url(${backgroundTest})`,
+        backgroundImage: `url(${imgs[currentSlide].url})`,
     };
     
     const leftArrow = {
@@ -71,15 +71,14 @@ function Slider({ imgs }) {
 
     return (
         <div className="" style={sliderContainer}>
-            
             <div style={imgStyles}>
                 <div style={dotDivStyle}>
                     {imgs.map((Slide, slideIndex) => (
-                        <div style={dotIcon} key={slideIndex} onClick={() => dotClick(slideIndex) }>•</div>
+                        <div style={dotIcon} key={slideIndex} onClick={() => dotClick(slideIndex)} >•</div>
                     ))}
                 </div>
                 <div styles={leftArrow} onClick={prevImg}>↽</div>
-            <div styles={rightArrow} onClick={nextImg}>⇀</div>
+                <div styles={rightArrow} onClick={nextImg}>⇀</div>
             </div>
         </div>
     );
