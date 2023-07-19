@@ -73,13 +73,14 @@ function Slider({ imgs }) {
 
     return (
         <>
-            <div className="" style={sliderContainer}>
+            <div  style={sliderContainer}>
                 <div style={imgStyles}>
                     <div style={dotDivStyle}>
                         {imgs.map((Slide, slideIndex) => (
                          <div style={dotIcon} key={slideIndex} onClick={() => dotClick(slideIndex)}>•</div>
                         ))}
                     </div>
+                    Hello World
                     <div styles={leftArrow} onClick={prevImg}>↽</div>
                     <div styles={rightArrow} onClick={nextImg}>⇀</div>
                 </div>
