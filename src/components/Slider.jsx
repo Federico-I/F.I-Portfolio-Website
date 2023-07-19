@@ -72,17 +72,19 @@ function Slider({ imgs }) {
     const dotClick = slideIndex => {setCurrentSlide(slideIndex)};
 
     return (
+        <>
         <div className="" style={sliderContainer}>
             <div style={imgStyles}>
                 <div style={dotDivStyle}>
                     {imgs.map((Slide, slideIndex) => (
-                        <div style={dotIcon} key={slideIndex} onClick={() => dotClick(slideIndex)} >•</div>
+                        <div style={dotIcon} key={slideIndex} onClick={() => dotClick(slideIndex)}>•</div>
                     ))}
                 </div>
                 <div styles={leftArrow} onClick={prevImg}>↽</div>
                 <div styles={rightArrow} onClick={nextImg}>⇀</div>
             </div>
         </div>
+        </>
     );
 };
 
