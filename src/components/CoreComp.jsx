@@ -6,7 +6,7 @@ import About from "./About";
 
 function CoreComp({ textData }) {
 
-  const infoData = textData;
+  //const infoData = textData;
 
   return (
     <>
@@ -19,7 +19,9 @@ function CoreComp({ textData }) {
             </p>
           </div>
         </div>
-        <MainSlider imgData={textData}/>
+        {textData.map((newItems) => {
+          <MainSlider key={newItems.id} imgData={newItems}/>
+        })}
         <ItemList />
         {textData.map((item) => (
           <About key={item.id} itemData={item}/>
@@ -33,7 +35,5 @@ export default CoreComp;
 
 
 /*
-{textData.map((newItems) => {
-          <MainSlider key={newItems.id} imgData={newItems}/>
-        })}
+
 */
