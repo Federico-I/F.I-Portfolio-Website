@@ -6,8 +6,6 @@ import About from "./About";
 
 function CoreComp({ textData }) {
 
-  //const infoData = textData;
-
   return (
     <>
       <div className=" flex flex-col items-center justify-center w-full h-full  pt-10 bg-transparent text-center">

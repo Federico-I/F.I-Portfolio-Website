@@ -11,8 +11,6 @@ function App() {
 
   const mainInfoData = informationData;
 
-  /* const [infoData, setInfoData] = useState(informationData); --- test */
-
   const backgroundImg = {
     backgroundImage: `url("${MountainImage}")`,
   };

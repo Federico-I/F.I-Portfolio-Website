@@ -4,6 +4,47 @@ import { useState } from "react";
 function Slider({ imgs }) {
 
     const [currentSlide, setCurrentSlide] = useState(0);
+    
+    const prevImg = () => {
+        const firstSlide = currentSlide === 0;
+        const newIndexPrev = firstSlide ? imgs.lenght - 1 : currentSlide - 1 ;
+        setCurrentSlide(newIndexPrev);
+    };
+
+    const nextImg = () => {
+        const lastSlide = currentSlide === imgs.lenght - 1;
+        const newIndexNext = lastSlide ? 0 : currentSlide + 1;
+        setCurrentSlide(newIndexNext);
+    };
+        
+    const dotClick = slideIndex => {setCurrentSlide(slideIndex)};
+
+    return (
+        <>
+            <div style={sliderContainer}>
+                <div style={imgStyles}>
+                    <div style={dotDivStyle}>
+                        {imgs.map((Slide, slideIndex) => (
+                         <div style={dotIcon} key={slideIndex} onClick={() => dotClick(slideIndex)}>•</div>
+                        ))}
+                    </div>
+                    Hello World
+                    <div styles={leftArrow} onClick={prevImg}>↽</div>
+                    <div styles={rightArrow} onClick={nextImg}>⇀</div>
+                </div>
+            </div>
+        </>
+    );
+};
+
+
+
+export default Slider;
+
+
+
+/* 
+    ///////////////// Slide classes /////////////////
 
     const sliderContainer = {
         height: "100%",
@@ -47,48 +88,13 @@ function Slider({ imgs }) {
         fontSize: "20px",
     }
 
-    const prevImg = () => {
-        const firstSlide = currentSlide === 0;
-        const newIndexPrev = firstSlide ? imgs.lenght - 1 : currentSlide - 1 ;
-        setCurrentSlide(newIndexPrev);
-    };
-
-    const nextImg = () => {
-        const lastSlide = currentSlide === imgs.lenght - 1;
-        const newIndexNext = lastSlide ? 0 : currentSlide + 1;
-        setCurrentSlide(newIndexNext);
-    };
-
     const imgStyles = {
         width: "100%",
         height: "100%",
         borderRadious: "10px",
         backgroundPosition: "center",
         backgroundSize: "cover",
-        // backgroundImage: `url(${backgroundTest})`,
         backgroundImage: `url(${imgs[currentSlide].url})`,
     };
-    
-    const dotClick = slideIndex => {setCurrentSlide(slideIndex)};
 
-    return (
-        <>
-            <div  style={sliderContainer}>
-                <div style={imgStyles}>
-                    <div style={dotDivStyle}>
-                        {imgs.map((Slide, slideIndex) => (
-                         <div style={dotIcon} key={slideIndex} onClick={() => dotClick(slideIndex)}>•</div>
-                        ))}
-                    </div>
-                    Hello World
-                    <div styles={leftArrow} onClick={prevImg}>↽</div>
-                    <div styles={rightArrow} onClick={nextImg}>⇀</div>
-                </div>
-            </div>
-        </>
-    );
-};
-
-
-
-export default Slider;
+*/
