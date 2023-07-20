@@ -17,9 +17,7 @@ function CoreComp({ textData }) {
             </p>
           </div>
         </div>
-        {textData.map((newItems) => {
-          <MainSlider key={newItems.id} imgData={newItems}/>
-        })}
+        <MainSlider imgData={textData}/>
         <ItemList />
         {textData.map((item) => (
           <About key={item.id} itemData={item}/>
@@ -33,5 +31,7 @@ export default CoreComp;
 
 
 /*
-
+  {textData.map((newItems) => {
+          <MainSlider key={newItems.id} imgData={newItems}/>
+        })}
 */

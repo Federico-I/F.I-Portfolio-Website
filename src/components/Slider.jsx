@@ -4,15 +4,17 @@ import { useState } from "react";
 function Slider({ imgs }) {
 
     const [currentSlide, setCurrentSlide] = useState(0);
+
+    const theImgs = imgs.ImgLinkSlides; 
     
     const prevImg = () => {
         const firstSlide = currentSlide === 0;
-        const newIndexPrev = firstSlide ? imgs.lenght - 1 : currentSlide - 1 ;
+        const newIndexPrev = firstSlide ? theImgs.lenght - 1 : currentSlide - 1 ;
         setCurrentSlide(newIndexPrev);
     };
 
     const nextImg = () => {
-        const lastSlide = currentSlide === imgs.lenght - 1;
+        const lastSlide = currentSlide === theImgs.lenght - 1;
         const newIndexNext = lastSlide ? 0 : currentSlide + 1;
         setCurrentSlide(newIndexNext);
     };
@@ -24,7 +26,7 @@ function Slider({ imgs }) {
             <div style={sliderContainer}>
                 <div style={imgStyles}>
                     <div style={dotDivStyle}>
-                        {imgs.map((Slide, slideIndex) => (
+                        {theImgs.map((Slide, slideIndex) => (
                          <div style={dotIcon} key={slideIndex} onClick={() => dotClick(slideIndex)}>•</div>
                         ))}
                     </div>
@@ -36,8 +38,6 @@ function Slider({ imgs }) {
         </>
     );
 };
-
-
 
 export default Slider;
 
@@ -52,8 +52,6 @@ export default Slider;
     };
 
     const backgroundTest = "https://p4.wallpaperbetter.com/wallpaper/390/840/968/zhangjiajie-national-forest-park-china-cliffs-mountains-fog-wallpaper-preview.jpg";
-
-    
     
     const leftArrow = {
         position: "absolute",
