@@ -9,10 +9,10 @@ function Slider({ imgs }) {
 
     return (
         <>
-            <div className="flex justify-item-center">
-                <div>
+            <div className="w-full font-titleFont text-white py-8 rounded-lg md:bg-black md:opacity-75 capitalize">
+                <div className="flex flex-col items-center justify-center w-full h-full bg-transparent text-center">
                     <div className="">
-                        <img src={backgroundTest} alt="test"></img>
+                        <img className="py-8 rounded-t-lg" src={backgroundTest} alt="test"></img>
                     </div>
                     <p>Hello World</p>
                 </div>
@@ -24,9 +24,11 @@ function Slider({ imgs }) {
 export default Slider;
 
 
-
 /* 
     ///////////////// Slide classes /////////////////
+
+    slice className="flex items-center justify-center w-full h-full pt-10 bg-transparent text-center"
+
 
     const sliderContainer = {
         height: "100%",
