@@ -3,36 +3,18 @@ import { useState } from "react";
 
 function Slider({ imgs }) {
 
+    const backgroundTest = "https://p4.wallpaperbetter.com/wallpaper/390/840/968/zhangjiajie-national-forest-park-china-cliffs-mountains-fog-wallpaper-preview.jpg";
+
     const [currentSlide, setCurrentSlide] = useState(0);
-
-    const theImgs = imgs.ImgLinkSlides; 
-    
-    const prevImg = () => {
-        const firstSlide = currentSlide === 0;
-        const newIndexPrev = firstSlide ? theImgs.lenght - 1 : currentSlide - 1 ;
-        setCurrentSlide(newIndexPrev);
-    };
-
-    const nextImg = () => {
-        const lastSlide = currentSlide === theImgs.lenght - 1;
-        const newIndexNext = lastSlide ? 0 : currentSlide + 1;
-        setCurrentSlide(newIndexNext);
-    };
-        
-    const dotClick = slideIndex => {setCurrentSlide(slideIndex)};
 
     return (
         <>
-            <div style={sliderContainer}>
-                <div style={imgStyles}>
-                    <div style={dotDivStyle}>
-                        {theImgs.map((Slide, slideIndex) => (
-                         <div style={dotIcon} key={slideIndex} onClick={() => dotClick(slideIndex)}>•</div>
-                        ))}
+            <div className="flex justify-item-center">
+                <div>
+                    <div className="">
+                        <img src={backgroundTest} alt="test"></img>
                     </div>
-                    Hello World
-                    <div styles={leftArrow} onClick={prevImg}>↽</div>
-                    <div styles={rightArrow} onClick={nextImg}>⇀</div>
+                    <p>Hello World</p>
                 </div>
             </div>
         </>
@@ -94,5 +76,43 @@ export default Slider;
         backgroundSize: "cover",
         backgroundImage: `url(${imgs[currentSlide].url})`,
     };
+
+    //////////////////////////////////  styles ////////////////////////
+
+        const theImgs = imgs.ImgLinkSlides; 
+    
+    const prevImg = () => {
+        const firstSlide = currentSlide === 0;
+        const newIndexPrev = firstSlide ? theImgs.lenght - 1 : currentSlide - 1 ;
+        setCurrentSlide(newIndexPrev);
+    };
+
+    const nextImg = () => {
+        const lastSlide = currentSlide === theImgs.lenght - 1;
+        const newIndexNext = lastSlide ? 0 : currentSlide + 1;
+        setCurrentSlide(newIndexNext);
+    };
+        
+    const dotClick = slideIndex => {setCurrentSlide(slideIndex)};
+
+
+
+    return(
+        <>
+            <div style={sliderContainer}>
+                <div style={imgStyles}>
+                    <div style={dotDivStyle}>
+                        {theImgs.map((Slide, slideIndex) => (
+                         <div style={dotIcon} key={slideIndex} onClick={() => dotClick(slideIndex)}>•</div>
+                        ))}
+                    </div>
+                    Hello World
+                    <div styles={leftArrow} onClick={prevImg}>↽</div>
+                    <div styles={rightArrow} onClick={nextImg}>⇀</div>
+                </div>
+            </div>
+        </>
+    )
+
 
 */
