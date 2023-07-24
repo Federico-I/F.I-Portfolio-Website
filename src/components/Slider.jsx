@@ -9,12 +9,16 @@ function Slider({ imgs }) {
 
     return (
         <>
-            <div className="w-full font-titleFont text-white py-8 rounded-lg md:bg-black md:opacity-75 capitalize">
-                <div className="flex flex-col items-center justify-center w-full h-full bg-transparent text-center">
-                    <div className="">
-                        <img className="py-8 rounded-t-lg" src={backgroundTest} alt="test"></img>
+            <div className="w-full font-titleFont text-white px-10 rounded-t-lg md:bg-black md:opacity-90 capitalize">
+                <div className="flex flex-col justify-center w-full h-full p-10 bg-transparent text-center">
+                    <div className="flex flex-col justify-evenly ">
+                        <img className="p-8 rounded-t-lg" src={backgroundTest} alt="test"></img>
+                        <div className="flex flex-row justify-center">
+                            <div className=" p-3 decoration-red-300 hover:text-white hover:decoration-red-500" >↽</div>
+                            <div className=" p-3 decoration-red-300 hover:text-white hover:decoration-red-500" >⇀</div>
+                        </div>
                     </div>
-                    <p>Hello World</p>
+                    <p>Place Name - dynamic</p>
                 </div>
             </div>
         </>
@@ -22,6 +26,7 @@ function Slider({ imgs }) {
 };
 
 export default Slider;
+
 
 
 /* 
