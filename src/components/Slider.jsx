@@ -1,5 +1,8 @@
 import React from "react";
+import arrowR from "../Data/Images/arrow-right.png"
+import { FontAwesomeIcon } from "@fortawesome/fontawesome-svg-core";
 import { useState } from "react";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 function Slider({ imgs }) {
 
@@ -13,9 +16,9 @@ function Slider({ imgs }) {
                 <div className="flex flex-col justify-center w-full h-full p-10 bg-transparent text-center">
                     <div className="flex flex-col justify-evenly ">
                         <img className="p-8 rounded-t-lg" src={backgroundTest} alt="test"></img>
-                        <div className="flex flex-row justify-center ">
-                            <button className=" p-7 decoration-red-300 rounded-full hover hover:bg-red-500" >↽</button>
-                            <button className=" p-7 decoration-red-300 hover hover:bg-red-500" >⇀</button>
+                        <div className="flex flex-row justify-around p-5">
+                            <FaArrowLeft className="fill-blue-500 stroke-cyan-400 hover hover:red-700" />
+                            <FaArrowRight className="fill-blue-500 stroke-cyan-400 hover hover:red-800" />
                         </div>
                     </div>
                     <p>Place Name - dynamic</p>
@@ -121,5 +124,9 @@ export default Slider;
         </>
     )
 
+      ////////////////// arrow buttons ////////////////////////////////
+
+         <button  className=" p-7  decoration-red-300 rounded-full hover hover:bg-red-500" >↽<FaArrowRight /></button>
+                            <button className=" p-7 decoration-red-300 hover hover:bg-red-500" >⇀</button>;
 
 */

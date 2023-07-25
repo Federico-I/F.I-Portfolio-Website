@@ -10,7 +10,7 @@ function Header(props) {
 }
 
 Header.defaultProps = {
-  text: "Welcome to my Portfolio",
+  text: "Welcome",
 };
 
 Header.propTypes = {
