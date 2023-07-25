@@ -9,7 +9,7 @@ import { informationData } from "./Data/infoData.js";
 
 function App() {
 
-  const mainInfoData = informationData;
+  const InfoData = informationData;
 
   const backgroundImg = {
     backgroundImage: `url("${MountainImage}")`,
@@ -24,7 +24,7 @@ function App() {
         <div className=" flex flex-col items-center justify-center bg-transparent h-full w-8/12">
           <Header />
           <div className="flex flex-col items-center justify-center h-1/2 w-full mb-28 ">
-            <CoreComp textData={mainInfoData} />
+            <CoreComp textData={InfoData} />
             <Contact />
           </div>
         </div>

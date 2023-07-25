@@ -13,9 +13,9 @@ function Slider({ imgs }) {
                 <div className="flex flex-col justify-center w-full h-full p-10 bg-transparent text-center">
                     <div className="flex flex-col justify-evenly ">
                         <img className="p-8 rounded-t-lg" src={backgroundTest} alt="test"></img>
-                        <div className="flex flex-row justify-center">
-                            <div className=" p-3 decoration-red-300 hover:text-white hover:decoration-red-500" >↽</div>
-                            <div className=" p-3 decoration-red-300 hover:text-white hover:decoration-red-500" >⇀</div>
+                        <div className="flex flex-row justify-center ">
+                            <button className=" p-7 decoration-red-300 rounded-full hover hover:bg-red-500" >↽</button>
+                            <button className=" p-7 decoration-red-300 hover hover:bg-red-500" >⇀</button>
                         </div>
                     </div>
                     <p>Place Name - dynamic</p>
