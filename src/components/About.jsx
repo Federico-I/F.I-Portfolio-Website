@@ -8,6 +8,9 @@ function About({ itemData }) {
     <>
       <div className="flex flex-col items-center justify-center w-full h-full bg-stone-300">
         <div className=" w-full leading-relaxed font-titleFont text-3xl">
+          <h1 className="flex justify-center xl:justify-start xl:pl-40 p-5 text-5xl md:text-5xl underline decoration-cyan-500 text-white bg-black font-titleFont">
+            About
+          </h1>
           <div className=" flex flex-col xl:flex-row pt-10 items-center justify-between">
             <ProfileImage />
             <div className="flex flex-col items-center justify-center p-10 xl:w-1/2 ">
