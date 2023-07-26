@@ -10,13 +10,13 @@ function Slider({ imgs }) {
 
     return (
         <>
-            <div className="w-full font-titleFont text-white px-10 rounded-t-lg md:bg-black md:opacity-90 capitalize">
-                <div className="flex flex-col justify-center w-full h-full p-10 bg-transparent text-center">
+            <div className="w-full font-titleFont text-white md:px-10 rounded-t-lg md:bg-black md:opacity-90 capitalize">
+                <div className="flex flex-col justify-center w-full h-full md:p-10 bg-transparent text-center">
                     <div className="flex flex-col justify-evenly ">
-                        <img className="p-8 rounded-t-lg" src={backgroundTest} alt="test"></img>
+                        <img className="p-8 rounded-t-lg opacity-100" src={backgroundTest} alt="test"></img>
                         <div className="flex flex-row justify-around p-5 ">
-                            <FaArrowLeft className="text-5xl hover hover:text-red-500 hover:bg-white rounded-full"/>
-                            <FaArrowRight className="text-5xl hover hover:text-cyan-400 hover:bg-white rounded-full" />
+                            <FaArrowLeft className=" text-3xl md:text-5xl hover hover:text-red-500 hover:bg-white rounded-full cursor-pointer"/>
+                            <FaArrowRight className="text-3xl md:text-5xl hover hover:text-green-400 hover:bg-white rounded-full cursor-pointer" />
                         </div>
                     </div>
                     <p>Place Name - dynamic</p>
