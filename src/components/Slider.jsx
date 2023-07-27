@@ -8,6 +8,12 @@ function Slider({ imgs }) {
 
     const [currentSlide, setCurrentSlide] = useState(0);
 
+    console.log(imgs);
+
+    {imgs.map( (img, imgID) => {
+        <img className="p-8 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-750 opacity-75 hover:opacity-100 cursor-pointer" key={imgID} src={img} alt="test" />
+    } )}
+
     return (
         <>
             <div className="w-full font-titleFont text-white md:px-10 rounded-lg md:bg-black md:opacity-90 capitalize">
