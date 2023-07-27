@@ -7,13 +7,21 @@ function Slider({ imgs }) {
     const backgroundTest = "https://p4.wallpaperbetter.com/wallpaper/390/840/968/zhangjiajie-national-forest-park-china-cliffs-mountains-fog-wallpaper-preview.jpg";
 
     const [currentSlide, setCurrentSlide] = useState(0);
+/*
+    // setCurrentSlide = ;
 
     console.log(imgs);
 
     {imgs.map( (img, imgID) => {
-        <img className="p-8 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-750 opacity-75 hover:opacity-100 cursor-pointer" key={imgID} src={img} alt="test" />
+        <img className="p-8 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-750 opacity-75 hover:opacity-100 cursor-pointer" key={currentSlide} src={img} alt="slider" />
     } )}
 
+    {imgs.length.map((dots) => {
+    
+        <div></div>
+    
+    } )};
+*/
     return (
         <>
             <div className="w-full font-titleFont text-white md:px-10 rounded-lg md:bg-black md:opacity-90 capitalize">
@@ -22,6 +30,11 @@ function Slider({ imgs }) {
                         <img className="p-8 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-750 opacity-75 hover:opacity-100 cursor-pointer" src={backgroundTest} alt="test"></img>
                         <div className="flex flex-row justify-around p-5 ">
                             <FaArrowLeft className=" text-3xl md:text-5xl hover hover:text-red-500 hover:bg-white rounded-full cursor-pointer"/>
+                            <span>
+                                {imgs.map((_, imgID) => {
+                                    <button key={imgID} onClick={null} className="indicator"></button>
+                                })}
+                            </span>
                             <FaArrowRight className="text-3xl md:text-5xl hover hover:text-green-400 hover:bg-white rounded-full cursor-pointer" />
                         </div>
                     </div>
@@ -93,8 +106,11 @@ export default Slider;
 
     //////////////////////////////////  styles ////////////////////////
 
-        const theImgs = imgs.ImgLinkSlides; 
+    const theImgs = imgs.ImgLinkSlides; 
     
+
+    const [currentSlide, setCurrentSlide] = useState(0);
+
     const prevImg = () => {
         const firstSlide = currentSlide === 0;
         const newIndexPrev = firstSlide ? theImgs.lenght - 1 : currentSlide - 1 ;
