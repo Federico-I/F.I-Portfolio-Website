@@ -50,6 +50,24 @@ export default Slider;
 
 
 /* 
+    //////////////////// option 2 ///////////////////////////////
+
+    <Carousel >
+                            {imgs.map((img) => (
+                                <div key={img.alt}>
+                                    <img src={img.url} alt={img.alt}/>
+                                    <p className="imageSlider">{img.label}</p>
+                                </div>
+                            ))}
+                        </Carousel>
+
+
+
+
+
+
+
+
     ///////////////// Slide classes /////////////////
 
     slice className="flex items-center justify-center w-full h-full pt-10 bg-transparent text-center"
