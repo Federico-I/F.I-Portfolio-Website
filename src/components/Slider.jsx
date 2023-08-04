@@ -17,11 +17,11 @@ function Slider({ imgs }) {
                         <div className="flex flex-row justify-around p-5 ">
                             <FaArrowLeft className=" text-3xl md:text-5xl hover hover:text-red-500 hover:bg-white rounded-full cursor-pointer"/>
                             <span>
+                                <FaRegImage icon="fa-regular fa-circle-dot" key={null} onClick={null} className="indicator cursor-pointer transition ease-in-out delay-150 hover:translate-y-1 hover:scale-110 duration-750"/>
                                 {imgs.map((img, imgID) => {
-                                    <FaRegImage icon="fa-regular fa-circle-dot" key={imgID} onClick={null} className="indicator"/>
+                                    
                                 })}
                             </span>
-                            
                             <FaArrowRight className="text-3xl md:text-5xl hover hover:text-green-400 hover:bg-white rounded-full cursor-pointer" />
                         </div>
                     </div>
