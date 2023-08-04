@@ -1,27 +1,13 @@
 import React from "react";
 import { useState } from "react";
-import { FaArrowLeft, FaArrowRight, FontAwesomeIcon } from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight, FaRegImage } from "react-icons/fa";
 
 function Slider({ imgs }) {
 
     const backgroundTest = "https://p4.wallpaperbetter.com/wallpaper/390/840/968/zhangjiajie-national-forest-park-china-cliffs-mountains-fog-wallpaper-preview.jpg";
 
     const [currentSlide, setCurrentSlide] = useState(0);
-/*
-    // setCurrentSlide = ;
 
-    console.log(imgs);
-
-    {imgs.map( (img, imgID) => {
-        <img className="p-8 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-750 opacity-75 hover:opacity-100 cursor-pointer" key={currentSlide} src={img} alt="slider" />
-    } )}
-
-    {imgs.length.map((dots) => {
-    
-        <div></div>
-    
-    } )};
-*/
     return (
         <>
             <div className="w-full font-titleFont text-white md:px-10 rounded-lg md:bg-black md:opacity-90 capitalize">
@@ -30,15 +16,26 @@ function Slider({ imgs }) {
                         <img className="p-8 transition ease-in-out delay-150 hover:translate-y-1 hover:scale-110 duration-750 opacity-75 hover:opacity-100 cursor-pointer" src={backgroundTest} alt="test"></img>
                         <div className="flex flex-row justify-around p-5 ">
                             <FaArrowLeft className=" text-3xl md:text-5xl hover hover:text-red-500 hover:bg-white rounded-full cursor-pointer"/>
-                            {/*
-                                <span>
-                                {imgs.map((_, imgID) => {
-                                    <FontAwesomeIcon icon="fa-regular fa-circle-dot" key={imgID} onClick={null} className="indicator"/>
+                            <span>
+                                {imgs.map((img, imgID) => {
+                                    <FaRegImage icon="fa-regular fa-circle-dot" key={imgID} onClick={null} className="indicator"/>
                                 })}
                             </span>
-                            */}
+                            
+                            <FaArrowRight className="text-3xl md:text-5xl hover hover:text-green-400 hover:bg-white rounded-full cursor-pointer" />
+                        </div>
+                    </div>
+                    <p>Place Name - dynamic</p>
+                </div>
+            </div>
+        </>
+    );
+};
 
-                            {/*
+export default Slider;
+
+
+/*
                                 /////////////////// component functionality //////////////////
 
                                     const renderSlides = imageData.map((image) => (
@@ -58,19 +55,23 @@ function Slider({ imgs }) {
                                 >
                                     {renderSlides}
                                 </Carousel>
-                            */}
-                            <FaArrowRight className="text-3xl md:text-5xl hover hover:text-green-400 hover:bg-white rounded-full cursor-pointer" />
-                        </div>
-                    </div>
-                    <p>Place Name - dynamic</p>
-                </div>
-            </div>
-        </>
-    );
-};
+                            */
 
-export default Slider;
+/*
+    // setCurrentSlide = ;
 
+    console.log(imgs);
+
+    {imgs.map( (img, imgID) => {
+        <img className="p-8 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-750 opacity-75 hover:opacity-100 cursor-pointer" key={currentSlide} src={img} alt="slider" />
+    } )}
+
+    {imgs.length.map((dots) => {
+    
+        <div></div>
+    
+    } )};
+*/
 
 
 /* 
