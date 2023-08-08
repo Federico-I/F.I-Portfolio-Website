@@ -10,9 +10,17 @@ function Slider({ imgs }) {
 
     const prevImg = () => {
         const firstSlide = currentSlide === 0;
-        const newIndexPrev = firstSlide ? theImgs.lenght - 1 : currentSlide - 1 ;
+        const newIndexPrev = firstSlide ? imgs.lenght - 1 : currentSlide - 1 ;
         setCurrentSlide(newIndexPrev);
     };
+
+    const nextImg = () => {
+        const lastSlide = currentSlide === theImgs.lenght - 1;
+        const newIndexNext = lastSlide ? 0 : currentSlide + 1;
+        setCurrentSlide(newIndexNext);
+    };
+        
+    const dotClick = slideIndex => {setCurrentSlide(slideIndex)};
 
     return (
         <>
@@ -21,14 +29,13 @@ function Slider({ imgs }) {
                     <div className="flex flex-col justify-evenly ">
                         <img className="p-8 transition ease-in-out delay-150 hover:translate-y-1 hover:scale-110 duration-750 opacity-75 hover:opacity-100 cursor-pointer" src={backgroundTest} alt="test"></img>
                         <div className="flex flex-row justify-around p-5 ">
-                            <FaArrowLeft className=" text-3xl md:text-5xl hover hover:text-red-500 hover:bg-white rounded-full cursor-pointer"/>
+                            <FaArrowLeft className=" text-3xl md:text-5xl hover hover:text-red-500 hover:bg-white rounded-full cursor-pointer" onClick={prevImg}/>
                             <span>
-                                <FaRegImage icon="fa-regular fa-circle-dot" key={null} onClick={null} className="indicator cursor-pointer transition ease-in-out delay-150 hover:translate-y-1 hover:scale-110 duration-750"/>
                                 {imgs.map((img, imgID) => {
-                                    
+                                    <FaRegImage icon="fa-regular fa-circle-dot" key={imgID} onClick={dotClick} className="indicator cursor-pointer transition ease-in-out delay-150 hover:translate-y-1 hover:scale-110 duration-750"/>
                                 })}
                             </span>
-                            <FaArrowRight className="text-3xl md:text-5xl hover hover:text-green-400 hover:bg-white rounded-full cursor-pointer" />
+                            <FaArrowRight className="text-3xl md:text-5xl hover hover:text-green-400 hover:bg-white rounded-full cursor-pointer" onClick={nextImg}/>
                         </div>
                     </div>
                     <p>Place Name - dynamic</p>
