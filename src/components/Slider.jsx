@@ -15,7 +15,7 @@ function Slider({ imgs }) {
     };
 
     const nextImg = () => {
-        const lastSlide = currentSlide === theImgs.lenght - 1;
+        const lastSlide = currentSlide === imgs.lenght - 1;
         const newIndexNext = lastSlide ? 0 : currentSlide + 1;
         setCurrentSlide(newIndexNext);
     };
