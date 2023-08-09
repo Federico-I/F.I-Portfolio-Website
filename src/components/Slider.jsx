@@ -22,6 +22,8 @@ function Slider({ imgs }) {
         
     const dotClick = slideIndex => {setCurrentSlide(slideIndex)};
 
+    console.log(imgs);
+
     return (
         <>
             <div className="w-full font-titleFont text-white md:px-10 rounded-lg md:bg-black md:opacity-90 capitalize">
