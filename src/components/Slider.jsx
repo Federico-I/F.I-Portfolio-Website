@@ -7,7 +7,7 @@ function Slider({ imgs }) {
     const backgroundTest = "https://p4.wallpaperbetter.com/wallpaper/390/840/968/zhangjiajie-national-forest-park-china-cliffs-mountains-fog-wallpaper-preview.jpg";
 
     const [currentSlide, setCurrentSlide] = useState();
-
+/*
     const prevImg = () => {
         const firstSlide = currentSlide === 0;
         const newIndexPrev = firstSlide ? imgs.lenght - 1 : currentSlide - 1 ;
@@ -21,9 +21,7 @@ function Slider({ imgs }) {
     };
         
     const dotClick = slideIndex => {setCurrentSlide(slideIndex)};
-
-    console.log(imgs);
-
+*/
     return (
         <>
             <div className="w-full font-titleFont text-white md:px-10 rounded-lg md:bg-black md:opacity-90 capitalize">
@@ -31,13 +29,17 @@ function Slider({ imgs }) {
                     <div className="flex flex-col justify-evenly ">
                         <img className="p-8 transition ease-in-out delay-150 hover:translate-y-1 hover:scale-110 duration-750 opacity-75 hover:opacity-100 cursor-pointer" src={backgroundTest} alt="test"></img>
                         <div className="flex flex-row justify-around p-5 ">
-                            <FaArrowLeft className=" text-3xl md:text-5xl hover hover:text-red-500 hover:bg-white rounded-full cursor-pointer" onClick={prevImg}/>
-                            <span>
-                                {imgs.map((img, imgID) => {
+                            <FaArrowLeft className=" text-3xl md:text-5xl hover hover:text-red-500 hover:bg-white rounded-full cursor-pointer" onClick={null}/>
+                            {
+                                /*
+                                <span>
+                                {i.map((img, imgID) => {
                                     <FaRegImage icon="fa-regular fa-circle-dot" key={imgID} onClick={dotClick} className="indicator cursor-pointer transition ease-in-out delay-150 hover:translate-y-1 hover:scale-110 duration-750"/>
                                 })}
                             </span>
-                            <FaArrowRight className="text-3xl md:text-5xl hover hover:text-green-400 hover:bg-white rounded-full cursor-pointer" onClick={nextImg}/>
+                                */
+                            }
+                            <FaArrowRight className="text-3xl md:text-5xl hover hover:text-green-400 hover:bg-white rounded-full cursor-pointer" onClick={null}/>
                         </div>
                     </div>
                     <p>Place Name - dynamic</p>
