@@ -9,7 +9,7 @@ function MainSlider({ imgData }) {
         width: "100%",
     }; 
 
-    const imgsData = imgData.map((item) => (item.ImageLinkSlSider));
+    const imgsData = imgData.map((item) => (item.ImgLinkSlides));
 
     console.log(imgsData);
 
