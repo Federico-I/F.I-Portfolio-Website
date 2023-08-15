@@ -6,7 +6,7 @@ function Slider({ imgs }) {
 
     const backgroundTest = "https://p4.wallpaperbetter.com/wallpaper/390/840/968/zhangjiajie-national-forest-park-china-cliffs-mountains-fog-wallpaper-preview.jpg";
 
-    // const [currentSlide, setCurrentSlide] = useState();
+    // const [currentSlide, setCurrentSlide] = useState(0);
 /*
     const prevImg = () => {
         const firstSlide = currentSlide === 0;
@@ -34,16 +34,15 @@ function Slider({ imgs }) {
                         <div className="flex flex-row justify-even p-5 ">
                             <FaArrowLeft className=" text-3xl md:text-5xl hover hover:text-red-500 hover:bg-white rounded-full cursor-pointer" onClick={null}/>
                                 <span className="w-full flex flex-row justify-center text-4xl">
-                                    {imgs.map((items, imgIndex) => (
+                                    {imgs.map((items) => 
                                         <>
-                                            <FaRegImage icon="fa-regular fa-circle-dot" key={imgIndex}  className=" flex flex-row justify-center text-4xl indicator cursor-pointer transition ease-in-out delay-150 hover:translate-y-1 hover:scale-110 duration-750"/>
-                                            {items.map((item, itemIndex) => (
-                                            <ul>
-                                                <li>{item.label}, {item.id}, {itemIndex}</li>
-                                            </ul>
+                                            {items.map((_, itemIndex) => (
+                                                <>
+                                                    <FaRegImage icon="fa-regular fa-circle-dot" key={itemIndex}  className=" flex flex-row justify-center text-4xl mx-4 indicator cursor-pointer transition ease-in-out delay-150 hover:translate-y-1 hover:scale-110 duration-750"/>
+                                                </>  
                                             ))}
-                                       </> 
-                                    ))}
+                                        </>
+                                    )}
                                 </span>
                             <FaArrowRight className="text-3xl md:text-5xl hover hover:text-green-400 hover:bg-white rounded-full cursor-pointer" onClick={null}/>
                         </div>
@@ -61,17 +60,11 @@ export default Slider;
 /*
 /////////////   displalying carousel   ///////////////
 
- 1) imgs is pointing just to the genral object, is not possible to access ulr or label
- 
- 2) might need to use an other .map  method ( for each) every element and get the url or index in this case, to generate an equal ammount of icons as .lengh 
+1) Indicators done, each indiactor has a key prop to set to onClick for slider logic. 
 
- 3) try: 
- 
- a) imgs.url.lenght.map((...)=>(...))
+2) Fix: arrows position, get icons and "Place Name" in the same div? 
 
- b) first change propertie name on MainSlider() from imgsData to ImglinkSlides, then on Slider use ImgLinkSlider.map(()=>) 
-
- c) last chance test .map property to console .log(url, label ,id), check if info gets displaied. 
+3) label name not hsowing up
 
 /////////////////////////////////////////////////////////
 
