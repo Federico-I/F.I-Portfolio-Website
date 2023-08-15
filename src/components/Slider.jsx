@@ -34,8 +34,15 @@ function Slider({ imgs }) {
                         <div className="flex flex-row justify-even p-5 ">
                             <FaArrowLeft className=" text-3xl md:text-5xl hover hover:text-red-500 hover:bg-white rounded-full cursor-pointer" onClick={null}/>
                                 <span className="w-full flex flex-row justify-center text-4xl">
-                                    {imgs.map((_, imgIndex) => (
-                                        <FaRegImage icon="fa-regular fa-circle-dot" key={imgIndex}  className=" w-full flex flex-row justify-center text-4xl indicator cursor-pointer transition ease-in-out delay-150 hover:translate-y-1 hover:scale-110 duration-750"/>
+                                    {imgs.map((items, imgIndex) => (
+                                        <>
+                                            <FaRegImage icon="fa-regular fa-circle-dot" key={imgIndex}  className=" flex flex-row justify-center text-4xl indicator cursor-pointer transition ease-in-out delay-150 hover:translate-y-1 hover:scale-110 duration-750"/>
+                                            {items.map((item, itemIndex) => (
+                                            <ul>
+                                                <li>{item.label}, {item.id}, {itemIndex}</li>
+                                            </ul>
+                                            ))}
+                                       </> 
                                     ))}
                                 </span>
                             <FaArrowRight className="text-3xl md:text-5xl hover hover:text-green-400 hover:bg-white rounded-full cursor-pointer" onClick={null}/>
@@ -54,7 +61,7 @@ export default Slider;
 /*
 /////////////   displalying carousel   ///////////////
 
- 1) imgs is pointing jsut to the genral object, is not possible to access ulr or label
+ 1) imgs is pointing just to the genral object, is not possible to access ulr or label
  
  2) might need to use an other .map  method ( for each) every element and get the url or index in this case, to generate an equal ammount of icons as .lengh 
 
@@ -64,7 +71,7 @@ export default Slider;
 
  b) first change propertie name on MainSlider() from imgsData to ImglinkSlides, then on Slider use ImgLinkSlider.map(()=>) 
 
- c) las chance test .map property to console .log(url, label ,id), check if info gets displaied. 
+ c) last chance test .map property to console .log(url, label ,id), check if info gets displaied. 
 
 /////////////////////////////////////////////////////////
 
