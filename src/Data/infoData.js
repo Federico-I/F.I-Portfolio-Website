@@ -11,7 +11,7 @@ export const informationData = [
       " Since the first time I started coding I have found my passion in it. This field is very interesting to me because of the customazation and innovation it has. I belive, how important to read and write onece was for our ancestors, to code, will equaly be for the next generations. There's still a million and one improvemnts to be made on this website but I will keep updating it with new ideas and features.",
     ImgLinkSlides:
     [
-      {url:"https://www.thisiscolossal.com/wp-content/uploads/2016/05/kyon03.jpg", lable: "China",  id:0},
+      {url:"https://www.thisiscolossal.com/wp-content/uploads/2016/05/kyon03.jpg", lable: "China -Zhangjiajie National Forest Park",  id:0},
       {url: "https://image.jimcdn.com/app/cms/image/transf/none/path/sa6549607c78f5c11/image/i2c81a69087b406ef/version/1456237268/most-beautiful-landscapes-in-europe-hallstatt-copyright-canadastock-european-best-destinations.jpg", lable: "Austria", id:1},
       {url: "https://www.nationalforests.org/assets/header-images/_1000x1000_fit_center-center_80_none/CopyMetolius.jpg", lable: "U.S", id:2},
       {url: "https://cheaphotels4uk.com/wp-content/uploads/2017/08/highlands-scotland-bg.jpg", lable: "Scotland", id:3},

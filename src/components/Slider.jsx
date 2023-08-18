@@ -6,9 +6,11 @@ function Slider({ imgs }) {
 
     const backgroundTest = "https://p4.wallpaperbetter.com/wallpaper/390/840/968/zhangjiajie-national-forest-park-china-cliffs-mountains-fog-wallpaper-preview.jpg";
 
-    // const [currentSlide, setCurrentSlide] = useState(0);
+    const [currentSlide, setCurrentSlide] = useState(0);
+
+    const displayImg = imgs.ImglinkSlides[`${currentSlide}`].url;
 /*
-    const displayImg = imgs.ImglinkSlides(currentSlide).url;
+    
 
     const prevImg = () => {
         const firstSlide = currentSlide === 0;
