@@ -1,14 +1,23 @@
 import React from "react";
 import { useState } from "react";
 import { FaArrowLeft, FaArrowRight, FaRegImage } from "react-icons/fa";
+import ImagesArray from "../Data/Images/ImagesArray.js";
 
-function Slider({ imgs }) {
+function Slider() {
+
+    // get more ideas, watch videos
+
+    // change in the logic, no porop drilling or passing variables, map the urls from imagesarray file
+
+    // CHECK: displayImgaes, can't read value of "0", when 0 comes form currentSlice(state),
 
     const backgroundTest = "https://p4.wallpaperbetter.com/wallpaper/390/840/968/zhangjiajie-national-forest-park-china-cliffs-mountains-fog-wallpaper-preview.jpg";
 
+    const ImgLinkSlides = ImagesArray;
+
     const [currentSlide, setCurrentSlide] = useState(0);
 
-    const displayImg = imgs.ImglinkSlides[`${currentSlide}`].url;
+    const displayImg = ImgLinkSlides[`${currentSlide}`].url;
 /*
     
 
@@ -37,7 +46,7 @@ function Slider({ imgs }) {
                         <img className="p-8 transition ease-in-out delay-150 hover:translate-y-1 hover:scale-110 duration-750 opacity-75 hover:opacity-100 cursor-pointer" src={displayImg} alt="test"></img>
                         <div className="flex flex-row justify-around p-5 ">
                             <FaArrowLeft className=" text-3xl md:text-5xl hover hover:text-red-500 hover:bg-white rounded-full cursor-pointer" onClick={null}/>
-                                <span className="flex flex-row justify-center text-4xl">
+                              { /* <span className="flex flex-row justify-center text-4xl">
                                     {imgs.map((items) => 
                                         <>
                                             {items.map((_, itemIndex) => (
@@ -47,7 +56,7 @@ function Slider({ imgs }) {
                                             ))}
                                         </>
                                     )}
-                                </span>
+                                </span> */}
                             <FaArrowRight className="text-3xl md:text-5xl hover hover:text-green-400 hover:bg-white rounded-full cursor-pointer" onClick={null}/>
                         </div>
                     </div>
