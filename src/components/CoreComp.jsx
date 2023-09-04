@@ -3,7 +3,6 @@ import ItemList from "./ItemList";
 import MainSlider from "./MainSlider";
 import About from "./About";
 
-
 function CoreComp({ textData }) {
 
   return (
