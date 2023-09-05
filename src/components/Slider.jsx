@@ -5,9 +5,7 @@ import ImagesArray from "../Data/Images/ImagesArray.js";
 
 function Slider() {
 
-    // get more ideas, watch videos
-
-    // change in the logic, no porop drilling or passing variables, map the urls from imagesarray file
+    // change the logic, no prop drilling or passing variables, map the urls from imagesarray file
 
     // CHECK: displayImgaes, can't read value of "0", when 0 comes form currentSlice(state),
 
@@ -16,11 +14,8 @@ function Slider() {
     const ImgLinkSlides = ImagesArray;
 
     const [currentSlide, setCurrentSlide] = useState(0);
-
-    const displayImg = ImgLinkSlides[`${currentSlide}`].url;
-/*
     
-
+    /* 
     const prevImg = () => {
         const firstSlide = currentSlide === 0;
         const newIndexPrev = firstSlide ? imgs.lenght - 1 : currentSlide - 1 ;
@@ -36,14 +31,14 @@ function Slider() {
     const dotClick = slideIndex => {setCurrentSlide(slideIndex)};
 
     onClick={dotClick}
-
     */
+
     return (
         <>
             <div className="w-full font-titleFont text-white md:px-10 rounded-lg md:bg-black md:opacity-90 capitalize">
                 <div className="flex flex-col justify-center w-full h-full md:p-10 bg-transparent text-center">
                     <div className="flex flex-col justify-evenly ">
-                        <img className="p-8 transition ease-in-out delay-150 hover:translate-y-1 hover:scale-110 duration-750 opacity-75 hover:opacity-100 cursor-pointer" src={displayImg} alt="test"></img>
+                        <img className="p-8 transition ease-in-out delay-150 hover:translate-y-1 hover:scale-110 duration-750 opacity-75 hover:opacity-100 cursor-pointer" src={null} alt="test"></img>
                         <div className="flex flex-row justify-around p-5 ">
                             <FaArrowLeft className=" text-3xl md:text-5xl hover hover:text-red-500 hover:bg-white rounded-full cursor-pointer" onClick={null}/>
                               { /* <span className="flex flex-row justify-center text-4xl">
