@@ -1,6 +1,6 @@
 import React from "react";
 import Slider from "./Slider";
-import Slider2 from "./Slider2";
+//import Slider2 from "./Slider2";
 import { FaRegHandPointDown } from "react-icons/fa"
 
 function MainSlider({ imgData }) {

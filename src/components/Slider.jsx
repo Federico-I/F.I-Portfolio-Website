@@ -4,15 +4,11 @@ import { FaArrowLeft, FaArrowRight, FaRegImage } from "react-icons/fa";
 
 function Slider( { img } ) {
 
-    // change the logic, no prop drilling or passing variables, map the urls from imagesarray file
-
-    // CHECK: displayImgaes, can't read value of "0", when 0 comes form currentSlice(state),
-
     const backgroundTest = "https://p4.wallpaperbetter.com/wallpaper/390/840/968/zhangjiajie-national-forest-park-china-cliffs-mountains-fog-wallpaper-preview.jpg";
 
-    const background1 = img.url;
-
     const [currentSlide, setCurrentSlide] = useState(0);
+    
+    // const background1 = img[currentSlide].url;
     
     /* 
     const prevImg = () => {
