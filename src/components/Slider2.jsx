@@ -1,10 +1,10 @@
 import React from "react";
 import { useState } from "react";
-import ImageArray from "../Data/Images/ImagesArray";
+//import ImageArray from "../Data/Images/ImagesArray";
 
-function Slider2() {
+function Slider2({  }) {
 
-const ImgLinkSlides = ImageArray;
+// const ImgLinkSlides = ImageArray.map((item) => {item});
 
 const [currentSlide, setCurrentSlide] = useState();
     
@@ -16,3 +16,5 @@ return(
     </>
     )
 };
+
+export default Slider2;

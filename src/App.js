@@ -6,10 +6,13 @@ import Contact from "./components/Contact.jsx";
 import Footer from "./components/Footer.jsx";
 import MountainImage from "./Data/Images/mountain2.jpg";
 import { informationData } from "./Data/infoData.js";
+import { ImagesArray } from "./Data/Images/ImagesArray.js";
 
 function App() {
 
   const InfoData = informationData;
+
+  const ImageArray = ImagesArray;
 
   const backgroundImg = {
     backgroundImage: `url("${MountainImage}")`,
@@ -24,7 +27,7 @@ function App() {
         <div className=" flex flex-col items-center justify-center bg-transparent h-full w-8/12">
           <Header />
           <div className="flex flex-col items-center justify-center h-1/2 w-full mb-28 ">
-            <CoreComp textData={InfoData} />
+            <CoreComp dataText={InfoData} dataImage={ImageArray} />
             <Contact />
           </div>
         </div>

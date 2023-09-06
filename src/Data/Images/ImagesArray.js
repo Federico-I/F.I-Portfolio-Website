@@ -5,4 +5,4 @@ const ImagesArray =
         {url: "https://www.nationalforests.org/assets/header-images/_1000x1000_fit_center-center_80_none/CopyMetolius.jpg", lable: "U.S", id:2},
         {url: "https://cheaphotels4uk.com/wp-content/uploads/2017/08/highlands-scotland-bg.jpg", lable: "Scotland", id:3},
         {url: "https://velvetescape.com/wp-content/uploads/2010/09/engjell-gjepali-M0OIyN5u8ZM-unsplash.jpg", lable: "Italy", id:4},
-      ];
+    ];

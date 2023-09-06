@@ -1,5 +1,6 @@
 import React from "react";
 import Slider from "./Slider";
+import Slider2 from "./Slider2";
 import { FaRegHandPointDown } from "react-icons/fa"
 
 function MainSlider({ imgData }) {
@@ -9,10 +10,6 @@ function MainSlider({ imgData }) {
         width: "100%",
     }; 
 
-    const imgsData = imgData.map((item) => (item.ImgLinkSlides));
-
-    console.log(imgsData);
-
     return (
         <>
             <div className="flex flex-col p-10 " style={sliderContainer} >
@@ -20,7 +17,9 @@ function MainSlider({ imgData }) {
                     <h1 className="w-full font-sans font-bold text-4xl pb-5 rounded text-white text-center"> Places to visit...  </h1>
                     <FaRegHandPointDown className="w-full text-4xl text-white text-center "/>
                 </div>
-                <Slider imgs={imgsData} />
+               {imgData.map((item)=> (
+                 <Slider key={item.id} img={item}/>
+               ))}
             </div>
         </>
     )

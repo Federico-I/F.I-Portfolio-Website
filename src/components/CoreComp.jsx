@@ -3,7 +3,7 @@ import ItemList from "./ItemList";
 import MainSlider from "./MainSlider";
 import About from "./About";
 
-function CoreComp({ textData }) {
+function CoreComp({ dataText }) {
 
   return (
     <>
@@ -16,9 +16,9 @@ function CoreComp({ textData }) {
             </p>
           </div>
         </div>
-        <MainSlider imgData={textData}/>
+        <MainSlider imgData={dataText}/>
         <ItemList />
-        {textData.map((item) => (
+        {dataText.map((item) => (
           <About key={item.id} itemData={item}/>
         ))}
       </div>
