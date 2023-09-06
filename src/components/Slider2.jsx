@@ -9,6 +9,10 @@ const ImgLinkSlides = ImageArray;
 const [currentSlide, setCurrentSlide] = useState();
     
 return(
-<></>
-)
+    <>
+        <div>
+            <div></div>
+        </div>
+    </>
+    )
 };
