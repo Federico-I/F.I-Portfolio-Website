@@ -38,13 +38,9 @@ function Slider( { img } ) {
                             <FaArrowLeft className=" text-3xl md:text-5xl hover hover:text-red-500 hover:bg-white rounded-full cursor-pointer" onClick={null}/>
                             { /*
                             <span className="flex flex-row justify-center text-4xl">
-                                    {img.map((items) => 
+                                    {img.map((img, index) => 
                                         <>
-                                            {items.map((_, itemIndex) => (
-                                                <>
-                                                    <FaRegImage icon="fa-regular fa-circle-dot" key={itemIndex}  className=" flex flex-row justify-center text-4xl mx-4 indicator cursor-pointer transition ease-in-out delay-150 hover:translate-y-1 hover:scale-110 duration-750"/>
-                                                </>  
-                                            ))}
+                                            <FaRegImage icon="fa-regular fa-circle-dot" key={index}  className=" flex flex-row justify-center text-4xl mx-4 indicator cursor-pointer transition ease-in-out delay-150 hover:translate-y-1 hover:scale-110 duration-750"/>
                                         </>
                                     )}
                             </span> 
