@@ -8,9 +8,15 @@ function Slider( { img } ) {
 
     const [currentSlide, setCurrentSlide] = useState(0);
     
-    const background1 = `${img.ImagesArray.map((url, index) => {
-        img.ImagesArray[index].url
-    })}`;
+    const background1 = img.map((url, index) => {
+        url
+    });
+
+    console.log(background1);
+
+    const SlideImg = background1[currentSlide].url;
+
+    console.log(SlideImg);
     
     /* 
     const prevImg = () => {
