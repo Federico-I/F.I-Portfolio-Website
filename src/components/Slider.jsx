@@ -10,6 +10,8 @@ function Slider( { img } ) {
     
     const background1 = img.ImagesArray[currentSlide].url;
 
+    const imgLabel = img.ImagesArray[currentSlide].url;
+
     console.log(background1);
 
     /* 
@@ -50,7 +52,7 @@ function Slider( { img } ) {
                             <FaArrowRight className="text-3xl md:text-5xl hover hover:text-green-400 hover:bg-white rounded-full cursor-pointer" onClick={null}/>
                         </div>
                     </div>
-                    <p>Place Name - dynamic</p>
+                    <p>{background1 ? imgLabel : "Place Name - Dynamic"}</p>
                 </div>
             </div>
         </>
