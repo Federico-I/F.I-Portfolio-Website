@@ -10,7 +10,7 @@ function Slider( { img } ) {
     
     const background1 = img.ImagesArray[currentSlide].url;
 
-    const imgLabel = img.ImagesArray[currentSlide].url;
+    const imgLabel = img.ImagesArray[currentSlide].label;
 
     console.log(background1);
 
