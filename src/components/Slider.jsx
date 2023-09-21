@@ -6,7 +6,7 @@ function Slider( { img } ) {
 
     const backgroundTest = "https://p4.wallpaperbetter.com/wallpaper/390/840/968/zhangjiajie-national-forest-park-china-cliffs-mountains-fog-wallpaper-preview.jpg";
 
-    const [currentSlide, setCurrentSlide] = useState('0');
+    const [currentSlide, setCurrentSlide] = useState(0);
     
     const background1 = img.ImagesArray[currentSlide].url;
 
@@ -37,7 +37,7 @@ function Slider( { img } ) {
             <div className="w-full font-titleFont text-white md:px-10 rounded-lg md:bg-black md:opacity-90 capitalize">
                 <div className="flex flex-col justify-center w-full h-full md:p-10 bg-transparent text-center">
                     <div className="flex flex-col justify-evenly ">
-                        <img className="p-8 transition ease-in-out delay-150 hover:translate-y-1 hover:scale-110 duration-750 opacity-75 hover:opacity-100 cursor-pointer" src={backgroundTest} alt="test"></img>
+                        <img className="p-8 transition ease-in-out delay-150 hover:translate-y-1 hover:scale-110 duration-750 opacity-75 hover:opacity-100 cursor-pointer" src={background1} alt="test"></img>
                         <div className="flex flex-row justify-around p-5 ">
                             <FaArrowLeft className=" text-3xl md:text-5xl hover hover:text-red-500 hover:bg-white rounded-full cursor-pointer" onClick={null}/>
                             { /*
