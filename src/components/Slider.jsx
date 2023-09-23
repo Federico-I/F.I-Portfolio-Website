@@ -40,7 +40,7 @@ function Slider( { img } ) {
                         <img className="p-8 transition ease-in-out delay-150 hover:translate-y-1 hover:scale-110 duration-750 opacity-75 hover:opacity-100 cursor-pointer" src={background1} alt="test"></img>
                         <div className="flex flex-row justify-around p-5 ">
                             <FaArrowLeft className=" text-3xl md:text-5xl hover hover:text-red-500 hover:bg-white rounded-full cursor-pointer" onClick={null}/>
-                            { /*
+                            { 
                             <span className="flex flex-row justify-center text-4xl">
                                     {img.map((img, index) => 
                                         <>
@@ -48,7 +48,7 @@ function Slider( { img } ) {
                                         </>
                                     )}
                             </span> 
-                            */}
+                            }
                             <FaArrowRight className="text-3xl md:text-5xl hover hover:text-green-400 hover:bg-white rounded-full cursor-pointer" onClick={null}/>
                         </div>
                     </div>
