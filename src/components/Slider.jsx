@@ -12,7 +12,7 @@ function Slider( { img } ) {
 
     const imgLabel = img.ImagesArray[currentSlide].label;
 
-    console.log(background1);
+    // console.log(background1);
 
     /* 
     const prevImg = () => {
@@ -42,9 +42,10 @@ function Slider( { img } ) {
                             <FaArrowLeft className=" text-3xl md:text-5xl hover hover:text-red-500 hover:bg-white rounded-full cursor-pointer" onClick={null}/>
                             { 
                             <span className="flex flex-row justify-center text-4xl">
-                                    {img.ImagesArray.map((img, index) => (
+                                    {img.ImagesArray.map((_, index) =>
+                                    (
                                         <>
-                                            <FaRegImage icon="fa-regular fa-circle-dot" key={index}  className=" flex flex-row justify-center text-4xl mx-4 indicator cursor-pointer transition ease-in-out delay-150 hover:translate-y-1 hover:scale-110 duration-750"/>
+                                            <FaRegImage icon="fa-regular fa-circle-dot" key={index} onClick={() => {setCurrentSlide(index)} } className=" flex flex-row justify-center text-4xl mx-4 indicator cursor-pointer transition ease-in-out delay-150 hover:translate-y-1 hover:scale-110 duration-750"/>
                                         </>
                                     ))}
                             </span> 
