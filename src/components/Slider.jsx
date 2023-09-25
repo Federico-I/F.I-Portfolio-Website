@@ -4,7 +4,7 @@ import { FaArrowLeft, FaArrowRight, FaRegImage } from "react-icons/fa";
 
 function Slider( { img } ) {
 
-    const backgroundTest = "https://p4.wallpaperbetter.com/wallpaper/390/840/968/zhangjiajie-national-forest-park-china-cliffs-mountains-fog-wallpaper-preview.jpg";
+    // const backgroundTest = "https://p4.wallpaperbetter.com/wallpaper/390/840/968/zhangjiajie-national-forest-park-china-cliffs-mountains-fog-wallpaper-preview.jpg";
 
     const [currentSlide, setCurrentSlide] = useState(0);
     
@@ -42,11 +42,11 @@ function Slider( { img } ) {
                             <FaArrowLeft className=" text-3xl md:text-5xl hover hover:text-red-500 hover:bg-white rounded-full cursor-pointer" onClick={null}/>
                             { 
                             <span className="flex flex-row justify-center text-4xl">
-                                    {img.map((img, index) => 
+                                    {img.ImagesArray.map((img, index) => (
                                         <>
                                             <FaRegImage icon="fa-regular fa-circle-dot" key={index}  className=" flex flex-row justify-center text-4xl mx-4 indicator cursor-pointer transition ease-in-out delay-150 hover:translate-y-1 hover:scale-110 duration-750"/>
                                         </>
-                                    )}
+                                    ))}
                             </span> 
                             }
                             <FaArrowRight className="text-3xl md:text-5xl hover hover:text-green-400 hover:bg-white rounded-full cursor-pointer" onClick={null}/>
