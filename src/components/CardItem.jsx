@@ -14,7 +14,7 @@ function CardItem() {
           </a>
         </div>
         <div className="pt-4 ">
-          <p className=" font-sans font-bold text-2xl rounded">LATEST PROJECTS</p>
+          <p className=" font-sans font-bold text-2xl rounded">Git Hub</p>
         </div>
       </div>  
     </>
