@@ -25,7 +25,7 @@ function Contact() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <FaGithub className="h-20 w-20 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-150 duration-750" />
+                <FaGithub className="h-20 w-20 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-125 duration-750" />
               </a>
             </li>
             <li className="p-5">
@@ -34,7 +34,7 @@ function Contact() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <FaLinkedin className="h-20 w-20 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-150 duration-750" />
+                <FaLinkedin className="h-20 w-20 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-125 duration-750" />
               </a>
             </li>
           </ul>
