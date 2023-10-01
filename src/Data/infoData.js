@@ -4,8 +4,6 @@ export const informationData = [
 
     name: "Fede",
 
-    title: "Selftought Junior Web Developer",
-
     description:
       "Don't know where to travel next? Let me give you some ideas!",
 
