@@ -11,6 +11,8 @@ function CardItem({ defa }) {
 
   const getLabel = defaultInfo.label;
 
+  // map cardProyect to rener info
+
   return (
       <div className="px-7 py-8 bg-slate-500 m-4 text-white hover:text-yellow-400 rounded">
         <div>
