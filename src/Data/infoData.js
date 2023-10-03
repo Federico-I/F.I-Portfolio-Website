@@ -25,8 +25,8 @@ export const informationData = [
 
     CardProyects: 
     [
-      {link:"", projectLable: "", id:0},
-      {link:"", projectLable: "", id:1}
+      {cardImage: "" , link:"", projectLable: "HTML-CSS", id:0},
+      {cardImage: "https://miro.medium.com/v2/resize:fit:820/1*y7ZgcnbxdF4aDgh-XaS1-Q.png", link:"https://github.com/Federico-I", projectLable: "Work in Progress", id:1}
     ],
 
     Card2: 
