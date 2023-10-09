@@ -19,9 +19,9 @@ function CardItem({ defa }) {
     
       <div className="px-7 py-8 bg-slate-500 m-4 text-white hover:text-yellow-400 rounded">
           
-          {cardInfo.map((infoItems)=> (
+          {cardInfo.map((infoItems, keyIndex)=> (
             <>
-              <div>
+              <div key={KeyIndex}>
                 <a href={infoItems.link} target="_blank" rel="noreferrer">
                   <img src={infoItems.imageProject} alt="project" className="h-40 w-70 rounded transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-750 opacity-75 hover:opacity-100 "></img>
                 </a>
