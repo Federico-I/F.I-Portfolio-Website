@@ -11,14 +11,15 @@ function ItemList() {
       <h1 className="felx p-5 text-5xl md:text-5xl underline decoration-green-500 font-titleFont">
         Projects
       </h1>
-      {defaultI.map((itemData) => (
-        <div className="flex grid grid-cols-1 lg:grid-cols-2 place-items-center justify-space-around w-full p-10">
-          <CardItem defa={itemData} />
-          <CardItem  defa={itemData} />
+      {defaultI.map((itemData, listIndex) => (
+        <div className="flex grid grid-cols-1 lg:grid-cols-2 place-items-center justify-space-around w-full p-10" key={listIndex}>
+          <CardItem defa={itemData} key={listIndex}/>
         </div>
       ))}
     </div>
   );
 }
+
+//<CardItem  defa={itemData} />
 
 export default ItemList;

@@ -16,12 +16,10 @@ function CardItem({ defa }) {
   const cardInfo = defa.cardProject[0];
 
   return (
-    
-      <div className="px-7 py-8 bg-slate-500 m-4 text-white hover:text-yellow-400 rounded">
-          
-          {cardInfo.map((infoItems, keyIndex)=> (
-            <>
-              <div key={KeyIndex}>
+    <>
+      {cardInfo.map((infoItems, keyIndex) => (
+            <div key={keyIndex} className="px-7 py-8 bg-slate-500 m-4 text-white hover:text-yellow-400 rounded">
+              <div>
                 <a href={infoItems.link} target="_blank" rel="noreferrer">
                   <img src={infoItems.imageProject} alt="project" className="h-40 w-70 rounded transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-750 opacity-75 hover:opacity-100 "></img>
                 </a>
@@ -29,11 +27,9 @@ function CardItem({ defa }) {
               <div className="pt-4 ">
                 <p className=" font-sans font-bold text-2xl rounded">{infoItems.projectLable}</p>
               </div>
-            </>
-          ))}
-      </div>
-    
-
+            </div>
+      ))}
+    </>
         /* 
    
 
