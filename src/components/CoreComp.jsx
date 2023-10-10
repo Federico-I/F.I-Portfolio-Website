@@ -27,9 +27,3 @@ function CoreComp( { dataText } ) {
 }
 
 export default CoreComp;
-
-/*
-  {textData.map((newItems) => {
-          <MainSlider key={newItems.id} imgData={newItems}/>
-        })}
-*/

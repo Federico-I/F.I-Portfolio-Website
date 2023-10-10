@@ -25,12 +25,3 @@ function MainSlider({ imgData }) {
 };
 
 export default MainSlider;
-
-
-//  <Slider style={{backgroundImage: `url(${backgroundTest})`}} imgs={imgData} />
-
-/* 
-/////////////////    ////////////////
-
-    const backgroundTest = "https://p4.wallpaperbetter.com/wallpaper/390/840/968/zhangjiajie-national-forest-park-china-cliffs-mountains-fog-wallpaper-preview.jpg";
-*/

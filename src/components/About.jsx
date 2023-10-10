@@ -1,7 +1,6 @@
 import React from "react";
 import ProfileImage from "./ProfileImage";
 
-
 function About({ itemData }) {
 
   return (

@@ -1,10 +1,7 @@
 import React from "react";
 import CardItem from "./CardItem";
-//import { informationData } from "../Data/infoData.js";
 
 function ItemList( { itemData } ) {
-
-  //const defaultI = informationData;
 
   return (
     <div className="flex place-items-center grid grid-cols-1 w-full bg-stone-100 rounded-t-lg">
@@ -15,7 +12,6 @@ function ItemList( { itemData } ) {
       {itemData.map((itemInfo) => (
         <CardItem defa={itemInfo}/>
       ))}
-
       </div>
     </div>
   );
@@ -23,7 +19,3 @@ function ItemList( { itemData } ) {
 
 export default ItemList;
 
-/*
-
-      
-*/
