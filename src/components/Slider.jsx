@@ -4,8 +4,6 @@ import { FaArrowLeft, FaArrowRight, FaRegImage } from "react-icons/fa";
 
 function Slider( { img } ) {
 
-    // const backgroundTest = "https://p4.wallpaperbetter.com/wallpaper/390/840/968/zhangjiajie-national-forest-park-china-cliffs-mountains-fog-wallpaper-preview.jpg";
-
     const [currentSlide, setCurrentSlide] = useState(0);
 
     const imgs = img.ImagesArray;
@@ -13,9 +11,6 @@ function Slider( { img } ) {
     const background1 = imgs[currentSlide].url;
 
     const imgLabel = imgs[currentSlide].label;
-
-    // console.log(background1);
-
     
     const prevImg = () => {
         const firstSlide = currentSlide === 0;
@@ -28,12 +23,6 @@ function Slider( { img } ) {
         const newIndexNext = lastSlide ? 0 : currentSlide + 1;
         setCurrentSlide(newIndexNext);
     };
-    
-    /*
-    const dotClick = slideIndex => {setCurrentSlide(slideIndex)};
-
-    onClick={dotClick}
-    */
 
     return (
         <>

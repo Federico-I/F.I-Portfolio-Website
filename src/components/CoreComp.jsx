@@ -17,7 +17,7 @@ function CoreComp({ dataText }) {
           </div>
         </div>
         <MainSlider imgData={dataText}/>
-        <ItemList />
+        <ItemList itemData={dataText}/>
         {dataText.map((item) => (
           <About key={item.id} itemData={item}/>
         ))}
