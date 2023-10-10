@@ -20,18 +20,18 @@ export const informationData = [
         {url: "https://www.nationalforests.org/assets/header-images/_1000x1000_fit_center-center_80_none/CopyMetolius.jpg", label: "U.S - National Parks", id:2},
         {url: "https://cheaphotels4uk.com/wp-content/uploads/2017/08/highlands-scotland-bg.jpg", label: "The Quiraings, Isle of Skye, Scotland", id:3},
         {url: "https://velvetescape.com/wp-content/uploads/2010/09/engjell-gjepali-M0OIyN5u8ZM-unsplash.jpg", label: "Italy", id:4},
-    ],
+      ],
 
 
     CardProjects: 
-    [
-      {cardImage: "" , link:"", projectLable: "HTML-CSS", id:0},
-      {cardImage: "https://miro.medium.com/v2/resize:fit:820/1*y7ZgcnbxdF4aDgh-XaS1-Q.png", link:"https://github.com/Federico-I", projectLable: "Work in Progress", id:1}
-    ],
+      [
+        {cardImage: "" , link:"", projectLable: "HTML-CSS", id:0},
+        {cardImage: "https://miro.medium.com/v2/resize:fit:820/1*y7ZgcnbxdF4aDgh-XaS1-Q.png", link:"https://github.com/Federico-I", projectLable: "Work in Progress", id:1}
+      ],
 
     Card2: 
-    [
-      {url:"https://miro.medium.com/v2/resize:fit:820/1*y7ZgcnbxdF4aDgh-XaS1-Q.png", label: "Work in Preogress"}
-    ]
+      [
+        {url:"https://miro.medium.com/v2/resize:fit:820/1*y7ZgcnbxdF4aDgh-XaS1-Q.png", label: "Work in Preogress"}
+      ],
   },
 ];

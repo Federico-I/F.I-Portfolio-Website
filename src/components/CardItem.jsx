@@ -1,7 +1,7 @@
 import React from "react";
 // import GitHubProfilePhoto from "../Data/Images/Git-Hub-Profile-Item.jpg";
 
-function CardItem({ defa }) {
+function CardItem( { defa } ) {
 
   // const GitProfileItem = GitHubProfilePhoto;
 
@@ -12,8 +12,10 @@ function CardItem({ defa }) {
   //const getLabel = defaultInfo.label;
 
   // map cardProyect to render info - still working on it.
-    /* 
-  const cardInfo = defa.cardProjects[0];
+    
+  // const cardInfo = defa.cardProjects[0];
+
+  const cardInfo = defa.CardProjects;
 
   return (
     <>
@@ -30,8 +32,7 @@ function CardItem({ defa }) {
             </div>
       ))}
     </>
-  
-
+/* 
       <div className="px-7 py-8 bg-slate-500 m-4 text-white hover:text-yellow-400 rounded">
         <div>
           <a href="https://github.com/Federico-I" target="_blank" rel="noreferrer">
@@ -42,9 +43,9 @@ function CardItem({ defa }) {
           <p className=" font-sans font-bold text-2xl rounded">{getLabel}</p>
         </div>
       </div>
- 
+ */
 
-  ) */
+  ) 
 }
 
 export default CardItem;
