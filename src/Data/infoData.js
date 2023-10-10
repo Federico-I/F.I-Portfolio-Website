@@ -25,13 +25,8 @@ export const informationData = [
 
     CardProjects: 
       [
-        {cardImage: "" , link:"", projectLable: "HTML-CSS", id:0},
-        {cardImage: "https://miro.medium.com/v2/resize:fit:820/1*y7ZgcnbxdF4aDgh-XaS1-Q.png", link:"https://github.com/Federico-I", projectLable: "Work in Progress", id:1}
-      ],
-
-    Card2: 
-      [
-        {url:"https://miro.medium.com/v2/resize:fit:820/1*y7ZgcnbxdF4aDgh-XaS1-Q.png", label: "Work in Preogress"}
+        {imageProject: "https://miro.medium.com/v2/resize:fit:820/1*y7ZgcnbxdF4aDgh-XaS1-Q.png", link:"", projectLable: "HTML-CSS", id:0},
+        {imageProject: "https://miro.medium.com/v2/resize:fit:820/1*y7ZgcnbxdF4aDgh-XaS1-Q.png", link:"https://github.com/Federico-I", projectLable: "Work in Progress", id:1},
       ],
   },
 ];
