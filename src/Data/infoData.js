@@ -22,10 +22,9 @@ export const informationData = [
         {url: "https://velvetescape.com/wp-content/uploads/2010/09/engjell-gjepali-M0OIyN5u8ZM-unsplash.jpg", label: "Italy", id:4},
       ],
 
-
     CardProjects: 
       [
-        {imageUrl: "null", imageLocal: "../Data/Images/IMG_51562.jpg",  link:"null", projectLable: "HTML-CSS", id:0},
+        {imageUrl: "null", imageLocal: "FedeProject",  link:"null", projectLable: "HTML-CSS", id:0},
         {imageUrl: "https://miro.medium.com/v2/resize:fit:820/1*y7ZgcnbxdF4aDgh-XaS1-Q.png", link:"https://github.com/Federico-I", projectLable: "Work in Progress", id:1},
       ],
   },
