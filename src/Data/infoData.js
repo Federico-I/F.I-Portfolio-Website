@@ -24,7 +24,7 @@ export const informationData = [
 
     CardProjects: 
       [
-        {imageUrl: "null", imageLocal: "FedeProject",  link:"null", projectLable: "HTML-CSS", id:0},
+        {imageUrl: "https://cdn.pixabay.com/photo/2017/12/28/12/31/sketch-3045125_1280.jpg", imageLocal: "https://cdn.pixabay.com/photo/2018/03/26/14/07/space-3262811_640.jpg",  link:"null", projectLable: "HTML-CSS", id:0},
         {imageUrl: "https://miro.medium.com/v2/resize:fit:820/1*y7ZgcnbxdF4aDgh-XaS1-Q.png", link:"https://github.com/Federico-I", projectLable: "Work in Progress", id:1},
       ],
   },
