@@ -10,11 +10,11 @@ function Contact() {
     <div className=" flex flex-col items-center xl:flex-row justify-between bg-stone-100 h-full w-full rounded-b-lg font-personalText text-3xl">
       <div className=" flex flex-col justify-items-center">
         <h1 className="py-8 hover:text-blue-500 text-5xl md:text-6xl sm:p-5 transition-all duration-1000 cursor-pointer">
-          <a href={`mailto:${emailDieStrhal}`}>Contact</a>
+          Contact
         </h1>
+        <h1 className="flex text-4xl p-3 sm:p-3 sm:selfcenter "><a href={`mailto:${emailDieStrhal}`}>Email</a></h1>
       </div>
       <div className=" flex flex-col items-center justify-items-center lg:flex-row ">
-        <h1 className="flex text-4xl p-3 sm:p-3 sm:selfcenter ">Email:</h1>
         <p className="flex font-planeText sm:p-3 hover:underline hover:decoration-green-500 transition-all duration-1000 cursor-pointer">{emailDieStrhal}</p>
       </div>
       <div className="p-3">
