@@ -7,16 +7,15 @@ function Contact() {
   const emailDieStrhal = "diestrahl7@gmail.com";
 
   return (
-    <div className=" flex flex-col items-center xl:flex-row justify-between bg-stone-100 h-full w-full rounded-b-lg font-personalText text-3xl">
-      <div className=" flex flex-row justify-items-center">
+    <div className=" flex flex-col items-center xl:flex-row justify-around bg-stone-100 h-full w-full rounded-b-lg font-personalText text-3xl">
+      <div className=" flex flex-row w-full justify-items-center">
         <h1 className="py-8 hover:text-blue-500 text-5xl md:text-6xl sm:p-5 transition-all duration-1000 cursor-pointer">
           Contact
         </h1>
-        <h1 className="flex text-4xl p-3 sm:p-3 sm:selfcenter "><a href={`mailto:${emailDieStrhal}`}>Email</a></h1>
+        <h1 className="flex justify-item-center text-4xl p-8 sm:p-3 sm:selfcenter "><a href={`mailto:${emailDieStrhal}`}>Email</a></h1>
       </div>
-      <div className=" flex flex-col items-center justify-items-center lg:flex-row "></div>
-      <div className="p-3">
-        <ul className=" flex flex-col lg:flex-row md:pr-8">
+      <div className="w-full p-3">
+        <ul className=" flex flex-col justify-around lg:flex-row md:pr-8">
           <li className="p-5">
             <a href="https://github.com/Federico-I" target="_blank" rel="noreferrer">
               <FaGithub className="h-20 w-20 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-125 duration-750" />
