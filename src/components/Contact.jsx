@@ -9,10 +9,10 @@ function Contact() {
   return (
     <div className=" flex flex-col items-center xl:flex-row justify-around bg-stone-100 h-full w-full rounded-b-lg font-personalText text-3xl">
       <div className=" flex items-stretch w-full pl-20">
-        <h1 className="py-8 hover:text-blue-500 text-5xl md:text-6xl sm:p-5 transition-all duration-1000 cursor-pointer">
+        <h1 className="py-8 text-5xl md:text-6xl sm:p-5 ">
           Contact
         </h1>
-        <h1 className="flex items-center text-5xl p-8 sm:p-3 sm:selfcenter "><a href={`mailto:${emailDieStrhal}`}>Email</a></h1>
+        <h1 className="flex items-center text-5xl p-8 sm:p-3 sm:selfcenter hover:text-blue-500 text-5xl md:text-6xl sm:p-5 transition-all duration-1000 cursor-pointer"><a href={`mailto:${emailDieStrhal}`}>Email</a></h1>
       </div>
       <div className=" p-3">
         <ul className="w-full flex flex-col justify-around lg:flex-row md:pr-8 ">
