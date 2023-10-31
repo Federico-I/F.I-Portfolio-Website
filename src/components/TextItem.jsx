@@ -1,3 +1,4 @@
+"strict mode";
 import React from "react";
 import infoData from "../Data/infoData";
 

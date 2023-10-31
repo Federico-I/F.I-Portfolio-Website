@@ -1,3 +1,4 @@
+"strict mode";
 import React from "react";
 import ProfilePhoto from "../Data/Images/IMG_51562.jpg";
 

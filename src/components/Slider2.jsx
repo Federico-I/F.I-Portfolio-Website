@@ -1,3 +1,4 @@
+"strict mode";
 import React from "react";
 import { useState } from "react";
 import ImageArray from "../Data/Images/ImagesArray";

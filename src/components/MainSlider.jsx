@@ -1,3 +1,4 @@
+"strict mode";
 import React from "react";
 import Slider from "./Slider";
 import { FaRegHandPointDown } from "react-icons/fa"
