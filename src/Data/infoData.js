@@ -15,17 +15,19 @@ export const informationData = [
     
     ImagesArray: 
       [
-        {url:"https://www.thisiscolossal.com/wp-content/uploads/2016/05/kyon03.jpg", label: "China -Zhangjiajie National Forest Park",  id:0},
-        {url: "https://image.jimcdn.com/app/cms/image/transf/none/path/sa6549607c78f5c11/image/i2c81a69087b406ef/version/1456237268/most-beautiful-landscapes-in-europe-hallstatt-copyright-canadastock-european-best-destinations.jpg", label: "Austria", id:1},
-        {url: "https://www.nationalforests.org/assets/header-images/_1000x1000_fit_center-center_80_none/CopyMetolius.jpg", label: "U.S - National Parks", id:2},
+        {url:"https://www.thisiscolossal.com/wp-content/uploads/2016/05/kyon03.jpg", label: "Zhangjiajie National Forest Park - China",  id:0},
+        {url: "https://image.jimcdn.com/app/cms/image/transf/none/path/sa6549607c78f5c11/image/i2c81a69087b406ef/version/1456237268/most-beautiful-landscapes-in-europe-hallstatt-copyright-canadastock-european-best-destinations.jpg", label: "Hallstatt - Austria", id:1},
+        {url: "https://www.nationalforests.org/assets/header-images/_1000x1000_fit_center-center_80_none/CopyMetolius.jpg", label: "National Park - OR - U.S", id:2},
         {url: "https://cheaphotels4uk.com/wp-content/uploads/2017/08/highlands-scotland-bg.jpg", label: "The Quiraings, Isle of Skye, Scotland", id:3},
-        {url: "https://velvetescape.com/wp-content/uploads/2010/09/engjell-gjepali-M0OIyN5u8ZM-unsplash.jpg", label: "Italy", id:4},
+        {url: "https://velvetescape.com/wp-content/uploads/2010/09/engjell-gjepali-M0OIyN5u8ZM-unsplash.jpg", label: "Campobasso country side - Italy", id:4},
       ],
 
     CardProjects: 
       [
         {imageUrl: "https://cdn.pixabay.com/photo/2017/12/28/12/31/sketch-3045125_1280.jpg", imageLocal: "null",  link:"null", projectLable: "HTML-CSS", id:0},
         {imageUrl: "https://miro.medium.com/v2/resize:fit:820/1*y7ZgcnbxdF4aDgh-XaS1-Q.png", link:"https://github.com/Federico-I", projectLable: "Work in Progress", id:1},
+        {imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV3LzRTGj1klQFL-BUlAAhXkwdeAbZBXXkPmQWGtrYqDy_1TceUR9epq5joUy6c-FuXsw&usqp=CAU", link:"https://github.com/Federico-I/Mapty", projectLable: "Js", id:1},
+        {imageUrl: "https://uploads.sitepoint.com/wp-content/uploads/2017/04/1493235373large_react_apps_A-01.png", link:"https://github.com/Federico-I/Reaktion", projectLable: "React Js", id:1},
       ],
   },
 ];
