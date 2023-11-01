@@ -8,7 +8,7 @@ export const informationData = [
       "Don't know where to travel next? Let me give you some ideas!",
 
     personal:
-      "Hey my name is Federico and I am a Front-End Web Developer. This web page was made from scratch. Activly working on it, improving the current features is the main task at the moment but I will add new fueatures of course. As a self taught web developer, I work full time and make time to keep studying to improve my skills.",
+      "Hey! My name is Federico and I am a Front-End Web Developer. This web page was made from scratch. Activly working on it, improving the current features is the main task at the moment. As a self taught web developer, I work full time (non-developer related) and make time to study and to improve my projects.",
 
     moreover:
       " Since the first time I started coding I have found my passion in it. This field is very interesting to me because of the customazation and innovation it has. I believe, how important to read and write onece was for our ancestors, to code, will equaly be for the next generations. There's still a million and one improvments to be made on this website but I will keep updating it with new ideas.",
@@ -26,7 +26,7 @@ export const informationData = [
       [
         {imageUrl: "https://cdn.pixabay.com/photo/2017/12/28/12/31/sketch-3045125_1280.jpg", imageLocal: "null",  link:"null", projectLable: "HTML-CSS", id:0},
         {imageUrl: "https://miro.medium.com/v2/resize:fit:820/1*y7ZgcnbxdF4aDgh-XaS1-Q.png", link:"https://github.com/Federico-I", projectLable: "Work in Progress", id:1},
-        {imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV3LzRTGj1klQFL-BUlAAhXkwdeAbZBXXkPmQWGtrYqDy_1TceUR9epq5joUy6c-FuXsw&usqp=CAU", link:"https://github.com/Federico-I/Mapty", projectLable: "Js", id:1},
+        {imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV3LzRTGj1klQFL-BUlAAhXkwdeAbZBXXkPmQWGtrYqDy_1TceUR9epq5joUy6c-FuXsw&usqp=CAU", link:"https://github.com/Federico-I/Mapty", projectLable: "Java Script", id:1},
         {imageUrl: "https://uploads.sitepoint.com/wp-content/uploads/2017/04/1493235373large_react_apps_A-01.png", link:"https://github.com/Federico-I/Reaktion", projectLable: "React Js", id:1},
       ],
   },
