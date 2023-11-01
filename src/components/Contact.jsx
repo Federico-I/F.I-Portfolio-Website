@@ -16,13 +16,13 @@ function Contact() {
         <h1 className="flex items-center text-5xl p-8 sm:p-3 sm:selfcenter hover:text-blue-500 text-5xl md:text-6xl sm:p-5 transition-all duration-1000 cursor-pointer"><a href={`mailto:${emailDieStrhal}`}>Email</a></h1>
       </div>
       <div className=" p-3">
-        <ul className="w-full flex flex-col justify-around lg:flex-row md:pr-8 ">
-          <li className="p-5 md:pr-20">
+        <ul className="w-full flex flex-col justify-around lg:flex-row">
+          <li className="p-5">
             <a href="https://github.com/Federico-I" target="_blank" rel="noreferrer">
-              <FaGithub className="h-20 w-20 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-125 duration-750" />
+              <FaGithub className="h-20 w-20 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-125 duration-750"/>
             </a>
           </li>
-          <li className="p-5 md:pr-20">
+          <li className="p-5">
             <a href="https://linkedin.com/in/federico11izzi11" target="_blank" rel="noreferrer">
               <FaLinkedin className="h-20 w-20 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-125 duration-750" />
             </a>
