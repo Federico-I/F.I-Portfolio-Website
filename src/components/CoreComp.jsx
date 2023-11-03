@@ -12,7 +12,7 @@ function CoreComp( { dataText } ) {
         <div className="py-8 w-full font-titleFont text-white rounded-lg md:bg-black md:opacity-75 capitalize">
           <h2 className="py-3 mb-20 text-6xl">To the</h2>
           <div className="w-full flex flex-row justify-center xl:justify-start">
-            <p className="ml-10 text-blue-600 text-5xl underline decoration-red-300 hover:text-white hover:decoration-red-500 transition-all duration-1000 cursor-pointer">
+            <p className="xl:ml-10 text-blue-600 text-5xl underline decoration-red-300 hover:text-white hover:decoration-red-500 transition-all duration-1000 cursor-pointer">
             Most relevant
             </p>
           </div>

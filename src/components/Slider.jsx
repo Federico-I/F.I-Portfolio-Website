@@ -38,7 +38,7 @@ function Slider( { img } ) {
                                     {imgs.map((_, index) =>
                                     (
                                         <>
-                                            <FaRegImage icon="fa-regular fa-circle-dot" key={index} onClick={() => {setCurrentSlide(index)} } className={`flex flex-row justify-center text-4xl mx-4 indicator cursor-pointer transition ease-in-out delay-150 hover:translate-y-1 ${currentSlide === index ? "scale-150 duration-750" : null}`}/>
+                                            <FaRegImage icon="fa-regular fa-circle-dot" key={index} onClick={() => {setCurrentSlide(index)} } className={`flex flex-row justify-center text-2xl md:text-4xl mx-4 indicator cursor-pointer transition ease-in-out delay-150 hover:translate-y-1 ${currentSlide === index ? "scale-150 duration-750" : null}`}/>
                                         </>
                                     ))}
                             </span> 
@@ -46,7 +46,7 @@ function Slider( { img } ) {
                             <FaArrowRight className="text-3xl md:text-5xl hover hover:text-green-400 hover:bg-white rounded-full cursor-pointer" onClick={nextImg}/>
                         </div>
                     </div>
-                    <p>{background1 ? imgLabel : "Place Name - Dynamic"}</p>
+                    <p className="pb-10">{background1 ? imgLabel : "Place Name - Dynamic"}</p>
                 </div>
             </div>
         </>
