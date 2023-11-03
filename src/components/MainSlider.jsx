@@ -12,8 +12,8 @@ function MainSlider({ imgData }) {
 
     return (
         <>
-            <div className="flex flex-col p-10 " style={sliderContainer} >
-                <div className="flex flex-col p-10">
+            <div className="flex flex-col md:p-10 " style={sliderContainer} >
+                <div className="flex flex-col md:p-10">
                     <h1 className="w-full font-sans font-bold text-4xl pb-5 rounded text-white text-center"> Places to visit...  </h1>
                     <FaRegHandPointDown className="w-full text-4xl text-white text-center "/>
                 </div>

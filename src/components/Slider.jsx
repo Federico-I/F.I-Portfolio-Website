@@ -28,7 +28,7 @@ function Slider( { img } ) {
     return (
         <>
             <div className="w-full font-titleFont text-white md:px-10 rounded-lg md:bg-black md:opacity-90 capitalize">
-                <div className="flex flex-col justify-center w-full h-full md:p-10 bg-transparent text-center">
+                <div className="flex flex-col justify-center w-full h-full  bg-transparent text-center">
                     <div className="flex flex-col justify-evenly ">
                         <img className="p-8 transition ease-in-out delay-150 hover:translate-y-1 hover:scale-110 duration-750 opacity-75 hover:opacity-100 cursor-pointer" src={background1} alt="test" />
                         <div className="flex flex-row justify-around p-5 ">

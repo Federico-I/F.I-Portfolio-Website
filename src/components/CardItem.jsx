@@ -8,7 +8,7 @@ function CardItem( { defa } ) {
   return (
     <>
       {cardInfo.map((infoItems, keyIndex) => (
-            <div key={infoItems.id} className="flex flex-col justify-center px-7 py-8 h-80 w-80 bg-slate-500 m-4 text-white hover:text-yellow-400 rounded">
+            <div key={infoItems.id} className="flex flex-col justify-center px-7 py-8 h-80 w-80 bg-slate-500 mt-20 text-white hover:text-yellow-400 rounded">
               <a href={infoItems.link} target="_blank" rel="noreferrer" className="flex justify-center">
                   <img src={infoItems.imageUrl === "null" ? infoItems.imageLocal : infoItems.imageUrl} alt="project" className="h-40 w-70 rounded transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-750 opacity-75 hover:opacity-100 "></img>
               </a>
