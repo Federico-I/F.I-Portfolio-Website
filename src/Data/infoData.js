@@ -8,7 +8,7 @@ export const informationData = [
       "Don't know where to travel next? Let me give you some ideas!",
 
     personal:
-      "Hey! My name is Federico and I am a Front-End Web Developer. This web page was made from scratch. Activly working on it, improving the current features is the main task at the moment. As a self taught web developer, I work full time (non-developer related) and make time to study and to improve my projects.",
+      "Hey! My name is Federico and I am a Frontend Web Developer. This web page was made from scratch. Activly working on it, improving the current features is the main task at the moment. As a self taught web developer, I work full time (non-developer related) and make time to study and to improve my projects.",
 
     moreover:
       " Since the first time I started coding I have found my passion in it. This field is very interesting to me because of the customazation and innovation it has. I believe, how important to read and write onece was for our ancestors, to code, will equaly be for the next generations. There's still a million and one improvments to be made on this website but I will keep updating it with new ideas.",
