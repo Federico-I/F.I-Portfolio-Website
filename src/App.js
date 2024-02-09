@@ -1,4 +1,3 @@
-"strict mode";
 import React from "react";
 import Header from "./components/Header.jsx";
 import CoreComp from "./components/CoreComp.jsx";
