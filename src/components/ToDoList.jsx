@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const List = [
     { id: 118836, task: "Go for a run", details: "Today I want to run 4.5km."}, 
@@ -7,36 +7,39 @@ const List = [
 
 
 
-function ToDoList() {
+export default function ToDoList() {
 
-    // useState
+    const [generalTasks, setGeneralTasks] = useState(List);
 
     return(
-        <div>
-            <h2>TuskyTusky</h2>
+        <div className="app">
+            <h1>TuskyTusky</h1>
             <InputTasks />
             <TaskList />
         </div>
-    )
+    );
 };
 
 function InputTasks() {
 
     return(
-        <div>
-            <label>What do you need to do?</label>
-            <input type="text"/>
-            <button>ADD</button>
-            <div>
-                <h3>taskName</h3>
-                <div>Details</div>
-            </div>
+        <div className="sidebar">
+            <form>
+                <label>What do you need to do?</label>
+                <input type="text"/>
+                <Button>ADD</Button>
+            </form>
+            <TaskDescription />
         </div>
-    )
+    );
 
 };
 
 function TaskList() {
+
+    // will display task info depending on selected task manageb by state 
+
+    //every list item will be rendered from List using .map
 
     return(
         <div>
@@ -47,5 +50,21 @@ function TaskList() {
                 <li>lalalalla</li>
             </ul>
         </div>
-    )
+    );
+};
+
+function TaskDescription() {
+
+    return(
+        <div>
+            <h3>taskName</h3>
+            <div>Details</div>
+        </div>
+    );
+};
+
+function Button({ children }){
+    return(
+        <button className="button" >{children}</button>
+    );
 };

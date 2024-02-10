@@ -1,4 +1,3 @@
-"strict mode";
 import React from "react";
 import ItemList from "./ItemList";
 import MainSlider from "./MainSlider";

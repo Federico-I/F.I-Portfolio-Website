@@ -1,4 +1,3 @@
-"strict mode";
 import React from "react";
 import { useState } from "react";
 import { FaArrowLeft, FaArrowRight, FaRegImage } from "react-icons/fa";

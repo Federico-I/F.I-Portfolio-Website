@@ -1,4 +1,3 @@
-"strict mode";
 import React from "react";
 
 function CardItem( { defa } ) {
