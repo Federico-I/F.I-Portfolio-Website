@@ -15,7 +15,7 @@ export default function ToDoList() {
         <div className="app">
             <h1>TuskyTusky</h1>
             <InputTasks />
-            <TaskList />
+            <TaskList generalTasks={generalTasks}/>
         </div>
     );
 };
@@ -32,10 +32,11 @@ function InputTasks() {
             <TaskDescription />
         </div>
     );
-
 };
 
-function TaskList() {
+function TaskList({ generalTasks }) {
+
+    // decide!!!! should pass info to Taskitem???
 
     // will display task info depending on selected task manageb by state 
 
@@ -45,13 +46,17 @@ function TaskList() {
         <div>
             <label>Next task to complete is...</label>
             <ul>
-                <li>lalalalla</li>
-                <li>lalalalla</li>
-                <li>lalalalla</li>
+                {generalTasks.map((item) => <TaskItem taskInfo={item} key={item.id}/>)}
             </ul>
         </div>
     );
 };
+
+function TaskItem({ taskInfo }) {
+    return(
+        <li>{taskInfo.task}</li>
+    )
+}
 
 function TaskDescription() {
 
