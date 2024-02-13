@@ -22,6 +22,10 @@ export default function ToDoList() {
 
 function InputTasks() {
 
+    // when create new task remember to create an unic id for that comp
+
+    // create add new task handleAdd function
+
     return(
         <div className="sidebar">
             <form>
@@ -36,11 +40,9 @@ function InputTasks() {
 
 function TaskList({ generalTasks }) {
 
-    // decide!!!! should pass info to Taskitem???
-
     // will display task info depending on selected task manageb by state 
 
-    //every list item will be rendered from List using .map
+    const [selectedTask, setSelectedTask] = useState("");
 
     return(
         <div>
