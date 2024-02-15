@@ -10,12 +10,22 @@ const List = [
 export default function ToDoList() {
 
     const [generalTasks, setGeneralTasks] = useState(List);
+    const [selectedTask, setSelectedTask] = useState("");
+
+
+    function handleAddTask() {
+
+    }; 
+
+    function handleSelect() {
+
+    };
 
     return(
         <div className="app">
             <h1>TuskyTusky</h1>
-            <InputTasks />
-            <TaskList generalTasks={generalTasks}/>
+            <InputTasks addTask={handleAddTask}/>
+            <TaskList generalTasks={generalTasks} onSelect={handleSelect} />
         </div>
     );
 };
@@ -40,13 +50,13 @@ function InputTasks() {
 
 function TaskList({ generalTasks }) {
 
-    // will display task info depending on selected task manageb by state 
+    // will display task info depending on selected task managed by state 
 
-    const [selectedTask, setSelectedTask] = useState("");
+   // generate new id' for every item
 
     return(
         <div>
-            <label>Next task to complete is...</label>
+            <label>Next task to do is...</label>
             <ul>
                 {generalTasks.map((item) => <TaskItem taskInfo={item} key={item.id}/>)}
             </ul>
@@ -64,8 +74,11 @@ function TaskDescription() {
 
     return(
         <div>
-            <h3>taskName</h3>
-            <div>Details</div>
+            <h1>Task Description</h1>
+            <div>
+                <h3>taskName</h3>
+                <div>Details</div>
+            </div>
         </div>
     );
 };
