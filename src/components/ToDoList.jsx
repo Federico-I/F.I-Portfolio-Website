@@ -24,26 +24,43 @@ export default function ToDoList() {
     return(
         <div className="app">
             <h1>TuskyTusky</h1>
-            <InputTasks addTask={handleAddTask}/>
+            <InputTasks addTask={handleAddTask} generalTasks={generalTasks}/>
             <TaskList generalTasks={generalTasks} onSelect={handleSelect} />
         </div>
     );
 };
 
-function InputTasks() {
-
-    // when create new task remember to create an unic id for that comp
+function InputTasks({ generalTasks }) {
 
     // create add new task handleAdd function
+    // generate new id' for every item
+
+    const [taskName, setTaskName] = useState("");
+    const [taskDescription, setTaskDescription] = useState("");
+
+    function handleAddTaskName(e) {
+        setTaskName(e.taget.value);
+    };
+
+    function handleAddDescription(e) {
+        setTaskDescription(e.target.value);
+    };
+
+    function handleSubmit(e) {
+        e.preventDeafult();
+
+        if (!taskName || !TaskDescription) return;
+    };
 
     return(
         <div className="sidebar">
-            <form>
+            <form onSubmit={handleSubmit}>
                 <label>What do you need to do?</label>
-                <input type="text"/>
+                <input type="text" value={taskName} onChange={handleAddTaskName}/>
+                <input type="text"value={taskDescription} onChange={handleAddDescription}/>
                 <Button>ADD</Button>
             </form>
-            <TaskDescription />
+            <TaskDescription generalTasks={generalTasks}/>
         </div>
     );
 };
@@ -51,8 +68,6 @@ function InputTasks() {
 function TaskList({ generalTasks }) {
 
     // will display task info depending on selected task managed by state 
-
-   // generate new id' for every item
 
     return(
         <div>
@@ -70,7 +85,7 @@ function TaskItem({ taskInfo }) {
     )
 }
 
-function TaskDescription() {
+function TaskDescription({ generalTasks }) {
 
     return(
         <div>
