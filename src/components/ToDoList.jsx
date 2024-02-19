@@ -10,11 +10,11 @@ const List = [
 export default function ToDoList() {
 
     const [generalTasks, setGeneralTasks] = useState(List);
-    const [selectedTask, setSelectedTask] = useState("");
+    const [selectedTask, setSelectedTask] = useState(false);
 
 
-    function handleAddTask() {
-
+    function handleAddTask(newTask) {
+        setGeneralTasks([...generalTasks, newTask]);
     }; 
 
     function handleSelect() {
@@ -24,15 +24,14 @@ export default function ToDoList() {
     return(
         <div className="app">
             <h1>TuskyTusky</h1>
-            <InputTasks addTask={handleAddTask} generalTasks={generalTasks}/>
+            <InputTasks addTask={handleAddTask} generalTasks={generalTasks} />
             <TaskList generalTasks={generalTasks} onSelect={handleSelect} />
         </div>
     );
 };
 
-function InputTasks({ generalTasks }) {
+function InputTasks({ generalTasks, addTask }) {
 
-    // create add new task handleAdd function
     // generate new id' for every item
 
     const [taskName, setTaskName] = useState("");
@@ -50,6 +49,16 @@ function InputTasks({ generalTasks }) {
         e.preventDeafult();
 
         if (!taskName || !TaskDescription) return;
+
+        const genrateId = crypto.randomUUID;
+
+        const newTask = {
+            id: `${genrateId}`,
+            task: `${taskName}`,
+            details: `${taskDescription}`,
+        }
+
+        addTask(newTask);
     };
 
     return(
@@ -86,6 +95,8 @@ function TaskItem({ taskInfo }) {
 }
 
 function TaskDescription({ generalTasks }) {
+
+    // should only appear if thre is an itme selected cnoditional rendering.
 
     return(
         <div>
