@@ -15,10 +15,16 @@ export default function ToDoList() {
 
     function handleAddTask(newTask) {
         setGeneralTasks([...generalTasks, newTask]);
-    }; 
+    };
 
-    function handleSelect() {
+    // when item selected setSelectedTask to true and display seleted item info
 
+    // previous item selected will be closed
+
+    // only display the id selected, one at a time. if there is any open close automatically
+
+    function handleSelect(id) {
+        setSelectedTask( id ===  ? true : false);
     };
 
     return(
@@ -31,8 +37,6 @@ export default function ToDoList() {
 };
 
 function InputTasks({ generalTasks, addTask }) {
-
-    // generate new id' for every item
 
     const [taskName, setTaskName] = useState("");
     const [taskDescription, setTaskDescription] = useState("");
@@ -96,7 +100,9 @@ function TaskItem({ taskInfo }) {
 
 function TaskDescription({ generalTasks }) {
 
-    // should only appear if thre is an itme selected cnoditional rendering.
+    // should only appear if thre is an itme selected conditional rendering.
+
+    // omly display selected itme info
 
     return(
         <div>
