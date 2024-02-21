@@ -10,7 +10,9 @@ const List = [
 export default function ToDoList() {
 
     const [generalTasks, setGeneralTasks] = useState(List);
-    const [selectedTask, setSelectedTask] = useState(false);
+    const [displayContent, setDisplayContent] = useState(false);
+
+    const [selectedTask, setSelectedTask] = useState("");
 
 
     function handleAddTask(newTask) {
@@ -23,20 +25,20 @@ export default function ToDoList() {
 
     // only display the id selected, one at a time. if there is any open close automatically
 
-    function handleSelect() {
-        setSelectedTask();
+    function handleSelect(id) {
+        setSelectedTask(id);
     };
 
     return(
         <div className="app">
             <h1>TuskyTusky</h1>
-            <InputTasks addTask={handleAddTask} generalTasks={generalTasks} />
-            <TaskList generalTasks={generalTasks} onSelectTask={handleSelect} activeTask={selectedTask}/>
+            <InputTasks addTask={handleAddTask} generalTasks={generalTasks} showContent={displayContent} onSelectedTask={selectedTask}/>
+            <TaskList generalTasks={generalTasks} onHandleSelect={handleSelect} onSelectedTask={selectedTask}/>
         </div>
     );
 };
 
-function InputTasks({ generalTasks, addTask }) {
+function InputTasks({ generalTasks, addTask, showContent, onSelectedTask }) {
 
     const [taskName, setTaskName] = useState("");
     const [taskDescription, setTaskDescription] = useState("");
@@ -73,12 +75,12 @@ function InputTasks({ generalTasks, addTask }) {
                 <input type="text"value={taskDescription} onChange={handleAddDescription}/>
                 <Button>ADD</Button>
             </form>
-            <TaskDescription generalTasks={generalTasks}/>
+            { showContent && <TaskDescription generalTasks={generalTasks} onSelectedTask={onSelectedTask}/>}
         </div>
     );
 };
 
-function TaskList({ generalTasks, onSelectTask, activeTask }) {
+function TaskList({ generalTasks, onHandleSelect, onSelectedTask }) {
 
     // will display task info depending on selected task managed by state 
 
@@ -86,19 +88,19 @@ function TaskList({ generalTasks, onSelectTask, activeTask }) {
         <div>
             <label>Next task to do is...</label>
             <ul>
-                {generalTasks.map((task) => <TaskItem taskInfo={task} key={task.id} onSelectTask={onSelectTask} activeTask={activeTask} />)}
+                {generalTasks.map((task) => <TaskItem taskInfo={task} key={task.id} onHandleSelect={onHandleSelect} onSelectedTask={onSelectedTask} />)}
             </ul>
         </div>
     );
 };
 
-function TaskItem({ taskInfo }) {
+function TaskItem({ taskInfo, onHandleSelect, onSelectedTask }) {
     return(
-        <li>{taskInfo.task}</li>
+        <li onClick={taskInfo.id === onSelectedTask ? "" : ""}>{taskInfo.task}</li>
     )
 }
 
-function TaskDescription({ generalTasks }) {
+function TaskDescription({ generalTasks, onSelectedTask }) {
 
     // should only appear if thre is an itme selected / conditional rendering.
 
