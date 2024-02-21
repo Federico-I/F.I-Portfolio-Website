@@ -23,15 +23,15 @@ export default function ToDoList() {
 
     // only display the id selected, one at a time. if there is any open close automatically
 
-    function handleSelect(id) {
-        setSelectedTask( id ===  ? true : false);
+    function handleSelect() {
+        setSelectedTask();
     };
 
     return(
         <div className="app">
             <h1>TuskyTusky</h1>
             <InputTasks addTask={handleAddTask} generalTasks={generalTasks} />
-            <TaskList generalTasks={generalTasks} onSelect={handleSelect} />
+            <TaskList generalTasks={generalTasks} onSelectTask={handleSelect} activeTask={selectedTask}/>
         </div>
     );
 };
@@ -78,7 +78,7 @@ function InputTasks({ generalTasks, addTask }) {
     );
 };
 
-function TaskList({ generalTasks }) {
+function TaskList({ generalTasks, onSelectTask, activeTask }) {
 
     // will display task info depending on selected task managed by state 
 
@@ -86,7 +86,7 @@ function TaskList({ generalTasks }) {
         <div>
             <label>Next task to do is...</label>
             <ul>
-                {generalTasks.map((item) => <TaskItem taskInfo={item} key={item.id}/>)}
+                {generalTasks.map((task) => <TaskItem taskInfo={task} key={task.id} onSelectTask={onSelectTask} activeTask={activeTask} />)}
             </ul>
         </div>
     );
@@ -100,9 +100,9 @@ function TaskItem({ taskInfo }) {
 
 function TaskDescription({ generalTasks }) {
 
-    // should only appear if thre is an itme selected conditional rendering.
+    // should only appear if thre is an itme selected / conditional rendering.
 
-    // omly display selected itme info
+    // only display selected item info
 
     return(
         <div>
