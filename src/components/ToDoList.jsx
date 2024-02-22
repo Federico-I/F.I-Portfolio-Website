@@ -32,13 +32,13 @@ export default function ToDoList() {
     return(
         <div className="app">
             <h1>TuskyTusky</h1>
-            <InputTasks addTask={handleAddTask} generalTasks={generalTasks} showContent={displayContent} onSelectedTask={selectedTask}/>
-            <TaskList generalTasks={generalTasks} onHandleSelect={handleSelect} onSelectedTask={selectedTask}/>
+            <InputTasks addTask={handleAddTask} generalTasks={generalTasks} showContent={displayContent} taskSelected={selectedTask}/>
+            <TaskList generalTasks={generalTasks} onHandleSelect={handleSelect} taskSelected={selectedTask}/>
         </div>
     );
 };
 
-function InputTasks({ generalTasks, addTask, showContent, onSelectedTask }) {
+function InputTasks({ generalTasks, addTask, showContent, taskSelected }) {
 
     const [taskName, setTaskName] = useState("");
     const [taskDescription, setTaskDescription] = useState("");
@@ -67,6 +67,10 @@ function InputTasks({ generalTasks, addTask, showContent, onSelectedTask }) {
         addTask(newTask);
     };
 
+    // make sure only one task is open at a time
+    // if a new task is open close previous.
+
+
     return(
         <div className="sidebar">
             <form onSubmit={handleSubmit}>
@@ -75,12 +79,12 @@ function InputTasks({ generalTasks, addTask, showContent, onSelectedTask }) {
                 <input type="text"value={taskDescription} onChange={handleAddDescription}/>
                 <Button>ADD</Button>
             </form>
-            { showContent && <TaskDescription generalTasks={generalTasks} onSelectedTask={onSelectedTask}/>}
+            { showContent && <TaskDescription generalTasks={generalTasks} taskSelected={taskSelected}/>}
         </div>
     );
 };
 
-function TaskList({ generalTasks, onHandleSelect, onSelectedTask }) {
+function TaskList({ generalTasks, onHandleSelect, taskSelected }) {
 
     // will display task info depending on selected task managed by state 
 
@@ -88,30 +92,31 @@ function TaskList({ generalTasks, onHandleSelect, onSelectedTask }) {
         <div>
             <label>Next task to do is...</label>
             <ul>
-                {generalTasks.map((task) => <TaskItem taskInfo={task} key={task.id} onHandleSelect={onHandleSelect} onSelectedTask={onSelectedTask} />)}
+                {generalTasks.map((task) => <TaskItem taskInfo={task} key={task.id} onHandleSelect={onHandleSelect} taskSelected={taskSelected} />)}
             </ul>
         </div>
     );
 };
 
-function TaskItem({ taskInfo, onHandleSelect, onSelectedTask }) {
+function TaskItem({ taskInfo, onHandleSelect, taskSelected }) {
     return(
-        <li onClick={taskInfo.id === onSelectedTask ? "" : ""}>{taskInfo.task}</li>
+        <li onClick={onHandleSelect(taskInfo.id)} >{taskInfo.task}</li>
     )
-}
+};
 
-function TaskDescription({ generalTasks, onSelectedTask }) {
+function TaskDescription({ generalTasks, taskSelected }) {
 
     // should only appear if thre is an itme selected / conditional rendering.
-
     // only display selected item info
+
+    const dispalyInfo = generalTasks.map((task) => task.id === taskSelected);
 
     return(
         <div>
             <h1>Task Description</h1>
             <div>
-                <h3>taskName</h3>
-                <div>Details</div>
+                <h3>{dispalyInfo.task}</h3>
+                <div>{dispalyInfo.details}</div>
             </div>
         </div>
     );
