@@ -29,11 +29,15 @@ export default function ToDoList() {
         setSelectedTask(id);
     };
 
+    function handleShowContent(show){
+        setDisplayContent(!show);
+    }
+
     return(
         <div className="app">
             <h1>TuskyTusky</h1>
             <InputTasks addTask={handleAddTask} generalTasks={generalTasks} showContent={displayContent} taskSelected={selectedTask}/>
-            <TaskList generalTasks={generalTasks} onHandleSelect={handleSelect} taskSelected={selectedTask}/>
+            <TaskList generalTasks={generalTasks} onHandleSelect={handleSelect} taskSelected={selectedTask} onHandleShowContent={handleShowContent}/>
         </div>
     );
 };
@@ -84,7 +88,7 @@ function InputTasks({ generalTasks, addTask, showContent, taskSelected }) {
     );
 };
 
-function TaskList({ generalTasks, onHandleSelect, taskSelected }) {
+function TaskList({ generalTasks, onHandleSelect, taskSelected, onHandleShowContent }) {
 
     // will display task info depending on selected task managed by state 
 
@@ -98,7 +102,7 @@ function TaskList({ generalTasks, onHandleSelect, taskSelected }) {
     );
 };
 
-function TaskItem({ taskInfo, onHandleSelect, taskSelected }) {
+function TaskItem({ taskInfo, onHandleSelect}) {
     return(
         <li onClick={onHandleSelect(taskInfo.id)} >{taskInfo.task}</li>
     )
