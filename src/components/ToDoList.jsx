@@ -25,12 +25,13 @@ export default function ToDoList() {
 
     // only display the id selected, one at a time. if there is any open close automatically
 
-    function handleSelect(id) {
-        setSelectedTask(id);
+    function handleSelect(taskInfo) {
+        setSelectedTask(taskInfo.id);
+
     };
 
-    function handleShowContent(show){
-        setDisplayContent(!show);
+    function handleShowContent(generalTasks){
+        setDisplayContent(generalTasks.id === selectedTask ? setDisplayContent(true) : "");
     }
 
     return(
@@ -104,7 +105,7 @@ function TaskList({ generalTasks, onHandleSelect, taskSelected, onHandleShowCont
 
 function TaskItem({ taskInfo, onHandleSelect}) {
     return(
-        <li onClick={onHandleSelect(taskInfo.id)} >{taskInfo.task}</li>
+        <li onClick={() => onHandleSelect(taskInfo)} >{taskInfo.task}</li>
     )
 };
 
