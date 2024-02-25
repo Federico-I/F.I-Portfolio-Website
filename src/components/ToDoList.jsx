@@ -19,6 +19,8 @@ export default function ToDoList() {
         setGeneralTasks([...generalTasks, newTask]);
     };
 
+    // BRANCH TEST
+
     // when item selected setSelectedTask to true and display seleted item info
 
     // previous item selected will be closed
