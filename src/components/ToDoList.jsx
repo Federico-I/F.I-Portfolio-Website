@@ -19,28 +19,26 @@ export default function ToDoList() {
         setGeneralTasks([...generalTasks, newTask]);
     };
 
-    // BRANCH TEST
-
-    // when item selected setSelectedTask to true and display seleted item info
-
     // previous item selected will be closed
 
     // only display the id selected, one at a time. if there is any open close automatically
 
     function handleSelect(taskInfo) {
-        setSelectedTask(taskInfo.id);
-
+        setSelectedTask(taskInfo);
+        setDisplayContent(true);
     };
 
+    /*
     function handleShowContent(generalTasks){
-        setDisplayContent(generalTasks.id === selectedTask ? setDisplayContent(true) : "");
+        setDisplayContent(generalTasks.id === selectedTask.id ? setDisplayContent(true) : "");
     }
+    */
 
     return(
         <div className="app">
             <h1>TuskyTusky</h1>
             <InputTasks addTask={handleAddTask} generalTasks={generalTasks} showContent={displayContent} taskSelected={selectedTask}/>
-            <TaskList generalTasks={generalTasks} onHandleSelect={handleSelect} taskSelected={selectedTask} onHandleShowContent={handleShowContent}/>
+            <TaskList generalTasks={generalTasks} onHandleSelect={handleSelect} taskSelected={selectedTask}/>
         </div>
     );
 };
@@ -91,7 +89,7 @@ function InputTasks({ generalTasks, addTask, showContent, taskSelected }) {
     );
 };
 
-function TaskList({ generalTasks, onHandleSelect, taskSelected, onHandleShowContent }) {
+function TaskList({ generalTasks, onHandleSelect, taskSelected }) {
 
     // will display task info depending on selected task managed by state 
 
@@ -111,19 +109,16 @@ function TaskItem({ taskInfo, onHandleSelect}) {
     )
 };
 
-function TaskDescription({ generalTasks, taskSelected }) {
+function TaskDescription({ taskSelected }) {
 
-    // should only appear if thre is an itme selected / conditional rendering.
-    // only display selected item info
-
-    const dispalyInfo = generalTasks.map((task) => task.id === taskSelected);
+   //  const dispalyInfo = generalTasks.map((task) => task.id === taskSelected);
 
     return(
         <div>
             <h1>Task Description</h1>
             <div>
-                <h3>{dispalyInfo.task}</h3>
-                <div>{dispalyInfo.details}</div>
+                <h3>{taskSelected.task}</h3>
+                <div>{taskSelected.details}</div>
             </div>
         </div>
     );
