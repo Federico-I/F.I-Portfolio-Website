@@ -6,6 +6,10 @@ const List = [
 ];
 
 
+/////////////////////////////////////////////////////////////////////////
+//                         Main
+/////////////////////////////////////////////////////////////////////////
+
 
 export default function ToDoList() {
 
@@ -15,18 +19,23 @@ export default function ToDoList() {
     const [selectedTask, setSelectedTask] = useState("");
 
 
+
     function handleAddTask(newTask) {
         setGeneralTasks([...generalTasks, newTask]);
     };
 
     // previous item selected will be closed
-
     // only display the id selected, one at a time. if there is any open close automatically
 
     function handleSelect(taskInfo) {
         setSelectedTask(taskInfo);
         setDisplayContent(true);
+
     };
+
+    function handleDisplayClose() {
+        setDisplayContent(false);
+    }
 
     /*
     function handleShowContent(generalTasks){
@@ -37,13 +46,17 @@ export default function ToDoList() {
     return(
         <div className="app">
             <h1>TuskyTusky</h1>
-            <InputTasks addTask={handleAddTask} generalTasks={generalTasks} showContent={displayContent} taskSelected={selectedTask}/>
-            <TaskList generalTasks={generalTasks} onHandleSelect={handleSelect} taskSelected={selectedTask}/>
+            <InputTasks addTask={handleAddTask} generalTasks={generalTasks} showContent={displayContent} taskSelected={selectedTask} handleDisplayClose={handleDisplayClose}/>
+            <TaskList taskInfo={generalTasks} onHandleSelect={handleSelect} taskSelected={selectedTask}/>
         </div>
     );
 };
 
-function InputTasks({ generalTasks, addTask, showContent, taskSelected }) {
+/////////////////////////////////////////////////////////////////////////
+//                          Input
+/////////////////////////////////////////////////////////////////////////
+
+function InputTasks({ generalTasks, addTask, showContent, taskSelected, handleDisplayClose }) {
 
     const [taskName, setTaskName] = useState("");
     const [taskDescription, setTaskDescription] = useState("");
@@ -78,18 +91,22 @@ function InputTasks({ generalTasks, addTask, showContent, taskSelected }) {
 
     return(
         <div className="sidebar">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} onClick={handleDisplayClose}>
                 <label>What do you need to do?</label>
                 <input type="text" value={taskName} onChange={handleAddTaskName}/>
                 <input type="text"value={taskDescription} onChange={handleAddDescription}/>
                 <Button>ADD</Button>
             </form>
-            { showContent && <TaskDescription generalTasks={generalTasks} taskSelected={taskSelected}/>}
+            { showContent && <TaskDescription taskSelected={taskSelected} generalTasks={generalTasks}/>}
         </div>
     );
 };
 
-function TaskList({ generalTasks, onHandleSelect, taskSelected }) {
+/////////////////////////////////////////////////////////////////////////
+//                           Task List
+/////////////////////////////////////////////////////////////////////////
+
+function TaskList({ taskInfo, onHandleSelect}) {
 
     // will display task info depending on selected task managed by state 
 
@@ -97,7 +114,7 @@ function TaskList({ generalTasks, onHandleSelect, taskSelected }) {
         <div>
             <label>Next task to do is...</label>
             <ul>
-                {generalTasks.map((task) => <TaskItem taskInfo={task} key={task.id} onHandleSelect={onHandleSelect} taskSelected={taskSelected} />)}
+                {taskInfo.map((task) => <TaskItem taskInfo={task} key={task.id} onHandleSelect={onHandleSelect}/>)}
             </ul>
         </div>
     );
@@ -109,16 +126,20 @@ function TaskItem({ taskInfo, onHandleSelect}) {
     )
 };
 
-function TaskDescription({ taskSelected }) {
+/////////////////////////////////////////////////////////////////////////
+//                        Task Description
+/////////////////////////////////////////////////////////////////////////
 
-   //  const dispalyInfo = generalTasks.map((task) => task.id === taskSelected);
+function TaskDescription({ generalTasks, taskSelected }) {
+
+   const infoTask = generalTasks.map((task) => task.id === taskSelected.id);
 
     return(
         <div>
             <h1>Task Description</h1>
             <div>
-                <h3>{taskSelected.task}</h3>
-                <div>{taskSelected.details}</div>
+                <h3>{infoTask.task}</h3>
+                <div>{infoTask.details}</div>
             </div>
         </div>
     );
