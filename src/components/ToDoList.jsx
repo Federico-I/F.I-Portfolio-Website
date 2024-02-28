@@ -7,7 +7,7 @@ const List = [
 
 
 /////////////////////////////////////////////////////////////////////////
-//                         Main
+//                              Main
 /////////////////////////////////////////////////////////////////////////
 
 
@@ -37,6 +37,10 @@ export default function ToDoList() {
         setDisplayContent(false);
     }
 
+    function handleDeleteTask(id) {
+        setGeneralTasks((generalTasks) => [generalTasks.filter((tasks) => tasks.id === id)]);
+    }
+
     /*
     function handleShowContent(generalTasks){
         setDisplayContent(generalTasks.id === selectedTask.id ? setDisplayContent(true) : "");
@@ -47,13 +51,43 @@ export default function ToDoList() {
         <div className="app">
             <h1>TuskyTusky</h1>
             <InputTasks addTask={handleAddTask} generalTasks={generalTasks} showContent={displayContent} taskSelected={selectedTask} handleDisplayClose={handleDisplayClose}/>
-            <TaskList taskInfo={generalTasks} onHandleSelect={handleSelect} taskSelected={selectedTask}/>
+            <TaskList taskInfo={generalTasks} onHandleSelect={handleSelect} taskSelected={selectedTask} handleDeleteTask={handleDeleteTask}/>
         </div>
     );
 };
 
 /////////////////////////////////////////////////////////////////////////
-//                          Input
+//                           Task List
+/////////////////////////////////////////////////////////////////////////
+
+function TaskList({ taskInfo, onHandleSelect, handleDeleteTask }) {
+
+    // will display task info depending on selected task managed by state 
+
+    return(
+        <div>
+            <label>Next task to do is...</label>
+            <ul>
+                {taskInfo.map((task) => <TaskItem taskInfo={task} key={task.id} onHandleSelect={onHandleSelect} handleDeleteTask={handleDeleteTask}/>)}
+            </ul>
+        </div>
+    );
+};
+
+function TaskItem({ taskInfo, onHandleSelect, handleDeleteTask }) {
+
+    // Check button delete prop
+    
+    return(
+        <div>
+            <li onClick={() => onHandleSelect(taskInfo)} >{taskInfo.task}</li>
+            <Button onClick={handleDeleteTask}>Delete</Button>
+        </div>
+    )
+};
+
+/////////////////////////////////////////////////////////////////////////
+//                             Input
 /////////////////////////////////////////////////////////////////////////
 
 function InputTasks({ generalTasks, addTask, showContent, taskSelected, handleDisplayClose }) {
@@ -103,30 +137,6 @@ function InputTasks({ generalTasks, addTask, showContent, taskSelected, handleDi
 };
 
 /////////////////////////////////////////////////////////////////////////
-//                           Task List
-/////////////////////////////////////////////////////////////////////////
-
-function TaskList({ taskInfo, onHandleSelect}) {
-
-    // will display task info depending on selected task managed by state 
-
-    return(
-        <div>
-            <label>Next task to do is...</label>
-            <ul>
-                {taskInfo.map((task) => <TaskItem taskInfo={task} key={task.id} onHandleSelect={onHandleSelect}/>)}
-            </ul>
-        </div>
-    );
-};
-
-function TaskItem({ taskInfo, onHandleSelect}) {
-    return(
-        <li onClick={() => onHandleSelect(taskInfo)} >{taskInfo.task}</li>
-    )
-};
-
-/////////////////////////////////////////////////////////////////////////
 //                        Task Description
 /////////////////////////////////////////////////////////////////////////
 
@@ -145,8 +155,12 @@ function TaskDescription({ generalTasks, taskSelected }) {
     );
 };
 
-function Button({ children }){
+/////////////////////////////////////////////////////////////////////////
+//                           Button
+/////////////////////////////////////////////////////////////////////////
+
+function Button({ children, handleDeleteTask }){
     return(
-        <button className="button" >{children}</button>
+        <button className="button" onClick={handleDeleteTask} >{children}</button>
     );
 };
