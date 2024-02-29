@@ -19,7 +19,6 @@ export default function ToDoList() {
     const [selectedTask, setSelectedTask] = useState("");
 
 
-
     function handleAddTask(newTask) {
         setGeneralTasks([...generalTasks, newTask]);
     };
@@ -76,11 +75,21 @@ function TaskList({ taskInfo, onHandleSelect, handleDeleteTask }) {
 
 function TaskItem({ taskInfo, onHandleSelect, handleDeleteTask }) {
 
+    const [finisedTask, setFinishedTask] = useState(false);
+
+    function handleCrossed(done) {
+        setFinishedTask(!done);
+    }
+
     // Check button delete prop
+    // add className to cross finished tasks
+    // check tailwind css style linet-hrough
+
+    const crossTask = "line-through";
     
     return(
-        <div>
-            <li onClick={() => onHandleSelect(taskInfo)} >{taskInfo.task}</li>
+        <div onClick={() => onHandleSelect(taskInfo)}>
+            <li style={ finisedTask ? crossTask : ""} onClick={handleCrossed} >{taskInfo.task}</li>
             <Button onClick={handleDeleteTask}>Delete</Button>
         </div>
     )
