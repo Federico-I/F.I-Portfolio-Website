@@ -23,9 +23,6 @@ export default function ToDoList() {
         setGeneralTasks([...generalTasks, newTask]);
     };
 
-    // previous item selected will be closed
-    // only display the id selected, one at a time. if there is any open close automatically
-
     function handleSelect(taskInfo) {
         setSelectedTask(taskInfo);
         setDisplayContent(true);
@@ -61,8 +58,6 @@ export default function ToDoList() {
 
 function TaskList({ taskInfo, onHandleSelect, handleDeleteTask }) {
 
-    // will display task info depending on selected task managed by state 
-
     return(
         <div>
             <label>Next task to do is...</label>
@@ -81,9 +76,6 @@ function TaskItem({ taskInfo, onHandleSelect, handleDeleteTask }) {
         setFinishedTask(!done);
     }
 
-    // Check button delete prop
-    // add className to cross finished tasks
-    // check tailwind css style linet-hrough
 
     const crossTask = "line-through";
     
@@ -127,9 +119,6 @@ function InputTasks({ generalTasks, addTask, showContent, taskSelected, handleDi
 
         addTask(newTask);
     };
-
-    // make sure only one task is open at a time
-    // if a new task is open close previous.
 
 
     return(
