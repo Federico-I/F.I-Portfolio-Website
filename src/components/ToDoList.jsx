@@ -44,10 +44,12 @@ export default function ToDoList() {
     */
 
     return(
-        <div className="app">
+        <div className="flex flex-row items-center background-grey">
             <h1>TuskyTusky</h1>
-            <InputTasks addTask={handleAddTask} generalTasks={generalTasks} showContent={displayContent} taskSelected={selectedTask} handleDisplayClose={handleDisplayClose}/>
-            <TaskList taskInfo={generalTasks} onHandleSelect={handleSelect} taskSelected={selectedTask} handleDeleteTask={handleDeleteTask}/>
+            <div className="flex flex-col">
+                <InputTasks addTask={handleAddTask} generalTasks={generalTasks} showContent={displayContent} taskSelected={selectedTask} handleDisplayClose={handleDisplayClose}/>
+                <TaskList taskInfo={generalTasks} onHandleSelect={handleSelect} taskSelected={selectedTask} handleDeleteTask={handleDeleteTask}/>
+            </div>
         </div>
     );
 };
