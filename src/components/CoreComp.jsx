@@ -19,7 +19,7 @@ function CoreComp( { dataText } ) {
         </div>
         <MainSlider imgData={dataText}/>
         <ItemList itemData={dataText}/>
-        
+        <ToDoList ></ToDoList>
         {dataText.map((item) => (
           <About key={item.id} itemData={item}/>
         ))}
