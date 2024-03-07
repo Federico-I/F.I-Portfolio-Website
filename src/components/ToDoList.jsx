@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import { useState } from "react";
 
 const List = [
     { id: 118836, task: "Go for a run", details: "Today I want to run 4.5km."}, 
@@ -45,48 +46,13 @@ export default function ToDoList() {
 
     return(
         <div className="flex flex-col items-center justify-center w-full h-full bg-stone-400 py-10 my-10 rounded-lg">
-            <h1 className="flex justify-center p-5 text-5xl md:text-5xl underline decoration-cyan-500 text-white bg-black font-titleFont rounded-lg">TuskyTusky</h1>
-            {/*<div className="flex flex-col">
+            <h1 className="flex justify-center p-5 text-5xl md:text-5xl underline decoration-cyan-500 text-white bg-black font-titleFont rounded-lg mb-10">Tuskyng</h1>
+            <div className="grid grid-col-1 items-center">
                 <InputTasks addTask={handleAddTask} generalTasks={generalTasks} showContent={displayContent} taskSelected={selectedTask} handleDisplayClose={handleDisplayClose}/>
-                <TaskList taskInfo={generalTasks} onHandleSelect={handleSelect} taskSelected={selectedTask} handleDeleteTask={handleDeleteTask}/>
-            </div>*/}
+                {/*<TaskList taskInfo={generalTasks} onHandleSelect={handleSelect} taskSelected={selectedTask} handleDeleteTask={handleDeleteTask}/>*/}
+            </div>
         </div>
     );
-};
-
-/////////////////////////////////////////////////////////////////////////
-//                           Task List
-/////////////////////////////////////////////////////////////////////////
-
-function TaskList({ taskInfo, onHandleSelect, handleDeleteTask }) {
-
-    return(
-        <div>
-            <label>Next task to do is...</label>
-            <ul>
-                {taskInfo.map((task) => <TaskItem taskInfo={task} key={task.id} onHandleSelect={onHandleSelect} handleDeleteTask={handleDeleteTask}/>)}
-            </ul>
-        </div>
-    );
-};
-
-function TaskItem({ taskInfo, onHandleSelect, handleDeleteTask }) {
-
-    const [finisedTask, setFinishedTask] = useState(false);
-
-    function handleCrossed(done) {
-        setFinishedTask(!done);
-    }
-
-
-    const crossTask = "line-through";
-    
-    return(
-        <div onClick={() => onHandleSelect(taskInfo)}>
-            <li style={ finisedTask ? crossTask : ""} onClick={handleCrossed} >{taskInfo.task}</li>
-            <Button onClick={handleDeleteTask}>Delete</Button>
-        </div>
-    )
 };
 
 /////////////////////////////////////////////////////////////////////////
@@ -124,15 +90,18 @@ function InputTasks({ generalTasks, addTask, showContent, taskSelected, handleDi
 
 
     return(
-        <div className="sidebar">
-            <form onSubmit={handleSubmit} onClick={handleDisplayClose}>
-                <label>What do you need to do?</label>
-                <input type="text" value={taskName} onChange={handleAddTaskName}/>
-                <input type="text"value={taskDescription} onChange={handleAddDescription}/>
-                <Button>ADD</Button>
-            </form>
-            { showContent && <TaskDescription taskSelected={taskSelected} generalTasks={generalTasks}/>}
-        </div>
+        <>
+            <div className="flex flex-col items-center bg-green-500 p-10 m-5 w-full h-full rounded-l">
+                <form className="grid frid-cil-1 bg-red-500 items-center w-full h-full" onSubmit={handleSubmit} onClick={handleDisplayClose}>
+                    <label className="bg-yellow-500 p-10 m-10">What do you need to do?</label>
+                    
+                    <input className="rounded-2xl border-2 text-center text-sm italic" type="text" value={taskName} onChange={handleAddTaskName}/>
+                    <input className="rounded-3xl border-2 text-center text-sm italic" type="text" value={taskDescription} onChange={handleAddDescription}/>
+                    <button className=" text-sm italic item-center bg-blue-500 hover:bg-blue-700 w-20 rounded-lg">ADD</button>
+                </form>
+                { showContent && <TaskDescription taskSelected={taskSelected} generalTasks={generalTasks}/>}
+            </div>
+        </>
     );
 };
 
@@ -161,6 +130,42 @@ function TaskDescription({ generalTasks, taskSelected }) {
 
 function Button({ children, handleDeleteTask }){
     return(
-        <button className="button" onClick={handleDeleteTask} >{children}</button>
+        <button className="bg-blue300 rounded text-bold" onClick={handleDeleteTask} >{children}</button>
     );
+};
+
+
+/////////////////////////////////////////////////////////////////////////
+//                           Task List
+/////////////////////////////////////////////////////////////////////////
+
+function TaskList({ taskInfo, onHandleSelect, handleDeleteTask }) {
+
+    return(
+        <div>
+            <label>Next task to do is...</label>
+            <ul>
+                {taskInfo.map((task) => <TaskItem taskInfo={task} key={task.id} onHandleSelect={onHandleSelect} handleDeleteTask={handleDeleteTask}/>)}
+            </ul>
+        </div>
+    );
+};
+
+function TaskItem({ taskInfo, onHandleSelect, handleDeleteTask }) {
+
+    const [finisedTask, setFinishedTask] = useState(false);
+
+    function handleCrossed(done) {
+        setFinishedTask(!done);
+    }
+
+
+    const crossTask = "line-through";
+    
+    return(
+        <div onClick={() => onHandleSelect(taskInfo)}>
+            <li style={ finisedTask ? crossTask : ""} onClick={handleCrossed} >{taskInfo.task}</li>
+            <Button onClick={handleDeleteTask}>Delete</Button>
+        </div>
+    )
 };
