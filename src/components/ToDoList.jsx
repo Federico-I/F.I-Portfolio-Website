@@ -44,8 +44,8 @@ export default function ToDoList() {
     */
 
     return(
-        <div className="flex flex-col items-center justify-center w-full h-full bg-stone-300 py-10 my-10 rounded-lg">
-            <h1 className="flex justify-center p-5 text-5xl md:text-5xl underline decoration-cyan-500 text-white bg-black font-titleFont">TuskyTusky</h1>
+        <div className="flex flex-col items-center justify-center w-full h-full bg-stone-400 py-10 my-10 rounded-lg">
+            <h1 className="flex justify-center p-5 text-5xl md:text-5xl underline decoration-cyan-500 text-white bg-black font-titleFont rounded-lg">TuskyTusky</h1>
             {/*<div className="flex flex-col">
                 <InputTasks addTask={handleAddTask} generalTasks={generalTasks} showContent={displayContent} taskSelected={selectedTask} handleDisplayClose={handleDisplayClose}/>
                 <TaskList taskInfo={generalTasks} onHandleSelect={handleSelect} taskSelected={selectedTask} handleDeleteTask={handleDeleteTask}/>
