@@ -65,7 +65,7 @@ function InputTasks({ generalTasks, addTask, showContent, taskSelected, handleDi
     const [taskDescription, setTaskDescription] = useState("");
 
     function handleAddTaskName(e) {
-        setTaskName(e.taget.value);
+        setTaskName(e.target.value);
     };
 
     function handleAddDescription(e) {
@@ -92,12 +92,17 @@ function InputTasks({ generalTasks, addTask, showContent, taskSelected, handleDi
     return(
         <>
             <div className="flex flex-col items-center bg-green-500 p-10 m-5 w-full h-full rounded-l">
-                <form className="grid frid-cil-1 bg-red-500 items-center w-full h-full" onSubmit={handleSubmit} onClick={handleDisplayClose}>
+                <form className="grid grid-cols-1 justify-items-cneter bg-red-500 items-center w-full h-full" onSubmit={handleSubmit} onClick={handleDisplayClose}>
                     <label className="bg-yellow-500 p-10 m-10">What do you need to do?</label>
-                    
-                    <input className="rounded-2xl border-2 text-center text-sm italic" type="text" value={taskName} onChange={handleAddTaskName}/>
-                    <input className="rounded-3xl border-2 text-center text-sm italic" type="text" value={taskDescription} onChange={handleAddDescription}/>
-                    <button className=" text-sm italic item-center bg-blue-500 hover:bg-blue-700 w-20 rounded-lg">ADD</button>
+                    <div>
+                        <label>Task</label>
+                        <input className=" grid justify-items-center w-60 rounded-3xl border-2 text-center text-sm italic" type="text" value={taskName} onChange={handleAddTaskName}/>
+                    </div>
+                    <div>
+                        <label>Description</label>
+                        <input className="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="text" value={taskDescription} onChange={handleAddDescription}/>
+                    </div>
+                    <button className="text-sm italic items-center bg-blue-500 hover:bg-blue-700 w-20 rounded-lg">ADD</button>
                 </form>
                 { showContent && <TaskDescription taskSelected={taskSelected} generalTasks={generalTasks}/>}
             </div>
