@@ -45,9 +45,9 @@ export default function ToDoList() {
     */
 
     return(
-        <div className="flex flex-col items-center justify-center w-full h-full bg-stone-400 py-10 my-10 rounded-lg">
-            <h1 className="flex justify-center p-5 text-5xl md:text-5xl underline decoration-cyan-500 text-white bg-black font-titleFont rounded-lg mb-10">Tuskyng</h1>
-            <div className="grid grid-col-1 items-center">
+        <div className="flex flex-col items-center w-full h-full bg-stone-400 py-10 my-10 rounded-lg">
+            <h1 className="flex p-5 text-5xl md:text-5xl underline decoration-cyan-500 text-white bg-black font-titleFont rounded-lg mb-10">Tuskyng</h1>
+            <div className="grid grid-col-1 ">
                 <InputTasks addTask={handleAddTask} generalTasks={generalTasks} showContent={displayContent} taskSelected={selectedTask} handleDisplayClose={handleDisplayClose}/>
                 {/*<TaskList taskInfo={generalTasks} onHandleSelect={handleSelect} taskSelected={selectedTask} handleDeleteTask={handleDeleteTask}/>*/}
             </div>
@@ -91,24 +91,34 @@ function InputTasks({ generalTasks, addTask, showContent, taskSelected, handleDi
 
     return(
         <>
-            <div className="flex flex-col items-center bg-green-500 p-10 m-5 w-full h-full rounded-l">
-                <form className="grid grid-cols-1 justify-items-cneter bg-red-500 items-center w-full h-full" onSubmit={handleSubmit} onClick={handleDisplayClose}>
-                    <label className="bg-yellow-500 p-10 m-10">What do you need to do?</label>
-                    <div>
-                        <label>Task</label>
-                        <input className=" grid justify-items-center w-60 rounded-3xl border-2 text-center text-sm italic" type="text" value={taskName} onChange={handleAddTaskName}/>
+            <div className="bg-green-500 w-full h-full rounded-lg">
+
+                <form className="w-full h-full grid justify-items-center bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"  >
+                    <label className="bg-yellow-500 p-10 block text-gray-700 text-2xl font-bold mb-5">What do you need to do today?</label>
+
+                    <div className=" w-full grid justify-items-start mb-5">
+                        <label className=" w-20 p-1 bg-blue-400 text-white text-xl font-bold mb-2 rounded-xl">Task</label>
+                        <input className=" shadow appearance-none border rounded w-50 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline " type="text" value={taskName} onChange={handleAddTaskName}/>
                     </div>
-                    <div>
-                        <label>Description</label>
-                        <input className="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="text" value={taskDescription} onChange={handleAddDescription}/>
+
+                    <div className="w-full grid justify-items-start mb-5">
+                        <label className=" col-start-1 text-gray-700 text-xl font-bold mb-2">Description</label>
+                        <textarea className="block w-full p-5 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="text" value={taskDescription} onChange={handleAddDescription}/>
                     </div>
-                    <button className="text-sm italic items-center bg-blue-500 hover:bg-blue-700 w-20 rounded-lg">ADD</button>
+
+                    <button className="w-full p-5 w-40 bg-blue-300 hover:bg-green-500 rounded-lg" onSubmit={handleSubmit} onClick={handleDisplayClose} ><p className="w-full text-2xl font-bold text-white italic">ADD</p></button>
                 </form>
+
                 { showContent && <TaskDescription taskSelected={taskSelected} generalTasks={generalTasks}/>}
             </div>
         </>
     );
 };
+
+
+{/*
+   
+*/}
 
 /////////////////////////////////////////////////////////////////////////
 //                        Task Description
