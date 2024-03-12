@@ -15,7 +15,7 @@ const List = [
 export default function ToDoList() {
 
     const [generalTasks, setGeneralTasks] = useState(List);
-    const [displayContent, setDisplayContent] = useState(false);
+    const [displayContent, setDisplayContent] = useState(true);
 
     const [selectedTask, setSelectedTask] = useState("");
 
@@ -45,7 +45,7 @@ export default function ToDoList() {
     */
 
     return(
-        <div className="flex flex-col items-center w-full h-full bg-stone-400 py-10 my-10 rounded-lg">
+        <div className="flex flex-col items-center w-full h-full bg-stone-200 py-10 my-10 rounded-lg">
             <h1 className="flex p-5 text-5xl md:text-5xl underline decoration-cyan-500 text-white bg-black font-titleFont rounded-lg mb-10">Tuskyng</h1>
             <div className="grid grid-col-1 ">
                 <InputTasks addTask={handleAddTask} generalTasks={generalTasks} showContent={displayContent} taskSelected={selectedTask} handleDisplayClose={handleDisplayClose}/>
@@ -91,10 +91,10 @@ function InputTasks({ generalTasks, addTask, showContent, taskSelected, handleDi
 
     return(
         <>
-            <div className="bg-green-500 w-full h-full rounded-lg">
+            <div className=" flex flex-col w-full h-full rounded-lg">
 
-                <form className="w-full h-full grid justify-items-center bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"  >
-                    <label className="bg-yellow-500 p-10 block text-gray-700 text-2xl font-bold mb-5">What do you need to do today?</label>
+                <form className="w-full h-full grid justify-items-center bg-white sx:shadow-md rounded px-4 py-4" >
+                    <label className="bg-yellow-400 p-10 block text-gray-700 text-2xl font-bold mb-5">What do you need to do today?</label>
 
                     <div className=" w-full grid justify-items-start mb-5">
                         <label className=" w-20 p-1 bg-blue-400 text-white text-xl font-bold mb-2 rounded-xl">Task</label>
@@ -129,11 +129,11 @@ function TaskDescription({ generalTasks, taskSelected }) {
    const infoTask = generalTasks.map((task) => task.id === taskSelected.id);
 
     return(
-        <div>
-            <h1>Task Description</h1>
-            <div>
-                <h3>{infoTask.task}</h3>
-                <div>{infoTask.details}</div>
+        <div className="w-full h-full grid justify-items-center  shadow-md rounded p-4 my-4">
+            <h1 className="bg-yellow-400 p-2 block text-gray-700 text-2xl font-bold mb-5">Task Description</h1>
+            <div className="w-full grid justify-items-start p-3 mb-5 bg-blue-200 rounded-xl">
+                <h3 className="col-start-1 text-red-700 text-xl font-bold mb-2 underline"> Pick up present{infoTask.task}</h3>
+                <p className=" p-4 mt-4 bg-slate-300 rounded-xl text-balance text-md font-bold">Pick up Katty's present before 17hrs.{infoTask.details}</p>
             </div>
         </div>
     );
