@@ -12,7 +12,7 @@ function Contact() {
         <h1 className="flex py-8 text-5xl md:text-6xl sm:p-5 ">
           Contact
         </h1>
-        <h1 className="flex items-center text-5xl p-8 sm:p-3 sm:selfcenter hover:text-blue-500 text-5xl md:text-6xl sm:p-5 transition-all duration-1000 cursor-pointer"><a href={`mailto:${emailDieStrhal}`}>Email</a></h1>
+        <h1 className="flex items-center text-5xl sm:p-3 sm:selfcenter hover:text-blue-500 md:text-6xl transition-all duration-1000 cursor-pointer"><a href={`mailto:${emailDieStrhal}`}>Email</a></h1>
       </div>
       <div className=" p-3">
         <ul className="w-full flex flex-col justify-around lg:flex-row">
