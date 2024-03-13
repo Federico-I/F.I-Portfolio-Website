@@ -28,8 +28,8 @@ function Slider( { img } ) {
         <>
             <div className="w-full font-titleFont text-white md:px-10 md:py-5 rounded-lg md:bg-black md:opacity-90 capitalize">
                 <div className="flex flex-col justify-center w-full h-full  bg-transparent text-center">
-                    <div className="flex flex-col justify-evenly ">
-                        <img className="p-8 transition ease-in-out delay-150 hover:translate-y-1 hover:scale-110 duration-750 opacity-75 hover:opacity-100 cursor-pointer" src={background1} alt="test" />
+                    <div className="flex flex-col ">
+                        <img className=" mt-3 md:p-8 transition ease-in-out delay-150 hover:translate-y-1 hover:scale-110 duration-750 opacity-100 md:opacity-75 hover:opacity-100 cursor-pointer" src={background1} alt="test" />
                         <div className="flex flex-row justify-around p-5 ">
                             <FaArrowLeft className=" text-3xl md:text-5xl hover hover:text-red-500 hover:bg-white rounded-full cursor-pointer" onClick={prevImg}/>
                             { 
@@ -37,7 +37,7 @@ function Slider( { img } ) {
                                     {imgs.map((_, index) =>
                                     (
                                         <>
-                                            <FaRegImage icon="fa-regular fa-circle-dot" key={index} onClick={() => {setCurrentSlide(index)} } className={`flex flex-row justify-center text-2xl md:text-4xl mx-4 indicator cursor-pointer transition ease-in-out delay-150 hover:translate-y-1 ${currentSlide === index ? "scale-150 duration-750" : null}`}/>
+                                            <FaRegImage icon="fa-regular fa-circle-dot" key={index} onClick={() => {setCurrentSlide(index)} } className={`flex flex-row justify-center text-2xl md:text-4xl mx-2 md:mx-4 indicator cursor-pointer transition ease-in-out delay-150 hover:translate-y-1 ${currentSlide === index ? "scale-150 duration-750" : null}`}/>
                                         </>
                                     ))}
                             </span> 
