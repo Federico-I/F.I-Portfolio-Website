@@ -8,7 +8,7 @@ function ItemList( { itemData } ) {
       <h1 className="felx p-5 text-5xl md:text-5xl underline decoration-green-500 font-titleFont">
         Projects
       </h1>
-      <div className="flex grid grid-cols-1 lg:grid-cols-2 place-items-center justify-space-around w-full pb-10">
+      <div className="flex grid grid-cols-1 lg:grid-cols-2 place-items-center justify-space-around bg-slate-400 w-full pb-10">
       {itemData.map((itemInfo) => (
         <CardItem defa={itemInfo}/>
       ))}
