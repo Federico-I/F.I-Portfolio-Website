@@ -49,7 +49,8 @@ export default function ToDoList() {
             <h1 className="flex p-5 text-5xl md:text-5xl underline decoration-cyan-500 text-white bg-black font-titleFont rounded-lg mb-10">Tuskyng</h1>
             <div className="grid grid-col-1 ">
                 <InputTasks addTask={handleAddTask} generalTasks={generalTasks} showContent={displayContent} taskSelected={selectedTask} handleDisplayClose={handleDisplayClose}/>
-                {/*<TaskList taskInfo={generalTasks} onHandleSelect={handleSelect} taskSelected={selectedTask} handleDeleteTask={handleDeleteTask}/>*/}
+                <TaskList taskInfo={generalTasks} onHandleSelect={handleSelect} taskSelected={selectedTask} handleDeleteTask={handleDeleteTask}/>
+                {/**/}
             </div>
         </div>
     );
@@ -178,9 +179,9 @@ function TaskItem({ taskInfo, onHandleSelect, handleDeleteTask }) {
     const crossTask = "line-through";
     
     return(
-        <div onClick={() => onHandleSelect(taskInfo)}>
-            <li style={ finisedTask ? crossTask : ""} onClick={handleCrossed} >{taskInfo.task}</li>
-            <Button onClick={handleDeleteTask}>Delete</Button>
-        </div>
+        <li className="" onClick={() => onHandleSelect(taskInfo)}>
+           { /* <h2 style={ finisedTask ? crossTask : ""} onClick={handleCrossed} >{taskInfo.task}</h2>
+            <Button onClick={handleDeleteTask}>Delete</Button> */}
+        </li>
     )
 };
