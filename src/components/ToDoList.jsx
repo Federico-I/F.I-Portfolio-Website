@@ -44,10 +44,13 @@ export default function ToDoList() {
     }
     */
 
+    // input and list are set to grid and not to flex. therefore, Flex won't pass it's styiling classes, check that
+
+
     return(
         <div className="flex flex-col items-center w-full h-full bg-stone-200 py-10 my-10 rounded-lg">
             <h1 className="flex p-5 text-5xl md:text-5xl underline decoration-cyan-500 text-white bg-black font-titleFont rounded-lg mb-5">Tuskyng</h1>
-            <div className="flex w-full h-full justify-evenly p-10">
+            <div className="flex flex-cols-2 md:flex-wrap w-full h-full md:justify-evenly p-5 md:p-10">
                 <InputTasks addTask={handleAddTask} generalTasks={generalTasks} showContent={displayContent} taskSelected={selectedTask} handleDisplayClose={handleDisplayClose}/>
                 <TaskList taskInfo={generalTasks} onHandleSelect={handleSelect} taskSelected={selectedTask} handleDeleteTask={handleDeleteTask}/>
             </div>
@@ -91,10 +94,10 @@ function InputTasks({ generalTasks, addTask, showContent, taskSelected, handleDi
 
     return(
         <>
-            <div className=" flex flex-col m-5 rounded-lg w-full">
+            <div className=" flex flex-col items-center md:m-5 rounded-lg w-full">
 
-                <form className="w-full h-full grid justify-items-center bg-white rounded-xl px-4 py-4" >
-                    <label className="bg-yellow-400 p-10 block text-gray-700 text-2xl font-bold mb-5">What do you need to do today?</label>
+                <form className="w-full h-full grid justify-items-center md:bg-white rounded-xl md:p-4" >
+                    <label className="bg-yellow-400 p-3 md:p-10 block text-gray-700 text-xl md:text-2xl font-bold mb-5">What do you need to do today?</label>
 
                     <div className=" w-full grid justify-items-start mb-5">
                         <label className=" w-20 p-1 bg-blue-400 text-white text-xl font-bold mb-2 rounded-xl">Task</label>
@@ -106,7 +109,7 @@ function InputTasks({ generalTasks, addTask, showContent, taskSelected, handleDi
                         <textarea className="block w-full p-5 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="text" value={taskDescription} onChange={handleAddDescription}/>
                     </div>
 
-                    <button className="w-full p-5 w-40 bg-blue-300 hover:bg-green-500 rounded-lg" onSubmit={handleSubmit} onClick={handleDisplayClose} ><p className="w-full text-2xl font-bold text-white italic">ADD</p></button>
+                    <button className="w-full p-5 md:w-40 bg-blue-300 hover:bg-green-500 rounded-lg" onSubmit={handleSubmit} onClick={handleDisplayClose} ><p className=" md:w-full text-xl md:text-2xl font-bold text-white italic">ADD</p></button>
                 </form>
 
                 { showContent && <TaskDescription taskSelected={taskSelected} generalTasks={generalTasks}/>}
@@ -174,7 +177,7 @@ function TaskItem({ taskInfo, onHandleSelect, handleDeleteTask }) {
     const crossTask = "line-through";
     
     return(
-        <li className="flex flex-row justify-center bg-white rounded-xl m-4" onClick={() => onHandleSelect(taskInfo)}>
+        <li className="flex justify-center bg-white rounded-xl m-4" onClick={() => onHandleSelect(taskInfo)}>
            { /* <h2 style={ finisedTask ? crossTask : ""} onClick={handleCrossed} >{taskInfo.task}</h2>
             */}
             <p className="flex w-80 justify-center m-4 font-bold text-2xl">lalalallallalalalalal</p>
