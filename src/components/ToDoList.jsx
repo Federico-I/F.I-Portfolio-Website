@@ -50,7 +50,7 @@ export default function ToDoList() {
     return(
         <div className="flex flex-col items-center w-full h-full bg-stone-200 py-10 my-10 rounded-lg">
             <h1 className="flex p-5 text-5xl md:text-5xl underline decoration-cyan-500 text-white bg-black font-titleFont rounded-lg mb-5">Tuskyng</h1>
-            <div className="grid grid-col md:grid-cols-2 w-full h-full p-5 md:p-10">
+            <div className="grid grid-col md:grid-cols-2 justify-items-center  p-5 md:p-10">
                 <InputTasks addTask={handleAddTask} generalTasks={generalTasks} showContent={displayContent} taskSelected={selectedTask} handleDisplayClose={handleDisplayClose}/>
                 <TaskList taskInfo={generalTasks} onHandleSelect={handleSelect} taskSelected={selectedTask} handleDeleteTask={handleDeleteTask}/>
             </div>
@@ -158,7 +158,7 @@ function TaskList({ taskInfo, onHandleSelect, handleDeleteTask }) {
     return(
         <div className="flex flex-col justify-items-center p-4 m-5">
             <label className=" bg-yellow-400 p-2 m-5 text-gray-700 text-2xl font-bold">Next task to do is...</label>
-            <ul className="flex flex-col w-80 bg-blue-400 rounded-xl p-6">
+            <ul className="flex flex-col w-full bg-blue-400 rounded-xl p-6">
                 {taskInfo.map((task) => <TaskItem taskInfo={task} key={task.id} onHandleSelect={onHandleSelect} handleDeleteTask={handleDeleteTask}/>)}
             </ul>
         </div>
@@ -180,8 +180,8 @@ function TaskItem({ taskInfo, onHandleSelect, handleDeleteTask }) {
         <li className="flex bg-white rounded-xl m-4" onClick={() => onHandleSelect(taskInfo)}>
            { /* <h2 style={ finisedTask ? crossTask : ""} onClick={handleCrossed} >{taskInfo.task}</h2>
             */}
-            <p className="flex w-full justify-items-center m-4 font-bold text-xl md:text-2xl">lalalallallalalalalal</p>
-            <Button className="flex w-full justify-items-center" onClick={handleDeleteTask}><p className="hover:bg-red-500 hover:border rounded-xl font-bold text-3xl py-1 px-2 ">X</p></Button> 
+            <p className="m-4 font-bold text-xl md:text-2xl">lalalallallalalalalal</p>
+            <Button className="" onClick={handleDeleteTask}><p className="hover:bg-red-500 hover:border rounded-xl font-bold text-3xl py-1 px-2 md:mr-4">X</p></Button> 
         </li>
     )
 };
