@@ -96,20 +96,20 @@ function InputTasks({ generalTasks, addTask, showContent, taskSelected, handleDi
         <>
             <div className=" flex flex-col items-center md:m-5 rounded-lg w-full">
 
-                <form className=" flex flex-col justify-items-center md:bg-white rounded-xl md:p-4" >
-                    <label className="bg-yellow-400 p-3 md:p-10 block text-gray-700 text-xl md:text-2xl font-bold mb-5">What do you need to do today?</label>
+                <form className=" md:bg-white rounded-xl md:p-4" >
+                    <label className="bg-yellow-400 p-3 md:p-10 block text-gray-700 text-sm md:text-2xl font-bold mb-5">What do you need to do today?</label>
 
                     <div className=" flex flex-col justify-items-start mb-5">
-                        <label className=" w-20 p-1 bg-blue-400 text-white text-xl font-bold mb-2 rounded-xl">Task</label>
-                        <input className=" shadow appearance-none border rounded w-50 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline " type="text" value={taskName} onChange={handleAddTaskName}/>
+                        <label className=" w-20 p-1 bg-blue-400 text-white text-sm md:text-xl font-bold mb-2 rounded-xl">Task</label>
+                        <input className=" w-44 md:w-52 shadow appearance-none border rounded text-sm md:text-lg py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline " type="text" value={taskName} onChange={handleAddTaskName}/>
                     </div>
 
-                    <div className="w-full flex flex-col items-start mb-5">
-                        <label className=" col-start-1 text-gray-700 text-xl font-bold mb-2">Description</label>
-                        <textarea className="block md:w-full p-5 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="text" value={taskDescription} onChange={handleAddDescription}/>
+                    <div className=" items-start mb-2 md:mb-5">
+                        <label className=" col-start-1 text-gray-700 text-sm md:text-xl font-bold mb-2">Description</label>
+                        <textarea className="block w-full p-3 text-sm md:text-lg text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="text" value={taskDescription} onChange={handleAddDescription}/>
                     </div>
 
-                    <button className="flex flex-col justify-items-center md:w-full md:p-5 md:w-40 bg-blue-300 hover:bg-green-500 rounded-lg" onSubmit={handleSubmit} onClick={handleDisplayClose} ><p className="flex flex-col md:w-full text-xl md:text-2xl font-bold text-white italic">ADD</p></button>
+                    <button className="items-center w-28 md:w-60 md:p-5  bg-blue-300 hover:bg-green-500 rounded-lg" onSubmit={handleSubmit} onClick={handleDisplayClose} ><p className=" w-full text-xl md:text-2xl font-bold text-white italic">ADD</p></button>
                 </form>
 
                 { showContent && <TaskDescription taskSelected={taskSelected} generalTasks={generalTasks}/>}
@@ -128,11 +128,11 @@ function TaskDescription({ generalTasks, taskSelected }) {
    const infoTask = generalTasks.map((task) => task.id === taskSelected.id);
 
     return(
-        <div className="flex flex-col justify-items-center bg-red-300 hover:bg-green-400 rounded-xl p-4 my-4">
-            <h1 className="bg-yellow-400 p-2 block text-gray-700 text-2xl font-bold mb-5">Task Description</h1>
-            <div className="flex flex-col justify-items-start p-3 mb-5 bg-blue-200 rounded-xl">
-                <h3 className="col-start-1 text-red-700 text-xl font-bold mb-2 underline"> Pick up present{infoTask.task}</h3>
-                <p className="p-4 mt-4 bg-slate-300 rounded-xl text-balance text-md font-bold">Pick up Katty's present before 17hrs.{infoTask.details}</p>
+        <div className="grid w-52 md:w-full justify-items-center bg-red-300 hover:bg-green-400 rounded-xl p-2 md:p-4 my-4 md:my-4">
+            <h1 className="bg-yellow-400 p-2 block text-gray-700 text-sm md:text-2xl font-bold mb-5">Task Description</h1>
+            <div className="flex flex-col justify-items-start p-3 mb-2 md:mb-5 bg-blue-200 rounded-xl">
+                <h3 className="col-start-1 text-red-700 text-sm md:text-xl font-bold m-1 md:mb-2 underline"> Pick up present{infoTask.task}</h3>
+                <p className="p-2 md:p-4 mt-4 bg-slate-300 rounded-xl text-balance text-sm md:text-md font-bold">Pick up Katty's present before 17hrs.{infoTask.details}</p>
             </div>
         </div>
     );
