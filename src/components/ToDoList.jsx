@@ -48,8 +48,8 @@ export default function ToDoList() {
 
 
     return(
-        <div className="flex flex-col items-center w-full h-full bg-stone-200 py-10 my-10 rounded-lg">
-            <h1 className="flex p-5 text-5xl md:text-5xl underline decoration-cyan-500 text-white bg-black font-titleFont rounded-lg mb-5">Tuskyng</h1>
+        <div className="flex flex-col items-center w-full h-full bg-stone-200 pt-10 mt-10 rounded-lg">
+            <h1 className="flex p-5 mb-5 text-5xl underline decoration-cyan-500 text-white bg-black font-titleFont rounded-lg ">Tuskyng</h1>
             <div className="grid grid-col md:grid-cols-2 justify-items-center  p-5 md:p-10">
                 <InputTasks addTask={handleAddTask} generalTasks={generalTasks} showContent={displayContent} taskSelected={selectedTask} handleDisplayClose={handleDisplayClose}/>
                 <TaskList taskInfo={generalTasks} onHandleSelect={handleSelect} taskSelected={selectedTask} handleDeleteTask={handleDeleteTask}/>
@@ -128,7 +128,8 @@ function TaskDescription({ generalTasks, taskSelected }) {
    const infoTask = generalTasks.map((task) => task.id === taskSelected.id);
 
     return(
-        <div className="grid w-52 md:w-full justify-items-center bg-red-300 hover:bg-green-400 rounded-xl p-2 md:p-4 my-4 md:my-4">
+        <div className="grid w-52 md:w-80 justify-items-center bg-red-300 hover:bg-green-400 rounded-xl p-2 md:p-4 my-4 md:my-4">
+
             <h1 className="bg-yellow-400 p-2 block text-gray-700 text-sm md:text-2xl font-bold mb-5">Task Description</h1>
             <div className="flex flex-col justify-items-start p-3 mb-2 md:mb-5 bg-blue-200 rounded-xl">
                 <h3 className="col-start-1 text-red-700 text-sm md:text-xl font-bold m-1 md:mb-2 underline"> Pick up present{infoTask.task}</h3>
@@ -156,9 +157,9 @@ function Button({ children, handleDeleteTask }){
 function TaskList({ taskInfo, onHandleSelect, handleDeleteTask }) {
 
     return(
-        <div className="flex flex-col justify-items-center p-4 m-5">
-            <label className=" bg-yellow-400 p-2 m-5 text-gray-700 text-2xl font-bold">Next task to do is...</label>
-            <ul className="flex flex-col w-full bg-blue-400 rounded-xl p-6">
+        <div className=" grid justify-items-center py-2 md:p-4 md:m-5">
+            <label className=" bg-yellow-400 p-2 m-3 md:m-5 text-gray-700 text-sm md:text-2xl font-bold">Next task to do is...</label>
+            <ul className="grid w-full bg-blue-400 rounded-xl md:p-6">
                 {taskInfo.map((task) => <TaskItem taskInfo={task} key={task.id} onHandleSelect={onHandleSelect} handleDeleteTask={handleDeleteTask}/>)}
             </ul>
         </div>
@@ -180,8 +181,8 @@ function TaskItem({ taskInfo, onHandleSelect, handleDeleteTask }) {
         <li className="flex bg-white rounded-xl m-4" onClick={() => onHandleSelect(taskInfo)}>
            { /* <h2 style={ finisedTask ? crossTask : ""} onClick={handleCrossed} >{taskInfo.task}</h2>
             */}
-            <p className="m-4 font-bold text-xl md:text-2xl">lalalallallalalalalal</p>
-            <Button className="" onClick={handleDeleteTask}><p className="hover:bg-red-500 hover:border rounded-xl font-bold text-3xl py-1 px-2 md:mr-4">X</p></Button> 
+            <p className="m-4 font-bold text-sm md:text-2xl">lalalallallalalalalal</p>
+            <Button className="" onClick={handleDeleteTask}><p className="hover:bg-red-500 hover:border rounded-xl font-bold text-xl md:text-3xl py-1 px-2 md:mr-4">X</p></Button> 
         </li>
     )
 };
