@@ -3,7 +3,8 @@ import { useState } from "react";
 
 const List = [
     { id: 118836, task: "Go for a run", details: "Today I want to run 4.5km."}, 
-    { id: 933372, task: "run errands", details: "Pick up Katty's present before 17hrs."}
+    { id: 933372, task: "Run errands", details: "Pick up Katty's present before 17hrs."},
+    { id: 933372, task: "Run errands v2", details: "Pick up dinner before 17hrs."}
 ];
 
 
@@ -91,6 +92,7 @@ function InputTasks({ generalTasks, addTask, showContent, taskSelected, handleDi
         addTask(newTask);
     };
 
+    // page refreshing when submitting form, prevent refresh.
 
     return(
         <>
@@ -178,11 +180,12 @@ function TaskItem({ taskInfo, onHandleSelect, handleDeleteTask }) {
     const crossTask = "line-through";
     
     return(
-        <li className="flex bg-white rounded-xl m-4" onClick={() => onHandleSelect(taskInfo)}>
-           { /* <h2 style={ finisedTask ? crossTask : ""} onClick={handleCrossed} >{taskInfo.task}</h2>
+        <li className="flex w-full bg-white rounded-xl m-4" onClick={() => onHandleSelect(taskInfo)}>
+           { /* <h2 style={ finisedTask ? crossTask : ""} onClick={handleCrossed} ></h2>
             */}
-            <p className="m-4 font-bold text-sm md:text-2xl">lalalallallalalalalal</p>
-            <Button className="" onClick={handleDeleteTask}><p className="hover:bg-red-500 hover:border rounded-xl font-bold text-xl md:text-3xl py-1 px-2 md:mr-4">X</p></Button> 
+            
+            <p className="flex items-end m-2  md:m-4 font-bold text-sm md:text-2xl">{taskInfo.task}</p>
+            <Button onClick={handleDeleteTask}><p className="flex flex-row justify-items-end hover:bg-red-500 hover:border rounded-xl font-bold border-black text-md md:text-3xl py- px-1 md:mr-4">X</p></Button> 
         </li>
     )
 };
