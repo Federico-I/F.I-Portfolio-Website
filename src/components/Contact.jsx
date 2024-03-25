@@ -8,7 +8,7 @@ function Contact() {
 
   return (
     <div className=" flex flex-col items-center xl:flex-row justify-around bg-stone-100 h-full w-full rounded-b-lg font-personalText text-3xl">
-      <div className="flex flex-col items-center xl:flex-row items-stretch w-full pl-20">
+      <div className="flex flex-col items-center xl:flex-row items-stretch w-full pl-14 md:pl-20">
         <h1 className="flex py-8 text-5xl md:text-6xl sm:p-5 ">
           Contact
         </h1>
