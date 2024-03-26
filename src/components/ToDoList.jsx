@@ -4,7 +4,9 @@ import { useState } from "react";
 const List = [
     { id: 118836, task: "Go for a run", details: "Today I want to run 4.5km."}, 
     { id: 933372, task: "Run errands", details: "Pick up Katty's present before 17hrs."},
-    { id: 933372, task: "Run errands v2", details: "Pick up dinner before 17hrs."}
+    { id: 933373, task: "Run errands v2", details: "Pick up dinner before 17hrs."},
+    { id: 933374, task: "Run errands v4", details: "Pick up dinner before 17hrs."}, { id: 933375, task: "Run errands v5", details: "Pick up dinner before 17hrs."},
+    { id: 933376, task: "Run errands v6", details: "Pick up dinner before 17hrs."},
 ];
 
 
@@ -159,9 +161,9 @@ function Button({ children, handleDeleteTask }){
 function TaskList({ taskInfo, onHandleSelect, handleDeleteTask }) {
 
     return(
-        <div className="flex flex-col  py-2 md:p-4 md:m-5">
+        <div className="flex flex-col py-2 md:p-4 md:m-5">
             <label className="flex justify-center md:h-16 bg-yellow-400 p-2 m-3 md:m-5 text-gray-700 text-sm md:text-2xl font-bold">Next task to do is...</label>
-            <ul className="grid overflow-auto bg-black rounded-xl md:p-6">
+            <ul className="grid h-64 md:h-96 overflow-auto bg-black rounded-xl md:p-6">
                 {taskInfo.map((task) => <TaskItem taskInfo={task} key={task.id} onHandleSelect={onHandleSelect} handleDeleteTask={handleDeleteTask}/>)}
             </ul>
         </div>
@@ -180,7 +182,7 @@ function TaskItem({ taskInfo, onHandleSelect, handleDeleteTask }) {
     const crossTask = "line-through";
     
     return(
-        <li className="flex flex-row justify-between bg-white hover:bg-blue-500 hover:text-white rounded-xl m-4" onClick={() => onHandleSelect(taskInfo)}>
+        <li className="flex flex-row justify-between  bg-white hover:bg-blue-500 hover:text-white rounded-xl m-4" onClick={() => onHandleSelect(taskInfo)}>
            { /* <h2 style={ finisedTask ? crossTask : ""} onClick={handleCrossed} ></h2>
             */}
             
