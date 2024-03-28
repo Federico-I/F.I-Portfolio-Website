@@ -166,15 +166,20 @@ function TaskList({ taskInfo, onHandleSelect, handleDeleteTask }) {
 
     // try to use ternay operator to check if there are any item on the list, either to display or to show no task list. 
 
+
+        /////////////////////////////////////////////////
+    //               fix code not ready yet
+    /////////////////////////////////////////////////
+
+
     return(
         <div className="flex flex-col py-2 md:p-4 md:m-5">
-            <label className="flex justify-center md:h-16 bg-yellow-400 p-2 m-3 md:m-5 text-gray-700 text-sm md:text-2xl font-bold">Next task to do is...</label>
-            <ul className="grid h-64 md:h-96 overflow-auto bg-black rounded-xl md:p-6">
-                { taskInfo.length >= 2 ? taskInfo.map((task) => <TaskItem taskInfo={task} key={task.id} onHandleSelect={onHandleSelect} handleDeleteTask={handleDeleteTask}/>) : <NoTasks /> }
+            <label className="flex justify-center md:h-16 bg-yellow-400 p-2 m-3 md:m-5 text-gray-700 text-sm md:text-2xl font-bold">Next task to do is...
+            </label>
 
-                {/*taskInfo.map((task) => <TaskItem taskInfo={task} key={task.id} onHandleSelect={onHandleSelect} handleDeleteTask={handleDeleteTask}/>)  */}
+            
 
-            </ul>
+            <TaskItem taskInfo={task} key={task.id} onHandleSelect={onHandleSelect} handleDeleteTask={handleDeleteTask}/>
         </div>
     );
 };
@@ -200,11 +205,20 @@ function TaskItem({ taskInfo, onHandleSelect, handleDeleteTask }) {
 
 
     const crossTask = "line-through";
+
+    /////////////////////////////////////////////////
+    //               fix code not ready yet
+    /////////////////////////////////////////////////
     
     return(
-        <li className="flex flex-row justify-between  bg-white hover:bg-blue-500 hover:text-white rounded-xl m-4" onClick={() => onHandleSelect(taskInfo)}>
-            <p className="flex m-2 md:m-4 font-bold text-sm md:text-2xl">{taskInfo.task}</p>
-            <span className="flex hover:text-red-500 rounded-xl font-bold text-md md:text-2xl pr-2 md:px-1 md:mr-4"><button onClick={handleDeleteTask}>X</button></span>
-        </li>
+        <ul className="grid h-64 md:h-96 overflow-auto bg-black rounded-xl md:p-6">
+            {taskInfo.map((task) => 
+                <li className="flex flex-row justify-between  bg-white hover:bg-blue-500 hover:text-white rounded-xl m-4" onClick={() => onHandleSelect(taskInfo)}>
+                    <p className="flex m-2 md:m-4 font-bold text-sm md:text-2xl">{taskInfo.task}</p>
+                    <span className="flex hover:text-red-500 rounded-xl font-bold text-md md:text-2xl pr-2 md:px-1 md:mr-4"><button onClick={handleDeleteTask}>X</button></span>
+                </li>) 
+            }
+        </ul>
+        
     )
 };
