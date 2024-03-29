@@ -144,56 +144,26 @@ function TaskDescription({ generalTasks, taskSelected }) {
 };
 
 /////////////////////////////////////////////////////////////////////////
-//                           Button
-/////////////////////////////////////////////////////////////////////////
-/*
-function Button({ children, handleDeleteTask }){
-    return(
-        <button className="bg-blue-300 rounded text-bold" onClick={handleDeleteTask} >{children}</button>
-    );
-};
-
-*/
-/////////////////////////////////////////////////////////////////////////
 //                           Task List
 /////////////////////////////////////////////////////////////////////////
 
 function TaskList({ taskInfo, onHandleSelect, handleDeleteTask }) {
 
-    // after deleting all components should display "no tasks"
-
-    /////// Temporarily fixed ///////
-
-    // try to use ternay operator to check if there are any item on the list, either to display or to show no task list. 
-
-
-        /////////////////////////////////////////////////
-    //               fix code not ready yet
-    /////////////////////////////////////////////////
-
+    //////////////////////////////////
+    //     fix code not ready yet
+    /////////////////////////////////
 
     return(
         <div className="flex flex-col py-2 md:p-4 md:m-5">
             <label className="flex justify-center md:h-16 bg-yellow-400 p-2 m-3 md:m-5 text-gray-700 text-sm md:text-2xl font-bold">Next task to do is...
             </label>
-
-            
-
-            <TaskItem taskInfo={task} key={task.id} onHandleSelect={onHandleSelect} handleDeleteTask={handleDeleteTask}/>
+            <TaskItem taskInfo={taskInfo} key={taskInfo.id} onHandleSelect={onHandleSelect} handleDeleteTask={handleDeleteTask}/>
         </div>
     );
 };
 
-function NoTasks() {
 
-    return( 
-        <li className="flex flex-row justify-between bg-blue h-16 bg-blue-500 hover:text-white rounded-xl m-4">
-            <p className="flex m-2 md:m-4 font-bold text-sm md:text-2xl">NO TASK YET</p>
-        </li>
-    )
-};
-
-/////////////// map items list in TaskItem Component //////////////////
+/////// map items list in TaskItem Component //////
 
 function TaskItem({ taskInfo, onHandleSelect, handleDeleteTask }) {
 
@@ -206,19 +176,32 @@ function TaskItem({ taskInfo, onHandleSelect, handleDeleteTask }) {
 
     const crossTask = "line-through";
 
-    /////////////////////////////////////////////////
-    //               fix code not ready yet
-    /////////////////////////////////////////////////
+    //////////////////////////////////////
+    //      fix code not ready yet
+    //////////////////////////////////////
     
     return(
         <ul className="grid h-64 md:h-96 overflow-auto bg-black rounded-xl md:p-6">
             {taskInfo.map((task) => 
                 <li className="flex flex-row justify-between  bg-white hover:bg-blue-500 hover:text-white rounded-xl m-4" onClick={() => onHandleSelect(taskInfo)}>
-                    <p className="flex m-2 md:m-4 font-bold text-sm md:text-2xl">{taskInfo.task}</p>
+                    <p className="flex m-2 md:m-4 font-bold text-sm md:text-2xl">{task.task}</p>
                     <span className="flex hover:text-red-500 rounded-xl font-bold text-md md:text-2xl pr-2 md:px-1 md:mr-4"><button onClick={handleDeleteTask}>X</button></span>
                 </li>) 
             }
         </ul>
         
+    )
+};
+
+/////////////////////////////////////////////////////////////////////////
+//                         Small List Components
+/////////////////////////////////////////////////////////////////////////
+
+function NoTasks() {
+
+    return( 
+        <li className="flex flex-row justify-between bg-blue h-16 bg-blue-500 hover:text-white rounded-xl m-4">
+            <p className="flex m-2 md:m-4 font-bold text-sm md:text-2xl">NO TASK YET</p>
+        </li>
     )
 };
