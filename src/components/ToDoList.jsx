@@ -5,8 +5,7 @@ const List = [
     { id: 118836, task: "Go for a run", details: "Today I want to run 4.5km."}, 
     { id: 933372, task: "Run errands", details: "Pick up Katty's present before 17hrs."},
     { id: 933373, task: "Run errands v2", details: "Pick up dinner before 17hrs."},
-    { id: 933374, task: "Run errands v4", details: "Pick up dinner before 17hrs."}, { id: 933375, task: "Run errands v5", details: "Pick up dinner before 17hrs."},
-    { id: 933376, task: "Run errands v6", details: "Pick up dinner before 17hrs."},
+    
 ];
 
 
@@ -24,7 +23,7 @@ export default function ToDoList() {
 
 
     function handleAddTask(newTask) {
-        setGeneralTasks([...generalTasks, newTask]);
+        setGeneralTasks(generalTasks => [...generalTasks, newTask]);
     };
 
     function handleSelect(taskInfo) {
@@ -100,7 +99,7 @@ function InputTasks({ generalTasks, addTask, showContent, taskSelected, handleDi
         <>
             <div className=" flex flex-col items-center md:m-5 rounded-lg w-full">
 
-                <form className=" md:bg-black rounded-xl md:p-4" >
+                <form className=" md:bg-black rounded-xl md:p-4" onSubmit={handleSubmit} >
                     <label className="bg-yellow-400 p-3 md:p-10 block text-gray-700 text-sm md:text-2xl font-bold mb-5">What do you need to do today?</label>
 
                     <div className=" flex flex-col justify-items-start mb-5">
@@ -113,7 +112,7 @@ function InputTasks({ generalTasks, addTask, showContent, taskSelected, handleDi
                         <textarea className="block w-full p-3 text-sm md:text-lg text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="text" value={taskDescription} onChange={handleAddDescription}/>
                     </div>
 
-                    <button className="items-center w-28 md:w-60 md:p-5  bg-blue-300 hover:bg-green-500 rounded-lg" onSubmit={handleSubmit} onClick={handleDisplayClose} ><p className=" w-full text-xl md:text-2xl font-bold text-white italic">ADD</p></button>
+                    <button className="items-center w-28 md:w-60 md:p-5  bg-blue-300 hover:bg-green-500 rounded-lg" ><p className=" w-full text-xl md:text-2xl font-bold text-white italic">ADD</p></button>
                 </form>
 
                 { showContent && <TaskDescription taskSelected={taskSelected} generalTasks={generalTasks}/>}
@@ -162,8 +161,6 @@ function TaskList({ taskInfo, onHandleSelect, handleDeleteTask }) {
     );
 };
 
-
-/////// map items list in TaskItem Component //////
 
 function TaskItem({ taskInfo, onHandleSelect, handleDeleteTask }) {
 
