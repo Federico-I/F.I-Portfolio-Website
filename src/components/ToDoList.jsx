@@ -46,8 +46,6 @@ export default function ToDoList() {
     }
     */
 
-    // input and list are set to grid and not to flex. therefore, Flex won't pass it's styiling classes, check that
-
 
     return(
         <div className="flex flex-col items-center w-full h-full bg-stone-200 pt-10 mt-10 rounded-lg">
@@ -112,7 +110,7 @@ function InputTasks({ generalTasks, addTask, showContent, taskSelected, handleDi
                         <textarea className="block w-full p-3 text-sm md:text-lg text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="text" value={taskDescription} onChange={handleAddDescription}/>
                     </div>
 
-                    <button className="items-center w-28 md:w-60 md:p-5  bg-blue-300 hover:bg-green-500 rounded-lg" ><p className=" w-full text-xl md:text-2xl font-bold text-white italic">ADD</p></button>
+                    <button className="items-center w-28 md:w-60 md:p-5  bg-blue-300 hover:bg-green-500 rounded-lg text-xl md:text-2xl font-bold text-white italic">ADD</button>
                 </form>
 
                 { showContent && <TaskDescription taskSelected={taskSelected} generalTasks={generalTasks}/>}
