@@ -1,11 +1,22 @@
 import React from "react";
 import { useState } from "react";
 
-const List = [
-    { id: 118836, task: "Go for a run", details: "Today I want to run 4.5km."}, 
-    { id: 933372, task: "Run errands", details: "Pick up Katty's present before 17hrs."},
-    { id: 933373, task: "Run errands v2", details: "Pick up dinner before 17hrs."},
-    
+const list = [
+    { 
+        id: 118836, 
+        task: "Go for a run", 
+        details: "Today I want to run 4.5km."
+    }, 
+    { 
+        id: 933372, 
+        task: "Run errands", 
+        details: "Pick up Katty's present before 17hrs."
+    },
+    { 
+        id: 933373, 
+        task: "Run errands v2", 
+        details: "Pick up dinner before 17hrs."
+    }
 ];
 
 
@@ -16,11 +27,10 @@ const List = [
 
 export default function ToDoList() {
 
-    const [generalTasks, setGeneralTasks] = useState(List);
+    const [generalTasks, setGeneralTasks] = useState(list);
     const [displayContent, setDisplayContent] = useState(true);
 
     const [selectedTask, setSelectedTask] = useState("");
-
 
     function handleAddTask(newTask) {
         setGeneralTasks(generalTasks => [...generalTasks, newTask]);
@@ -29,7 +39,6 @@ export default function ToDoList() {
     function handleSelect(taskInfo) {
         setSelectedTask(taskInfo);
         setDisplayContent(true);
-
     };
 
     function handleDisplayClose() {
@@ -45,7 +54,6 @@ export default function ToDoList() {
         setDisplayContent(generalTasks.id === selectedTask.id ? setDisplayContent(true) : "");
     }
     */
-
 
     return(
         <div className="flex flex-col items-center w-full h-full bg-stone-200 pt-10 mt-10 rounded-lg">
@@ -92,6 +100,10 @@ function InputTasks({ generalTasks, addTask, showContent, taskSelected, handleDi
     };
 
     // page refreshing when submitting form, prevent refresh.
+
+    // button add not working, no itme added onclick
+
+    // state not udpated or displayed
 
     return(
         <>
@@ -141,54 +153,6 @@ function TaskDescription({ generalTasks, taskSelected }) {
 };
 
 /////////////////////////////////////////////////////////////////////////
-//                           Task List
-/////////////////////////////////////////////////////////////////////////
-
-function TaskList({ taskInfo, onHandleSelect, handleDeleteTask }) {
-
-    //////////////////////////////////
-    //     fix code not ready yet
-    /////////////////////////////////
-
-    return(
-        <div className="flex flex-col py-2 md:p-4 md:m-5">
-            <label className="flex justify-center md:h-16 bg-yellow-400 p-2 m-3 md:m-5 text-gray-700 text-sm md:text-2xl font-bold">Next task to do is...
-            </label>
-            <TaskItem taskInfo={taskInfo} key={taskInfo.id} onHandleSelect={onHandleSelect} handleDeleteTask={handleDeleteTask}/>
-        </div>
-    );
-};
-
-
-function TaskItem({ taskInfo, onHandleSelect, handleDeleteTask }) {
-
-    const [finisedTask, setFinishedTask] = useState(false);
-
-    function handleCrossed(done) {
-        setFinishedTask(!done);
-    }
-
-
-    const crossTask = "line-through";
-
-    //////////////////////////////////////
-    //      fix code not ready yet
-    //////////////////////////////////////
-    
-    return(
-        <ul className="grid h-64 md:h-96 overflow-auto bg-black rounded-xl md:p-6">
-            {taskInfo.map((task) => 
-                <li className="flex flex-row justify-between  bg-white hover:bg-blue-500 hover:text-white rounded-xl m-4" onClick={() => onHandleSelect(taskInfo)}>
-                    <p className="flex m-2 md:m-4 font-bold text-sm md:text-2xl">{task.task}</p>
-                    <span className="flex hover:text-red-500 rounded-xl font-bold text-md md:text-2xl pr-2 md:px-1 md:mr-4"><button onClick={handleDeleteTask}>X</button></span>
-                </li>) 
-            }
-        </ul>
-        
-    )
-};
-
-/////////////////////////////////////////////////////////////////////////
 //                         Small List Components
 /////////////////////////////////////////////////////////////////////////
 
@@ -200,3 +164,55 @@ function NoTasks() {
         </li>
     )
 };
+
+/////////////////////////////////////////////////////////////////////////
+//                           Task List
+/////////////////////////////////////////////////////////////////////////
+
+function TaskList({ taskInfo, onHandleSelect, handleDeleteTask }) {
+
+    //////////////////////////////////
+    //     fix code not ready yet
+    /////////////////////////////////
+
+    ////// No task implementation pendent
+
+    return(
+        <div className="flex flex-col py-2 md:p-4 md:m-5">
+            <label className="flex justify-center md:h-16 bg-yellow-400 p-2 m-3 md:m-5 text-gray-700 text-sm md:text-2xl font-bold">Next task to do is...
+            </label>
+            <ul className="grid h-64 md:h-96 overflow-auto bg-black rounded-xl md:p-6">
+                {taskInfo.map((task) => 
+                    <TaskItem taskInfo={task} key={task.id} onHandleSelect={onHandleSelect} handleDeleteTask={handleDeleteTask}/>    
+                )}
+            </ul>
+        </div>
+    );
+};
+
+
+function TaskItem({ taskInfo, onHandleSelect, handleDeleteTask }) {
+
+    const [completedTask, setCompletedTask] = useState(false);
+
+    function handleCrossed(done) {
+        setCompletedTask(!done);
+    }
+
+
+    const crossTask = "line-through";
+
+    //////////////////////////////////////
+    //      fix code not ready yet
+    //////////////////////////////////////
+
+    // list component should be a button to submit onclick => send ask to state
+    
+    return(
+        <li className="flex flex-row justify-between items-center bg-white hover:bg-blue-500 hover:text-white rounded-xl m-4" onClick={() => onHandleSelect(taskInfo)}>
+            <p className="flex m-2 md:m-4 font-bold text-sm md:text-2xl">{taskInfo.task}</p>
+            <button className="flex hover:text-red-500 rounded-xl font-bold text-md md:text-2xl pr-2 md:px-1 md:mr-4" onClick={handleDeleteTask}>X</button>
+        </li>
+    );
+};
+
