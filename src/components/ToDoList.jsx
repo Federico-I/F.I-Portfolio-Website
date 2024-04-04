@@ -19,6 +19,22 @@ const list = [
     }
 ];
 
+/////////////////////////////////////////////////////////////////////////
+//                         Small List Components
+/////////////////////////////////////////////////////////////////////////
+
+//// Still to be implemented
+
+function NoTasks() {
+
+    return( 
+        <li className="flex flex-row justify-between bg-blue h-16 bg-blue-500 hover:text-white rounded-xl m-4">
+            <p className="flex m-2 md:m-4 font-bold text-sm md:text-2xl">NO TASK YET</p>
+        </li>
+    )
+};
+
+
 function Button({ children, onClick, className }) {
     return(
         <button className={className} onClick={onClick}>{children}</button>
@@ -26,7 +42,7 @@ function Button({ children, onClick, className }) {
 }
 
 /////////////////////////////////////////////////////////////////////////
-//                              Main
+//                         Main - Component
 /////////////////////////////////////////////////////////////////////////
 
 
@@ -41,8 +57,8 @@ export default function ToDoList() {
         setGeneralTasks((generalTasks) => [...generalTasks, newTask]);
     };
 
-    function handleSelect(taskInfo) {
-        setSelectedTask(taskInfo);
+    function handleSelect(individualTask) {
+        setSelectedTask(individualTask.id);
         setDisplayContent(true);
     };
 
@@ -72,20 +88,6 @@ export default function ToDoList() {
 };
 
 
-
-/////////////////////////////////////////////////////////////////////////
-//                         Small List Components
-/////////////////////////////////////////////////////////////////////////
-
-function NoTasks() {
-
-    return( 
-        <li className="flex flex-row justify-between bg-blue h-16 bg-blue-500 hover:text-white rounded-xl m-4">
-            <p className="flex m-2 md:m-4 font-bold text-sm md:text-2xl">NO TASK YET</p>
-        </li>
-    )
-};
-
 /////////////////////////////////////////////////////////////////////////
 //                           Task List
 /////////////////////////////////////////////////////////////////////////
@@ -95,8 +97,6 @@ function TaskList({ generalTasks, onHandleSelect, handleDeleteTask }) {
     //////////////////////////////////
     //     fix code not ready yet
     /////////////////////////////////
-
-    ////// No task implementation pendent
 
     return(
         <div className="flex flex-col py-2 md:p-4 md:m-5">
@@ -137,7 +137,7 @@ function TaskItem({ individualTask, onHandleSelect, handleDeleteTask }) {
 };
 
 /////////////////////////////////////////////////////////////////////////
-//                             Input
+//                       ADD Task - Input Task
 /////////////////////////////////////////////////////////////////////////
 
 function InputTasks({ generalTasks, onAddTask, showContent, taskSelected, handleDisplayClose }) {
@@ -162,6 +162,10 @@ function InputTasks({ generalTasks, onAddTask, showContent, taskSelected, handle
 
         setTaskName("");
         setTaskDescription("");
+
+        console.log(newTask);
+
+        return false
     };
 
     // page refreshing when submitting form, prevent refresh.
