@@ -66,8 +66,8 @@ export default function ToDoList() {
         setDisplayContent(false);
     }
 
-    function handleDeleteTask(deletedId) {
-        setGeneralTasks((generalTasks) => [generalTasks.filter((task) => task.id === deletedId)]);
+    function handleDeleteTask(deletedTask) {
+        setGeneralTasks((generalTasks) => [generalTasks.filter((task) => task.id === deletedTask)]);
     }
 
     /*
