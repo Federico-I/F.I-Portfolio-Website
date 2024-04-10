@@ -140,7 +140,7 @@ function TaskItem({ individualTask, onHandleSelect, handleDeleteTask }) {
 //                       ADD Task - Input Task
 /////////////////////////////////////////////////////////////////////////
 
-function InputTasks({ generalTasks, onAddTask, showContent, taskSelected, handleDisplayClose }) {
+function InputTasks({ onAddTask, generalTasks, showContent, taskSelected, handleDisplayClose }) {
 
     const [taskName, setTaskName] = useState("");
     const [taskDescription, setTaskDescription] = useState("");
@@ -178,7 +178,7 @@ function InputTasks({ generalTasks, onAddTask, showContent, taskSelected, handle
         <>
             <div className=" flex flex-col items-center md:m-5 rounded-lg w-full">
 
-                <form className=" md:bg-black rounded-xl md:p-4" onSubmit={handleSubmit} >
+                <form className=" md:bg-black rounded-xl md:p-4" onSubmit={(e) => e.preventDefault()} >
                     <label className="bg-yellow-400 p-3 md:p-10 block text-gray-700 text-sm md:text-2xl font-bold mb-5">What do you need to do today?</label>
 
                     <div className=" flex flex-col justify-items-start mb-5">
@@ -191,7 +191,7 @@ function InputTasks({ generalTasks, onAddTask, showContent, taskSelected, handle
                         <textarea className="block w-full p-3 text-sm md:text-lg text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="text" value={taskDescription} onChange={(e) => setTaskDescription(e.target.value)}/>
                     </div>
 
-                    <Button className="items-center w-28 md:w-60 md:p-5  bg-blue-300 hover:bg-green-500 rounded-lg text-xl md:text-2xl font-bold text-white italic">ADD</Button>
+                    <Button type="button" onClick={handleSubmit} className="items-center w-28 md:w-60 md:p-5  bg-blue-300 hover:bg-green-500 rounded-lg text-xl md:text-2xl font-bold text-white italic">ADD</Button>
                 </form>
 
                 { showContent && <TaskDescription taskSelected={taskSelected} generalTasks={generalTasks}/>}
