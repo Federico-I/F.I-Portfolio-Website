@@ -4,8 +4,8 @@ import { useState } from "react";
 const list = [
     { 
         id: 118836, 
-        task: "Go for a run", 
-        details: "Today I want to run 4.5km."
+        taskName: "Go for a run", 
+        taskDescription: "Today I want to run 4.5km."
     }, 
     { 
         id: 933372, 
@@ -35,9 +35,9 @@ function NoTasks() {
 };
 
 
-function Button({ children, onClick, className }) {
+function Button({ type, children, onClick, className }) {
     return(
-        <button className={className} onClick={onClick}>{children}</button>
+        <button type={type} className={className} onClick={onClick}>{children}</button>
     )
 }
 
@@ -145,8 +145,8 @@ function InputTasks({ onAddTask, generalTasks, showContent, taskSelected, handle
     const [taskName, setTaskName] = useState("");
     const [taskDescription, setTaskDescription] = useState("");
 
-    function handleSubmit(e) {
-        e.preventDeafult();
+    function handleSubmit() {
+        // e.preventDeafult(); ///// while active page was reloading... ????
 
         if (!taskName || !TaskDescription) return;
 
@@ -164,8 +164,6 @@ function InputTasks({ onAddTask, generalTasks, showContent, taskSelected, handle
         setTaskDescription("");
 
         console.log(newTask);
-
-        return false
     };
 
     // page refreshing when submitting form, prevent refresh.
@@ -178,7 +176,7 @@ function InputTasks({ onAddTask, generalTasks, showContent, taskSelected, handle
         <>
             <div className=" flex flex-col items-center md:m-5 rounded-lg w-full">
 
-                <form className=" md:bg-black rounded-xl md:p-4" onSubmit={(e) => e.preventDefault()} >
+                <form className=" md:bg-black rounded-xl md:p-4" >
                     <label className="bg-yellow-400 p-3 md:p-10 block text-gray-700 text-sm md:text-2xl font-bold mb-5">What do you need to do today?</label>
 
                     <div className=" flex flex-col justify-items-start mb-5">
