@@ -4,8 +4,8 @@ import { useState } from "react";
 const list = [
     { 
         id: 118836, 
-        taskName: "Go for a run", 
-        taskDescription: "Today I want to run 4.5km."
+        task: "Go for a run", 
+        details: "Today I want to run 4.5km."
     }, 
     { 
         id: 933372, 
@@ -13,9 +13,9 @@ const list = [
         details: "Pick up Katty's present before 17hrs."
     },
     { 
-        id: 933373, 
-        task: "Run errands v2", 
-        details: "Pick up dinner before 17hrs."
+        id: 933679, 
+        task: "Run errands 2", 
+        details: "Pick up dinner before 18hrs."
     }
 ];
 
@@ -57,6 +57,10 @@ export default function ToDoList() {
         setGeneralTasks((generalTasks) => [...generalTasks, newTask]);
     };
 
+    function handleDeleteTask(deletedTask) {
+        setGeneralTasks((generalTasks) => [generalTasks.filter((task) => task.id === deletedTask)]);
+    }
+
     function handleSelect(individualTask) {
         setSelectedTask(individualTask.id);
         setDisplayContent(true);
@@ -66,9 +70,7 @@ export default function ToDoList() {
         setDisplayContent(false);
     }
 
-    function handleDeleteTask(deletedTask) {
-        setGeneralTasks((generalTasks) => [generalTasks.filter((task) => task.id === deletedTask)]);
-    }
+    
 
     /*
     function handleShowContent(generalTasks){
@@ -125,14 +127,16 @@ function TaskItem({ individualTask, onHandleSelect, handleDeleteTask }) {
     //////////////////////////////////////
     //      fix code not ready yet
     //////////////////////////////////////
-
+ 
     // list component should be a button to submit onclick => send ask to state
     
     return(
         <li className="flex flex-row justify-between items-center bg-white hover:bg-blue-500 hover:text-white rounded-xl m-4" onClick={() => onHandleSelect(individualTask)}>
             <p className="flex m-2 md:m-4 font-bold text-sm md:text-2xl">{individualTask.task}</p>
-            <Button className="flex hover:text-red-500 rounded-xl font-bold text-md md:text-2xl pr-2 md:px-1 md:mr-4" onClick={handleDeleteTask}>X</Button>
+            <Button type="button" className="flex hover:text-red-500 rounded-xl font-bold text-md md:text-2xl pr-2 md:px-1 md:mr-4" onClick={()=> handleDeleteTask(individualTask.id)}>X</Button>
         </li>
+
+        // {handleDeleteTask(individualTask.id)} infinite loop !!!!!!!!
     );
 };
 
@@ -146,16 +150,16 @@ function InputTasks({ onAddTask, generalTasks, showContent, taskSelected, handle
     const [taskDescription, setTaskDescription] = useState("");
 
     function handleSubmit() {
-        // e.preventDeafult(); ///// while active page was reloading... ????
+        // e.preventDeafult(); ///// while active, page was reloading... ????
 
         if (!taskName || !TaskDescription) return;
 
         const Id = crypto.randomUUID();
 
         const newTask = {
-            id: `"${Id}"`,
-            task: `"${taskName}"`,
-            details: `"${taskDescription}"`,
+            id: `${Id}`,
+            task: `${taskName}`,
+            details: `${taskDescription}`,
         };
 
         onAddTask(newTask);
