@@ -57,8 +57,8 @@ export default function ToDoList() {
         setGeneralTasks((generalTasks) => [...generalTasks, newTask]);
     };
 
-    function handleDeleteTask(deletedTask) {
-        setGeneralTasks((generalTasks) => [generalTasks.filter((task) => task.id === deletedTask)]);
+    function handleDeleteTask(deletedID) {
+        setGeneralTasks((generalTasks) => generalTasks.filter((task) => task.id !== deletedID));
     }
 
     function handleSelect(individualTask) {
