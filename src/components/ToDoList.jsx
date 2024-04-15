@@ -23,8 +23,6 @@ const list = [
 //                         Small List Components
 /////////////////////////////////////////////////////////////////////////
 
-//// Still to be implemented
-
 function NoTasks() {
 
     return( 
@@ -127,8 +125,6 @@ function TaskItem({ individualTask, onHandleSelect, handleDeleteTask }) {
     //////////////////////////////////////
     //      fix code not ready yet
     //////////////////////////////////////
- 
-    // list component should be a button to submit onclick => send ask to state
     
     return(
         <li className="flex flex-row justify-between items-center bg-white hover:bg-blue-500 hover:text-white rounded-xl m-4" onClick={() => onHandleSelect(individualTask)}>
@@ -169,12 +165,6 @@ function InputTasks({ onAddTask, generalTasks, showContent, taskSelected, handle
 
         console.log(newTask);
     };
-
-    // page refreshing when submitting form, prevent refresh.
-
-    // button add not working, no itme added onclick
-
-    // state not udpated or displayed
 
     return(
         <>
