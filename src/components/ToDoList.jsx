@@ -68,13 +68,9 @@ export default function ToDoList() {
         setDisplayContent(false);
     }
 
-    
-
-    /*
     function handleShowContent(generalTasks){
         setDisplayContent(generalTasks.id === selectedTask.id ? setDisplayContent(true) : "");
     }
-    */
 
     return(
         <div className="flex flex-col items-center w-full h-full bg-stone-200 pt-10 mt-10 rounded-lg">
@@ -94,10 +90,6 @@ export default function ToDoList() {
 
 function TaskList({ generalTasks, onHandleSelect, handleDeleteTask }) {
 
-    //////////////////////////////////
-    //     fix code not ready yet
-    /////////////////////////////////
-
     const tasksLength = generalTasks.length;
 
     return(
@@ -116,25 +108,25 @@ function TaskList({ generalTasks, onHandleSelect, handleDeleteTask }) {
 
 function TaskItem({ individualTask, onHandleSelect, handleDeleteTask }) {
 
+    /*
     const [completedTask, setCompletedTask] = useState(false);
 
     function handleCrossed(done) {
         setCompletedTask(!done);
     }
-
+    
     const crossTask = "line-through";
+    */
 
-    //////////////////////////////////////
-    //      fix code not ready yet
-    //////////////////////////////////////
+    ////////////////////////////////////////////////
+    //      code not ready yet - wroking on it
+    ////////////////////////////////////////////////
     
     return(
         <li className="flex flex-row justify-between items-center bg-white hover:bg-blue-500 hover:text-white rounded-xl m-4" onClick={() => onHandleSelect(individualTask)}>
             <p className="flex m-2 md:m-4 font-bold text-sm md:text-2xl">{individualTask.task}</p>
             <Button type="button" className="flex hover:text-red-500 rounded-xl font-bold text-md md:text-2xl pr-2 md:px-1 md:mr-4" onClick={()=> handleDeleteTask(individualTask.id)}>X</Button>
         </li>
-
-        // {handleDeleteTask(individualTask.id)} infinite loop !!!!!!!!
     );
 };
 
@@ -200,6 +192,11 @@ function InputTasks({ onAddTask, generalTasks, showContent, taskSelected, handle
 /////////////////////////////////////////////////////////////////////////
 
 function TaskDescription({ generalTasks, taskSelected }) {
+
+    
+    //////////////////////////////////////////////
+    //      code not ready yet - working on it
+    //////////////////////////////////////////////
 
     // need to access the object where taskSelected matches with the taskID
 
