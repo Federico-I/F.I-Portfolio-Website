@@ -59,8 +59,8 @@ export default function ToDoList() {
         setGeneralTasks((generalTasks) => generalTasks.filter((task) => task.id !== deletedID));
     }
 
-    function handleSelect(individualTask) {
-        setSelectedTask(individualTask.id);
+    function handleSelect(taskID) {
+        setSelectedTask(taskID);
         setDisplayContent(true);
     };
 
@@ -119,11 +119,11 @@ function TaskItem({ individualTask, onHandleSelect, handleDeleteTask }) {
     */
 
     ////////////////////////////////////////////////
-    //      code not ready yet - wroking on it
+    //      code not ready yet - working on it
     ////////////////////////////////////////////////
     
     return(
-        <li className="flex flex-row justify-between items-center bg-white hover:bg-blue-500 hover:text-white rounded-xl m-4" onClick={() => onHandleSelect(individualTask)}>
+        <li className="flex flex-row justify-between items-center bg-white hover:bg-blue-500 hover:text-white rounded-xl m-4" onClick={() => onHandleSelect(individualTask.id)}>
             <p className="flex m-2 md:m-4 font-bold text-sm md:text-2xl">{individualTask.task}</p>
             <Button type="button" className="flex hover:text-red-500 rounded-xl font-bold text-md md:text-2xl pr-2 md:px-1 md:mr-4" onClick={()=> handleDeleteTask(individualTask.id)}>X</Button>
         </li>
@@ -200,9 +200,11 @@ function TaskDescription({ generalTasks, taskSelected }) {
 
     // need to access the object where taskSelected matches with the taskID
 
-   const infoTask = generalTasks.map((task) => task.id === taskSelected.id);
+   // const infoTask = generalTasks.map((task) => task.id === taskSelected);
 
-    return(
+   const infoTask = taskSelected; // in progress
+    
+   return(
         <div className="grid w-48 md:w-80 justify-items-center bg-red-500 hover:bg-green-500 rounded-xl p-2 md:p-4 my-2 md:my-4">
 
             <h1 className="bg-yellow-400 p-2 block text-gray-700 text-sm md:text-2xl font-bold mb-2 md:mb-5">Task Description</h1>
