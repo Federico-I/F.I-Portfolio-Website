@@ -76,7 +76,7 @@ export default function ToDoList() {
         <div className="flex flex-col items-center w-full h-full bg-stone-200 pt-10 mt-10 rounded-lg">
             <h1 className="flex p-5 mb-5 text-5xl underline decoration-cyan-500 text-white bg-black font-titleFont rounded-lg ">Tuskyng</h1>
             <div className="grid grid-col md:grid-cols-2 justify-items-center  p-5 md:p-10">
-                <InputTasks onAddTask={handleAddTask} generalTasks={generalTasks} showContent={displayContent} taskSelected={selectedTask} handleDisplayClose={handleDisplayClose}/>
+                <InputTasks onAddTask={handleAddTask} generalTasks={generalTasks} showContent={displayContent} selectedTaskID={selectedTask} handleDisplayClose={handleDisplayClose}/>
                 <TaskList generalTasks={generalTasks} onHandleSelect={handleSelect} taskSelected={selectedTask} handleDeleteTask={handleDeleteTask}/>
             </div>
         </div>
@@ -107,20 +107,6 @@ function TaskList({ generalTasks, onHandleSelect, handleDeleteTask }) {
 
 
 function TaskItem({ individualTask, onHandleSelect, handleDeleteTask }) {
-
-    /*
-    const [completedTask, setCompletedTask] = useState(false);
-
-    function handleCrossed(done) {
-        setCompletedTask(!done);
-    }
-    
-    const crossTask = "line-through";
-    */
-
-    ////////////////////////////////////////////////
-    //      code not ready yet - working on it
-    ////////////////////////////////////////////////
     
     return(
         <li className="flex flex-row justify-between items-center bg-white hover:bg-blue-500 hover:text-white rounded-xl m-4" onClick={() => onHandleSelect(individualTask.id)}>
@@ -134,7 +120,7 @@ function TaskItem({ individualTask, onHandleSelect, handleDeleteTask }) {
 //                       ADD Task - Input Task
 /////////////////////////////////////////////////////////////////////////
 
-function InputTasks({ onAddTask, generalTasks, showContent, taskSelected, handleDisplayClose }) {
+function InputTasks({ onAddTask, generalTasks, showContent, selectedTaskID, handleDisplayClose }) {
 
     const [taskName, setTaskName] = useState("");
     const [taskDescription, setTaskDescription] = useState("");
@@ -180,7 +166,7 @@ function InputTasks({ onAddTask, generalTasks, showContent, taskSelected, handle
                     <Button type="button" onClick={handleSubmit} className="items-center w-28 md:w-60 md:p-5  bg-blue-500 hover:bg-green-500 rounded-lg text-xl md:text-2xl font-bold text-white italic">ADD</Button>
                 </form>
 
-                { showContent && <TaskDescription taskSelected={taskSelected} generalTasks={generalTasks}/>}
+                { showContent && <TaskDescription selectedTaskID={selectedTaskID} generalTasks={generalTasks}/>}
             </div>
         </>
     );
@@ -191,9 +177,10 @@ function InputTasks({ onAddTask, generalTasks, showContent, taskSelected, handle
 //                        Task Description
 /////////////////////////////////////////////////////////////////////////
 
-function TaskDescription({ generalTasks, taskSelected }) {
+function TaskDescription({ generalTasks, selectedTaskID }) {
 
-    
+    const idtask = selectedTaskID;
+
     //////////////////////////////////////////////
     //      code not ready yet - working on it
     //////////////////////////////////////////////
@@ -202,14 +189,18 @@ function TaskDescription({ generalTasks, taskSelected }) {
 
    // const infoTask = generalTasks.map((task) => task.id === taskSelected);
 
-   const infoTask = taskSelected; // in progress
-    
+   const infoTask = generalTasks.map((task) => task.id === selectedTaskID ); //in progress - Pick up present
+   
+   
+   console.log(idtask);
+   console.log(infoTask); /// returns a "false" value
+
    return(
         <div className="grid w-48 md:w-80 justify-items-center bg-red-500 hover:bg-green-500 rounded-xl p-2 md:p-4 my-2 md:my-4">
 
             <h1 className="bg-yellow-400 p-2 block text-gray-700 text-sm md:text-2xl font-bold mb-2 md:mb-5">Task Description</h1>
             <div className="flex flex-col justify-items-start p-3 mb-1 md:mb-5 bg-blue-200 rounded-xl">
-                <h3 className="col-start-1 text-red-700 text-sm md:text-xl font-bold md:mb-2 underline"> Pick up present{infoTask.task}</h3>
+                <h3 className="col-start-1 text-red-700 text-sm md:text-xl font-bold md:mb-2 underline"> {infoTask.task}</h3>
                 <p className="p-2 md:p-4 mt-2 md:mt-4 bg-white rounded-xl text-balance text-sm md:text-md font-bold">Pick up Katty's present before 17hrs.{infoTask.details}</p>
             </div>
         </div>
