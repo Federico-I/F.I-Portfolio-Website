@@ -126,7 +126,6 @@ function InputTasks({ onAddTask, generalTasks, showContent, selectedTaskID, hand
     const [taskDescription, setTaskDescription] = useState("");
 
     function handleSubmit() {
-        // e.preventDeafult(); ///// while active, page was reloading... ????
 
         if (!taskName || !TaskDescription) return;
 
@@ -179,7 +178,7 @@ function InputTasks({ onAddTask, generalTasks, showContent, selectedTaskID, hand
 
 function TaskDescription({ generalTasks, selectedTaskID }) {
 
-    const idtask = selectedTaskID;
+    const idTask = selectedTaskID;
 
     //////////////////////////////////////////////
     //      code not ready yet - working on it
@@ -187,13 +186,11 @@ function TaskDescription({ generalTasks, selectedTaskID }) {
 
     // need to access the object where taskSelected matches with the taskID
 
-   // const infoTask = generalTasks.map((task) => task.id === taskSelected);
-
-   const infoTask = generalTasks.map((task) => task.id === selectedTaskID ); //in progress - Pick up present
+   const infoTask = generalTasks.map((task) => task.id === idTask ); //in progress - Pick up present.
    
    
-   console.log(idtask);
-   console.log(infoTask); /// returns a "false" value
+   console.log(idTask);
+   console.log(infoTask);
 
    return(
         <div className="grid w-48 md:w-80 justify-items-center bg-red-500 hover:bg-green-500 rounded-xl p-2 md:p-4 my-2 md:my-4">
