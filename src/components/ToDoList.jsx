@@ -3,41 +3,21 @@ import { useState } from "react";
 
 const list = [
     { 
-        id: 118836, 
+        id: "118836", 
         task: "Go for a run", 
         details: "Today I want to run 4.5km."
     }, 
     { 
-        id: 933372, 
+        id: "933372", 
         task: "Run errands", 
         details: "Pick up Katty's present before 17hrs."
     },
     { 
-        id: 933679, 
+        id: "933679", 
         task: "Run errands 2", 
         details: "Pick up dinner before 18hrs."
     }
 ];
-
-/////////////////////////////////////////////////////////////////////////
-//                         Small List Components
-/////////////////////////////////////////////////////////////////////////
-
-function NoTasks() {
-
-    return( 
-        <li className="flex flex-row justify-between bg-blue h-16 bg-blue-500 rounded-xl m-4">
-            <p className="flex m-2 md:m-4 font-bold text-sm md:text-2xl">ADD NEW TASK</p>
-        </li>
-    )
-};
-
-
-function Button({ type, children, onClick, className }) {
-    return(
-        <button type={type} className={className} onClick={onClick}>{children}</button>
-    )
-}
 
 /////////////////////////////////////////////////////////////////////////
 //                         Main - Component
@@ -83,6 +63,25 @@ export default function ToDoList() {
     );
 };
 
+/////////////////////////////////////////////////////////////////////////
+//                         Small List Components
+/////////////////////////////////////////////////////////////////////////
+
+function NoTasks() {
+
+    return( 
+        <li className="flex flex-row justify-between bg-blue h-16 bg-blue-500 rounded-xl m-4">
+            <p className="flex m-2 md:m-4 font-bold text-sm md:text-2xl">ADD NEW TASK</p>
+        </li>
+    )
+};
+
+
+function Button({ type, children, onClick, className }) {
+    return(
+        <button type={type} className={className} onClick={onClick}>{children}</button>
+    )
+}
 
 /////////////////////////////////////////////////////////////////////////
 //                           Task List
@@ -105,6 +104,9 @@ function TaskList({ generalTasks, onHandleSelect, handleDeleteTask }) {
     );
 };
 
+/////////////////////////////////////////////////////////////////////////
+//                           Task Item
+/////////////////////////////////////////////////////////////////////////
 
 function TaskItem({ individualTask, onHandleSelect, handleDeleteTask }) {
     
@@ -186,11 +188,13 @@ function TaskDescription({ generalTasks, selectedTaskID }) {
 
     // need to access the object where taskSelected matches with the taskID
 
-   const infoTask = generalTasks.map((task) => task.id === idTask ); //in progress - Pick up present.
-   
+    // idTask passes the selectedID, must pass object that matches selectedID
+
+   const infoTask = generalTasks.filter((task) => { if (task.id === idTask) { return task }}); //in progress - Pick up present.
    
    console.log(idTask);
    console.log(infoTask);
+
 
    return(
         <div className="grid w-48 md:w-80 justify-items-center bg-red-500 hover:bg-green-500 rounded-xl p-2 md:p-4 my-2 md:my-4">
