@@ -190,10 +190,11 @@ function TaskDescription({ generalTasks, selectedTaskID }) {
 
     // idTask passes the selectedID, must pass object that matches selectedID
 
-   const infoTask = generalTasks.filter((task) => { if (task.id === idTask) { return task }}); //in progress - Pick up present.
+   const infoTask = generalTasks.filter((task) => task.id === idTask); //in progress - Pick up present.
    
-   console.log(idTask);
-   console.log(infoTask);
+   // console.log(idTask);
+   // console.log(infoTask);
+   // console.log(infoTask.task);
 
 
    return(
@@ -201,8 +202,8 @@ function TaskDescription({ generalTasks, selectedTaskID }) {
 
             <h1 className="bg-yellow-400 p-2 block text-gray-700 text-sm md:text-2xl font-bold mb-2 md:mb-5">Task Description</h1>
             <div className="flex flex-col justify-items-start p-3 mb-1 md:mb-5 bg-blue-200 rounded-xl">
-                <h3 className="col-start-1 text-red-700 text-sm md:text-xl font-bold md:mb-2 underline"> {infoTask.task}</h3>
-                <p className="p-2 md:p-4 mt-2 md:mt-4 bg-white rounded-xl text-balance text-sm md:text-md font-bold">Pick up Katty's present before 17hrs.{infoTask.details}</p>
+                <h3 className="col-start-1 text-red-700 text-sm md:text-xl font-bold md:mb-2 underline">{infoTask[0].task}</h3>
+                <p className="p-2 md:p-4 mt-2 md:mt-4 bg-white rounded-xl text-balance text-sm md:text-md font-bold">{infoTask[0].details}</p>
             </div>
         </div>
     );
