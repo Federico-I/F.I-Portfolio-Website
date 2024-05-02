@@ -112,7 +112,7 @@ function TaskItem({ individualTask, onHandleSelect, handleDeleteTask }) {
     
     return(
         <li className="flex flex-row justify-between items-center bg-white hover:bg-blue-500 hover:text-white rounded-xl m-4" >
-            <p className="flex w-64 m-2 md:m-4 font-bold text-sm truncate md:text-2xl " onClick={() => onHandleSelect(individualTask.id)} >{individualTask.task}</p>
+            <p className="flex w-28 md:w-64 m-2 md:m-4 font-bold text-sm truncate md:text-2xl pointer-grab" onClick={() => onHandleSelect(individualTask.id)} >{individualTask.task}</p>
             <Button type="button" className="flex hover:text-red-500 rounded-xl font-bold text-md md:text-2xl pr-2 md:px-1 md:mr-4" onClick={()=> handleDeleteTask(individualTask.id)}>X</Button>
         </li>
     );
@@ -189,8 +189,8 @@ function TaskDescription({ generalTasks, selectedTaskID }) {
 
             <h1 className="bg-yellow-400 p-2 block text-gray-700 text-sm md:text-2xl font-bold mb-2 md:mb-5">Task Description</h1>
             <div className="flex flex-col justify-items-start p-3 mb-1 md:mb-5 bg-blue-200 rounded-xl">
-                <h3 className="col-start-1 w-48 text-red-700 text-sm md:text-xl truncate font-bold  md:mb-2 underline">{ idTask === 0 ? "No Tasks Selected" : infoTask[0].task}</h3>
-                <p className=" w-48 p-2 md:p-4 mt-2 md:mt-4 bg-white rounded-xl text-balance text-sm md:text-md font-bold text-wrap">{idTask === 0 ? "Please create and select a task." : infoTask[0].details}</p>
+                <h3 className="col-start-1 w-36 md:w-48 text-red-700 text-sm md:text-xl truncate font-bold  md:mb-2 underline">{ idTask === 0 ? "No Tasks Selected" : infoTask[0].task}</h3>
+                <p className=" w-36 md:w-48 p-2 md:p-4 mt-2 md:mt-4 bg-white rounded-xl text-balance text-sm md:text-md font-bold text-wrap">{idTask === 0 ? "Please create and select a task." : infoTask[0].details}</p>
             </div>
         </div>
     );
