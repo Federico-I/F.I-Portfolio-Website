@@ -9,8 +9,8 @@ function ItemList( { itemData } ) {
         Projects
       </h1>
       <div className="flex grid grid-cols-1 lg:grid-cols-2 place-items-center justify-space-around bg-slate-400 w-full pb-10">
-      {itemData.map((itemInfo) => (
-        <CardItem defa={itemInfo}/>
+      {itemData.map((itemInfo, i) => (
+        <CardItem key={i} defa={itemInfo}/>
       ))}
       </div>
     </div>
