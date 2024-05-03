@@ -24,10 +24,10 @@ export const informationData = [
 
     CardProjects: 
       [
-        {imageUrl: "https://cdn.pixabay.com/photo/2017/12/28/12/31/sketch-3045125_1280.jpg", imageLocal: "null",  link:"null", projectLable: "HTML-CSS", id:0},
-        {imageUrl: "https://miro.medium.com/v2/resize:fit:820/1*y7ZgcnbxdF4aDgh-XaS1-Q.png", link:"https://github.com/Federico-I", projectLable: "Work in Progress", id:1},
-        {imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV3LzRTGj1klQFL-BUlAAhXkwdeAbZBXXkPmQWGtrYqDy_1TceUR9epq5joUy6c-FuXsw&usqp=CAU", link:"https://github.com/Federico-I/Mapty", projectLable: "Java Script", id:1},
-        {imageUrl: "https://uploads.sitepoint.com/wp-content/uploads/2017/04/1493235373large_react_apps_A-01.png", link:"https://github.com/Federico-I/Reaktion", projectLable: "React Js", id:1},
+        {imageUrl: "https://cdn.pixabay.com/photo/2017/12/28/12/31/sketch-3045125_1280.jpg", imageLocal: "null",  link:"null", projectLable: "HTML-CSS", id:868},
+        {imageUrl: "https://miro.medium.com/v2/resize:fit:820/1*y7ZgcnbxdF4aDgh-XaS1-Q.png", link:"https://github.com/Federico-I", projectLable: "Work in Progress", id:45763},
+        {imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV3LzRTGj1klQFL-BUlAAhXkwdeAbZBXXkPmQWGtrYqDy_1TceUR9epq5joUy6c-FuXsw&usqp=CAU", link:"https://github.com/Federico-I/Mapty", projectLable: "Java Script", id:4568},
+        {imageUrl: "https://uploads.sitepoint.com/wp-content/uploads/2017/04/1493235373large_react_apps_A-01.png", link:"https://github.com/Federico-I/Reaktion", projectLable: "React Js", id:16852},
       ],
   },
 ];

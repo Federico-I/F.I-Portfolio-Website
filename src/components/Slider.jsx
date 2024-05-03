@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { FaArrowLeft, FaArrowRight, FaRegImage } from "react-icons/fa";
 
-function Slider( { img } ) {
+function Slider( { img, ind } ) {
 
     const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -36,9 +36,7 @@ function Slider( { img } ) {
                             <span className="flex flex-row justify-center text-4xl">
                                     {imgs.map((_, index) =>
                                     (
-                                        <>
-                                            <FaRegImage icon="fa-regular fa-circle-dot" key={index} onClick={() => {setCurrentSlide(index)} } className={`flex flex-row justify-center text-2xl md:text-4xl mx-2 md:mx-4 indicator cursor-pointer transition ease-in-out delay-150 hover:translate-y-1 ${currentSlide === index ? "scale-150 duration-750 text-orange-300" : null}`}/>
-                                        </>
+                                        <FaRegImage icon="fa-regular fa-circle-dot" key={index} onClick={() => {setCurrentSlide(index)} } className={`flex flex-row justify-center text-2xl md:text-4xl mx-2 md:mx-4 indicator cursor-pointer transition ease-in-out delay-150 hover:translate-y-1 ${currentSlide === index ? "scale-150 duration-750 text-orange-300" : null}`}/>
                                     ))}
                             </span> 
                             }
