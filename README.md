@@ -2,7 +2,7 @@
 
 Welcome to my Portfolio! 
 
-As you cam see, the code is not 100% clean yet.
+As you cam see, the code is not completed yet.
 
 Also, I'm still doing some changes on the way and adding new fautures to it.
 

@@ -8,10 +8,10 @@ export const informationData = [
       "Don't know where to travel next? Let me give you some ideas!",
 
     personal:
-      "Hey! My name is Federico and I am a Frontend Web Developer. This web page was made from scratch. Activly working on it, improving the current features is the main task at the moment. As a self taught web developer, I work full time (non-developer related) and make time to study and to improve my projects.",
+      "Hey! My name is Federico and I am a Frontend Web Developer. This web page was made from scratch and activly working on it. At the moment, I'm still implementing some new ideas and features. After finshing several courses and projects on ReactJS I'm constaly trying to learn more and to improve what I've learn already. So a bit about my life, I currnetly work full time (non-developer related) and make time to study and build my carrer as a self taught web developer.",
 
     moreover:
-      " Since the first time I started coding I have found my passion in it. I believe, how important to read and write onece was for our ancestors, to code, will equaly be for the next generations. There's still a million and one things to learn and improvments to be made on this website but I will keep updating it with new ideas and open to suggestions.",
+      " Since the first time I started coding I have found my passion in it. I believe, how important to read and write onece was for our ancestors, to code, will equaly be for the next generations. There's still a million and one things to learn, to fix and improvments to be made on this website, but I'm still working on it. Pice of advises, new ideas and constructive suggestions are more than welcome, and of course, I will be very happy for some inspiring feedback! Thanks for reading :D! Federico",
     
     ImagesArray: 
       [
