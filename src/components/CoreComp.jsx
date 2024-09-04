@@ -1,8 +1,8 @@
 import React from "react";
-import ItemList from "./ItemList";
-import MainSlider from "./MainSlider";
+import ItemList from "./Features/ItemList";
+import MainSlider from "./Features/MainSlider";
 import About from "./About";
-import ToDoList from "./ToDoList";
+import ToDoList from "./Features/ToDoList";
 
 function CoreComp( { dataText } ) {
 
