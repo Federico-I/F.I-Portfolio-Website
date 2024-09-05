@@ -5,7 +5,7 @@ function Footer() {
 
   return (
     <footer className=" flex flex-col items-center justify-center footer p-3 bg-neutral-900 w-full text-white">
-      <div className="">
+      <div>
         <p>Copyright &copy; {footerYear} All rights reserved</p>
       </div>
     </footer>
