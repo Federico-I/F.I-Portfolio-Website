@@ -1,23 +1,28 @@
 import React from "react";
 import { useState } from "react";
+import { informationData } from "../../Data/infoData";
 
-const list = [
-    { 
-        id: "118836", 
-        task: "Go for a run", 
-        details: "Today I want to run 4.5km."
-    }, 
-    { 
-        id: "933372", 
-        task: "Run errands", 
-        details: "Pick up Katty's present before 17hrs."
-    },
-    { 
-        id: "933679", 
-        task: "Run errands 2", 
-        details: "Pick up dinner before 18hrs."
-    }
-];
+// const list = [
+//     { 
+//         id: "118836", 
+//         task: "Go for a run", 
+//         details: "Today I want to run 4.5km."
+//     }, 
+//     { 
+//         id: "933372", 
+//         task: "Run errands", 
+//         details: "Pick up Katty's present before 17hrs."
+//     },
+//     { 
+//         id: "933679", 
+//         task: "Run errands 2", 
+//         details: "Pick up dinner before 18hrs."
+//     }
+// ];
+
+const list = informationData.map((item) => item.list);
+
+console.log(list);
 
 /////////////////////////////////////////////////////////////////////////
 //                         Main - Component
