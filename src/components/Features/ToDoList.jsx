@@ -1,28 +1,11 @@
 import React from "react";
 import { useState } from "react";
-import { informationData } from "../../Data/infoData";
+import { informationData } from "../../data/infoData.js";
 
-// const list = [
-//     { 
-//         id: "118836", 
-//         task: "Go for a run", 
-//         details: "Today I want to run 4.5km."
-//     }, 
-//     { 
-//         id: "933372", 
-//         task: "Run errands", 
-//         details: "Pick up Katty's present before 17hrs."
-//     },
-//     { 
-//         id: "933679", 
-//         task: "Run errands 2", 
-//         details: "Pick up dinner before 18hrs."
-//     }
-// ];
 
-const list = informationData.map((item) => item.list);
+const listData = informationData.map((item) => item.list);
 
-console.log(list);
+console.log(listData);
 
 /////////////////////////////////////////////////////////////////////////
 //                         Main - Component
@@ -31,9 +14,11 @@ console.log(list);
 
 export default function ToDoList() {
 
-    const [generalTasks, setGeneralTasks] = useState(list);
+    const [generalTasks, setGeneralTasks] = useState(listData[0]);
     const [displayContent, setDisplayContent] = useState(true);
     const [selectedTask, setSelectedTask] = useState(0);
+
+    console.log(generalTasks);
 
     function handleAddTask(newTask) {
         setGeneralTasks((generalTasks) => [...generalTasks, newTask]);
@@ -53,9 +38,12 @@ export default function ToDoList() {
         setDisplayContent(false);
     }
 
-    function handleShowContent(generalTasks){
-        setDisplayContent(generalTasks.id === selectedTask.id ? setDisplayContent(true) : "");
-    }
+    ////////////////////////////////////////////////////
+    //  Fix Feature Implementation -actually disabled.
+
+    // function handleShowContent(generalTasks){
+    //     setDisplayContent(generalTasks.id === selectedTask.id ? setDisplayContent(true) : "");
+    // }
 
     return(
         <div className="flex flex-col items-center w-full h-full bg-stone-200 pt-10 mt-10 rounded-lg">

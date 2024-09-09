@@ -1,5 +1,5 @@
 import React from "react";
-import ProfilePhoto from "../Data/Images/IMG_51562.jpg";
+import ProfilePhoto from "../../data/Images/IMG_51562.jpg";
 
 function ProfileImage() {
   const profilePicture = ProfilePhoto;

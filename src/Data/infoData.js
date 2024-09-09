@@ -29,7 +29,9 @@ export const informationData = [
         {imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV3LzRTGj1klQFL-BUlAAhXkwdeAbZBXXkPmQWGtrYqDy_1TceUR9epq5joUy6c-FuXsw&usqp=CAU", link:"https://github.com/Federico-I/Mapty", projectLable: "Java Script", id:4568},
         {imageUrl: "https://uploads.sitepoint.com/wp-content/uploads/2017/04/1493235373large_react_apps_A-01.png", link:"https://github.com/Federico-I/Reaktion", projectLable: "React Js", id:16852},
       ],
-      list: [
+      
+    list: 
+      [
         { 
             id: "118836", 
             task: "Go for a run", 
@@ -45,6 +47,6 @@ export const informationData = [
             task: "Run errands 2", 
             details: "Pick up dinner before 18hrs."
         }
-      ]
+      ],
   },
 ];
