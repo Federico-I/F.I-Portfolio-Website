@@ -1,10 +1,10 @@
 import React from "react";
 import ItemList from "./Features/ItemList";
 import MainSlider from "./Features/MainSlider";
-import About from "./About";
+import About from "./Features/About";
 import ToDoList from "./Features/ToDoList";
 
-function CoreComp( { dataText } ) {
+function CoreComp({ dataText }) {
 
   return (
     <>

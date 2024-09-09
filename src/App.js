@@ -1,10 +1,10 @@
 import React from "react";
 import Header from "./components/Header.jsx";
 import CoreComp from "./components/CoreComp.jsx";
-import Contact from "./components/Contact.jsx";
+import Contact from "./components/Features/Contact.jsx";
 import Footer from "./components/Footer.jsx";
-import MountainImage from "./Data/Images/mountain2.jpg";
-import { informationData } from "./Data/infoData.js";
+import MountainImage from "./data/Images/mountain2.jpg";
+import { informationData } from "./data/infoData.js";
 import MainComp from "./components/MainComp.jsx";
 import MesosComp from "./components/MesosComp.jsx";
 
