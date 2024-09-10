@@ -27,7 +27,7 @@ export default function ToDoList() {
     function handleDeleteTask(deletedID) {
         setSelectedTask(0);
         setGeneralTasks((generalTasks) => generalTasks.filter((task) => task.id !== deletedID));
-    }
+    };
 
     function handleSelect(taskID) {
         setSelectedTask(taskID);
@@ -36,10 +36,10 @@ export default function ToDoList() {
 
     function handleDisplayClose() {
         setDisplayContent(false);
-    }
+    };
 
     ////////////////////////////////////////////////////
-    //  Fix Feature Implementation -actually disabled.
+    //  Feature Implementation -actually disabled.
 
     // function handleShowContent(generalTasks){
     //     setDisplayContent(generalTasks.id === selectedTask.id ? setDisplayContent(true) : "");
@@ -144,7 +144,7 @@ function InputTasks({ onAddTask, generalTasks, showContent, selectedTaskID, hand
         <>
             <div className=" flex flex-col items-center md:m-5 rounded-lg w-full">
 
-                <form className=" md:bg-black rounded-xl md:p-4" >
+                <form className=" bg-black rounded-xl p-4 mb-4" >
                     <label className="bg-yellow-400 p-3 md:p-10 block text-gray-700 text-sm md:text-2xl font-bold mb-5">What do you need to do today?</label>
 
                     <div className=" flex flex-col justify-items-start mb-5">
@@ -153,13 +153,12 @@ function InputTasks({ onAddTask, generalTasks, showContent, selectedTaskID, hand
                     </div>
 
                     <div className=" items-start mb-2 md:mb-5">
-                        <label className=" col-start-1 text-gray-700 md:text-white text-sm md:text-xl font-bold mb-2">Description</label>
+                        <label className=" col-start-1 text-white text-sm md:text-xl font-bold mb-2">Description</label>
                         <textarea className="block w-full p-3 text-sm md:text-lg text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="text" value={taskDescription} onChange={(e) => setTaskDescription(e.target.value)}/>
                     </div>
 
                     <Button type="button" onClick={handleSubmit} className="items-center w-28 md:w-60 md:p-5  bg-blue-500 hover:bg-green-500 rounded-lg text-xl md:text-2xl font-bold text-white italic">ADD</Button>
                 </form>
-
                 { showContent && <TaskDescription selectedTaskID={selectedTaskID} generalTasks={generalTasks}/>}
             </div>
         </>
@@ -178,12 +177,12 @@ function TaskDescription({ generalTasks, selectedTaskID }) {
    const infoTask = generalTasks.filter((task) => task?.id === idTask); 
 
    return(
-        <div className="grid w-48 md:w-80 justify-items-center bg-red-500 hover:bg-green-500 rounded-xl p-2 md:p-4 my-2 md:my-4">
+        <div className="grid w-42 md:w-80 justify-items-center bg-red-500 hover:bg-green-500 rounded-xl p-2 md:p-4 my-2 md:my-4">
 
             <h1 className="bg-yellow-400 p-2 block text-gray-700 text-sm md:text-2xl font-bold mb-2 md:mb-5">Task Description</h1>
-            <div className="flex flex-col justify-items-start p-3 mb-1 md:mb-5 bg-blue-200 rounded-xl">
-                <h3 className="col-start-1 w-36 md:w-48 text-red-700 text-sm md:text-xl truncate font-bold  md:mb-2 underline">{ idTask === 0 ? "No Tasks Selected" : infoTask[0].task}</h3>
-                <p className=" w-36 md:w-48 p-2 md:p-4 mt-2 md:mt-4 bg-white rounded-xl text-balance text-sm md:text-md font-bold text-wrap">{idTask === 0 ? "Please create and select a task." : infoTask[0].details}</p>
+            <div className="flex flex-col w-full items-center p-3 mb-1 bg-white rounded-xl">
+                <h3 className="col-start-1 w-36 md:w-48 text-red-700 text-sm md:text-xl truncate font-bold md:mb-2 underline">{ idTask === 0 ? "No Tasks Selected" : infoTask[0].task}</h3>
+                <p className=" w-36 md:w-full p-2 md:p-2  rounded-xl text-balance text-sm md:text-xl font-bold text-wrap">{idTask === 0 ? "Please create and select a task." : infoTask[0].details}</p>
             </div>
         </div>
     );
