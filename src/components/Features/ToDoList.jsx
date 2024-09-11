@@ -48,7 +48,7 @@ export default function ToDoList() {
     return(
         <div className="flex flex-col items-center w-full h-full bg-stone-200 pt-10 mt-10 rounded-lg">
             <h1 className="flex p-5 mb-5 text-5xl underline decoration-cyan-500 text-white bg-black font-titleFont rounded-lg ">Tuskyng</h1>
-            <div className="grid grid-col md:grid-cols-2 justify-items-center  p-5 md:p-10">
+            <div className="grid grid-col xl:grid-cols-2 justify-items-center  p-5 md:p-10">
                 <InputTasks onAddTask={handleAddTask} generalTasks={generalTasks} showContent={displayContent} selectedTaskID={selectedTask} handleDisplayClose={handleDisplayClose}/>
                 <TaskList generalTasks={generalTasks} onHandleSelect={handleSelect} taskSelected={selectedTask} handleDeleteTask={handleDeleteTask}/>
             </div>
@@ -63,8 +63,8 @@ export default function ToDoList() {
 function NoTasks() {
 
     return( 
-        <li className="flex flex-row justify-between bg-blue h-16 bg-blue-500 rounded-xl m-4">
-            <p className="flex m-2 md:m-4 font-bold text-sm md:text-2xl">ADD NEW TASK</p>
+        <li className="flex flex-row justify-center bg-blue h-16 bg-blue-500 rounded-xl m-4">
+            <p className="flex m-2 md:m-4 font-bold text-sm text-center md:text-3xl text-white">ADD NEW TASK</p>
         </li>
     )
 };
@@ -85,7 +85,7 @@ function TaskList({ generalTasks, onHandleSelect, handleDeleteTask }) {
     const tasksLength = generalTasks.length;
 
     return(
-        <div className="flex flex-col py-2 md:p-4 md:m-5">
+        <div className="flex flex-col w-full md:w-85 py-2 md:p-4 md:m-5">
             <label className="flex justify-center md:h-16 bg-yellow-400 p-2 m-3 md:m-5 text-gray-700 text-sm md:text-2xl font-bold">Next task to do is...
             </label>
             <ul className="flex flex-col h-64 md:h-96 overflow-auto bg-black rounded-xl md:p-6">
