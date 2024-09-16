@@ -47,7 +47,8 @@ export default function ToDoList() {
 
     return(
         <div className="flex flex-col items-center w-full h-full bg-stone-200 pt-10 mt-10 rounded-lg">
-            <h1 className="flex p-5 mb-5 text-5xl underline decoration-cyan-500 text-white bg-black font-titleFont rounded-lg ">Tuskyng</h1>
+            <p className="w-full pb-5 md:pl-10 text-black text-center md:text-start text-3xl font-titleFont">Let's play with...</p>
+            <h1 className="flex p-5 text-5xl underline decoration-cyan-500 text-white bg-black font-titleFont rounded-lg ">Tuskyng</h1>
             <div className="grid grid-col xl:grid-cols-2 justify-items-center  p-5 md:p-10">
                 <InputTasks onAddTask={handleAddTask} generalTasks={generalTasks} showContent={displayContent} selectedTaskID={selectedTask} handleDisplayClose={handleDisplayClose}/>
                 <TaskList generalTasks={generalTasks} onHandleSelect={handleSelect} taskSelected={selectedTask} handleDeleteTask={handleDeleteTask}/>

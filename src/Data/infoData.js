@@ -29,7 +29,7 @@ export const informationData = [
         {imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV3LzRTGj1klQFL-BUlAAhXkwdeAbZBXXkPmQWGtrYqDy_1TceUR9epq5joUy6c-FuXsw&usqp=CAU", link:"https://github.com/Federico-I/Mapty", projectLable: "Java Script", id:4568},
         {imageUrl: "https://uploads.sitepoint.com/wp-content/uploads/2017/04/1493235373large_react_apps_A-01.png", link:"https://github.com/Federico-I/Reaktion", projectLable: "React Js", id:16852},
         {imageUrl: "https://miro.medium.com/v2/resize:fit:820/1*y7ZgcnbxdF4aDgh-XaS1-Q.png", link:"https://github.com/Federico-I/WatchNext", projectLable: "2Watch-InPreogress", id:16853},
-        {imageUrl: "https://miro.medium.com/v2/resize:fit:820/1*y7ZgcnbxdF4aDgh-XaS1-Q.pngg", link:"https://github.com/Federico-I/MemoMap", projectLable: "MemoMap-InProgress", id:16854},
+        {imageUrl: "https://miro.medium.com/v2/resize:fit:820/1*y7ZgcnbxdF4aDgh-XaS1-Q.png", link:"https://github.com/Federico-I/MemoMap", projectLable: "MemoMap-InProgress", id:16854},
       ],
       
     list: 
