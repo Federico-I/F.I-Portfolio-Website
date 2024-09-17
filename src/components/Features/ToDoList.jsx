@@ -87,7 +87,7 @@ function TaskList({ generalTasks, onHandleSelect, handleDeleteTask }) {
 
     return(
         <div className="flex flex-col w-full md:w-85 py-2 md:p-4 md:m-5">
-            <label className="flex justify-center md:h-16 bg-yellow-400 p-2 m-3 md:m-5 text-gray-700 text-sm md:text-2xl font-bold">Next task to do is...
+            <label className="flex justify-center item-justify-center md:h-16 bg-yellow-400 p-2 m-3 md:m-5 text-gray-700 text-sm md:text-2xl font-bold">Next task to do is...
             </label>
             <ul className="flex flex-col h-64 md:h-96 overflow-auto bg-black rounded-xl md:p-6">
                 { tasksLength >= 1 ? generalTasks.map((task) => 

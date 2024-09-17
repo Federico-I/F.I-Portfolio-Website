@@ -17,16 +17,16 @@ function App() {
   };
 
   return (
-      <div className="flex flex-col items-center justify-between h-full bg-no-repeat bg-cover bg-top bg-fixed" style={backgroundImg}>
-        <MesosComp className=" flex flex-col items-center justify-center bg-transparent h-full w-8/12">
-          <Header />
-          <MainComp>
-            <CoreComp dataText={InfoData}/>
-            <Contact />
-          </MainComp>
-        </MesosComp>
-        <Footer />
-      </div>
+    <div className="flex flex-col items-center justify-between h-full bg-no-repeat bg-cover bg-top bg-fixed" style={backgroundImg}>
+      <MesosComp className=" flex flex-col items-center justify-center bg-transparent h-full w-8/12">
+        <Header />
+        <MainComp>
+          <CoreComp dataText={InfoData}/>
+          <Contact />
+        </MainComp>
+      </MesosComp>
+      <Footer />
+    </div>
   );
 }
 
@@ -53,6 +53,5 @@ export default App;
       </div>
     </div>
   );
-}
-
+  
 */

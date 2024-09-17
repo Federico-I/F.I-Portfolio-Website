@@ -31,7 +31,7 @@ function Slider( { img, ind } ) {
                     <div className="flex flex-col ">
                         <img className="mt-3 md:p-8 transition ease-in-out delay-150 hover:translate-y-1 hover:scale-110 duration-750 opacity-100 md:opacity-75 hover:opacity-100 cursor-pointer" src={background1} alt="test" />
                         <div className="flex flex-row justify-around p-5 ">
-                            <FaArrowLeft className=" text-3xl mr-3 md:text-5xl hover hover:text-red-500 rounded-full cursor-pointer" onClick={prevImg}/>
+                            <FaArrowLeft className=" text-3xl mr-3 md:text-5xl hover hover:text-red-500 rounded-full cursor-pointer transition ease-in-out delay-150 hover:translate-y-1 hover:scale-110 duration-750" onClick={prevImg}/>
                             { 
                             <span className="flex flex-row justify-center text-4xl">
                                     {imgs.map((_, index) =>
@@ -40,7 +40,7 @@ function Slider( { img, ind } ) {
                                     ))}
                             </span> 
                             }
-                            <FaArrowRight className="text-3xl ml-3 md:text-5xl hover hover:text-green-400 rounded-full cursor-pointer" onClick={nextImg}/>
+                            <FaArrowRight className="text-3xl ml-3 md:text-5xl hover hover:text-green-400 rounded-full cursor-pointer transition ease-in-out delay-150 hover:translate-y-1 hover:scale-110 duration-750" onClick={nextImg}/>
                         </div>
                     </div>
                     <p className="pb-10">{background1 ? imgLabel : "Place Name - Dynamic"}</p>
