@@ -50,7 +50,7 @@ export default App;
           </div>
         </div>
         <Footer />
-      </div>
+      
     </div>
   );
   
